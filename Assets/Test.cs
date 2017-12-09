@@ -7,17 +7,31 @@ using Leap.Unity;
 public class Test : MonoBehaviour {
 
     LeapServiceProvider provider;
-    bool closedFist;
+    public bool closedFist;
+
+    DetectCollision detectCollisionScript;
+
+    public bool getDetectCollision;
+
+    public GameObject[] detectCollisions;
+
+    public GameObject rightHand;
 
     // Use this for initialization
     void Start () {
         provider = FindObjectOfType<LeapServiceProvider>() as LeapServiceProvider;
+
+        detectCollisions = GameObject.FindGameObjectsWithTag("grab");
+
+
 
     }
 	
 	// Update is called once per frame
 	void Update () {
 
+
+        //Debug.Log(rightHand.transform.position);
 
         Frame frame = provider.CurrentFrame;
         foreach (Hand hand in frame.Hands)
@@ -30,8 +44,29 @@ public class Test : MonoBehaviour {
 
             else {
                 closedFist = false;
-              //  Debug.Log("No Fist");
+                //  Debug.Log("No Fist");
             }
         }
+
+
+        for (int i = 0; i < detectCollisions.Length; i++)
+        {
+            getDetectCollision = detectCollisions[i].GetComponent<DetectCollision>().collisionDetected;
+           // Debug.Log(getDetectCollision);
+
+            if (closedFist && getDetectCollision)
+            {
+                closedFist = true;
+                getDetectCollision = true;
+                detectCollisions[i].transform.position = rightHand.transform.position;
+                // Debug.Log("Closed Fist and Collision");
+            }
+        }
+
+
+
+
+
+
     }
 }
