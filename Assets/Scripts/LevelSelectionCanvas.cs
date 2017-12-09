@@ -11,14 +11,10 @@ public class LevelSelectionCanvas : MonoBehaviour {
     private AsyncOperation asyncOperation;
 
     public void SelectLevel(int level) {
-        print("Selected Levelaaa " + level);
-
         var buttons = GetComponentsInChildren<Button>();
         foreach (var button in buttons) {
             button.enabled = false;
         }
-
-        print("Selected Level " + level);
 
         asyncOperation = SceneManager.LoadSceneAsync("Level" + level);
         asyncOperation.allowSceneActivation = false;
