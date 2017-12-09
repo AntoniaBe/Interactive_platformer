@@ -16,12 +16,12 @@ public class DetectCollision : MonoBehaviour {
     }
 
 
-    private void OnTriggerEnter(Collider collision)
+    void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "hands")
         {
             //If the GameObject has the same tag as specified, output this message in the console
-            Debug.Log("Trigger!");
+            Debug.Log("Collision Exit");
         }
     }
 
