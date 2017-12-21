@@ -5,6 +5,7 @@ using UnityEngine;
 public class UITester : MonoBehaviour {
 
     public GameObject levelCompleteCanvasPrefab;
+    public GameObject gameOverCanvasPrefab;
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
@@ -13,6 +14,8 @@ public class UITester : MonoBehaviour {
             TestVictoryScreen(2);
         } else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             TestVictoryScreen(3);
+        } else if(Input.GetKeyDown(KeyCode.L)) {
+            TestGameOverScreen();
         }
     }
 
@@ -20,6 +23,11 @@ public class UITester : MonoBehaviour {
         var screenObj = Instantiate(levelCompleteCanvasPrefab);
         var screen = screenObj.GetComponent<LevelCompleteCanvas>();
         screen.starCount = stars;
+    }
+
+    private void TestGameOverScreen() {
+        var screenObj = Instantiate(gameOverCanvasPrefab);
+        var screen = screenObj.GetComponent<GameOverCanvas>();
     }
 
 }

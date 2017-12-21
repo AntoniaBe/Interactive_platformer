@@ -27,4 +27,8 @@ public class GameController : MonoBehaviour {
         isLevelRunning = true;
     }
 
+    public void StopLevel() {
+        isLevelRunning = false;
+    }
+
 }
