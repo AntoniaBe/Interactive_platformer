@@ -32,6 +32,7 @@ public class ClapDetection : MonoBehaviour {
         if (!AreBothHandsTracked()) {
             if (Time.unscaledTime - probablyClappingTime < probablyClappingCooldown) {
                 Clap();
+                lastClapTime = Time.unscaledTime;
                 probablyClappingTime = -1f;
             }
             return;
@@ -43,6 +44,7 @@ public class ClapDetection : MonoBehaviour {
             probablyClappingTime = Time.unscaledTime;
 
             if (handDistance < clapDistance) {
+                lastClapTime = Time.unscaledTime;
                 Clap();
                 probablyClappingTime = -1f;
             }
