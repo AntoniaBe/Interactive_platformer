@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: 1b31e264ef5e241a28ab511f801c9f68
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BigBox
+    100002: BoxBig
+    100004: BoxMiddle
+    100006: BoxSquare
+    100008: BoxWall
+    100010: BoxWall 1
+    100012: BoxWall 2
+    100014: BoxWall 3
+    100016: BoxWall 4
+    100018: Bridge
+    100020: Bridge 1
+    100022: BridgeBoxBended
+    100024: BridgeBoxBenUp
+    100026: BridgeBoxLine
+    100028: BridgeRamp
+    100030: BridgeWoodenDesks
+    100032: BridgeWoodenDesks 1
+    100034: BridgeWoodenRamp
+    100036: ConeBig
+    100038: ConeSmall
+    100040: Crate_g
+    100042: Crate_o
+    100044: Crate_small
+    100046: Crate_small 1
+    100048: DoorEnter
+    100050: Drabine
+    100052: Entrence
+    100054: Ground
+    100056: GroundBig
+    100058: GroundBreak
+    100060: GroundHole
+    100062: GroundRect
+    100064: GroundSquare
+    100066: Hose
+    100068: Palm
+    100070: PillarBig_g
+    100072: PillarBig_o
+    100074: PillarHigh
+    100076: PillarLong
+    100078: PillarSmall_g
+    100080: PillarSmall_o
+    100082: Platform
+    100084: Pyramid
+    100086: Ramp
+    100088: RampHigh
+    100090: RampHighSmall
+    100092: RampLong
+    100094: RampWall
+    100096: RampWallLong
+    100098: RampWallSmall
+    100100: Rect
+    100102: Rect 1
+    100104: Rect 2
+    100106: RoofBig
+    100108: RoofBig 1
+    100110: RoofSmall_g
+    100112: RoofSmall_o
+    100114: SmallBoxWall
+    100116: SphereBig
+    100118: SphereSmall
+    100120: Stairs_Box_Big
+    100122: Stairs_Box_Big 1
+    100124: Stairs_Box_Big 2
+    100126: Stairs_Box_Big 3
+    100128: Stairs_Box_Big 4
+    100130: Stairs_Box_Big 5
+    100132: Stairs_Box_Big 6
+    100134: Stairs_Box_Small
+    100136: Stairs_Closed
+    100138: Stairs_Closed 1
+    100140: Stairs_Closed 10
+    100142: Stairs_Closed 11
+    100144: Stairs_Closed 12
+    100146: Stairs_Closed 13
+    100148: Stairs_Closed 14
+    100150: Stairs_Closed 15
+    100152: Stairs_Closed 16
+    100154: Stairs_Closed 17
+    100156: Stairs_Closed 2
+    100158: Stairs_Closed 3
+    100160: Stairs_Closed 4
+    100162: Stairs_Closed 5
+    100164: Stairs_Closed 6
+    100166: Stairs_Closed 7
+    100168: Stairs_Closed 8
+    100170: Stairs_Closed 9
+    100172: Stairs_Closed_Big
+    100174: Stairs_Closed_Big014
+    100176: Stairs_Closed_Big015
+    100178: Stairs_Closed_Small
+    100180: Stairs_Closedq
+    100182: StairsBox
+    100184: StairsBox 1
+    100186: StairsBox 2
+    100188: StairsBox 3
+    100190: StairsFlat
+    100192: StairsFlat 1
+    100194: StairsFlat 2
+    100196: StairsFlat 3
+    100198: StairsFlat 4
+    100200: StairsFlat 5
+    100202: StairsFlat 6
+    100204: StairsPhilar
+    100206: StairsPhilar 1
+    100208: StairsPhilar 2
+    100210: StairsPhilar 3
+    100212: StairsPhilar 4
+    100214: StairsPhilars
+    100216: StairsRounded
+    100218: StairsSticker
+    100220: StairsSticker 1
+    100222: StairsSticker 2
+    100224: StairsSticker 3
+    100226: StairsSticker 4
+    100228: StairsSticker 5
+    100230: //RootNode
+    100232: Tunnel
+    100234: Wall
+    100236: Wall 1
+    100238: Wall_g
+    100240: Wall_o
+    100242: WallBig
+    100244: WallBig 1
+    100246: WallBig 2
+    100248: WallBig 3
+    100250: WallBigCorner
+    100252: WallBigWindow
+    100254: WallBlock
+    100256: WallBlock 1
+    100258: WallBox
+    100260: WallCorner
+    100262: WallCorner 1
+    100264: WallCorner 2
+    100266: WallCorner 3
+    100268: WallCorner 4
+    100270: WallDoor
+    100272: WallHigh
+    100274: WallHigh 1
+    100276: WallHole
+    100278: WallLongWindow
+    100280: WallPillars
+    100282: WallPillars 1
+    100284: WallRounded
+    100286: WallRounded 1
+    100288: WallSmallWindow
+    100290: WallSmallWindow 1
+    100292: WallSquare
+    100294: WallWindow
+    100296: WallWindow 1
+    100298: WallWindows
+    400000: BigBox
+    400002: BoxBig
+    400004: BoxMiddle
+    400006: BoxSquare
+    400008: BoxWall
+    400010: BoxWall 1
+    400012: BoxWall 2
+    400014: BoxWall 3
+    400016: BoxWall 4
+    400018: Bridge
+    400020: Bridge 1
+    400022: BridgeBoxBended
+    400024: BridgeBoxBenUp
+    400026: BridgeBoxLine
+    400028: BridgeRamp
+    400030: BridgeWoodenDesks
+    400032: BridgeWoodenDesks 1
+    400034: BridgeWoodenRamp
+    400036: ConeBig
+    400038: ConeSmall
+    400040: Crate_g
+    400042: Crate_o
+    400044: Crate_small
+    400046: Crate_small 1
+    400048: DoorEnter
+    400050: Drabine
+    400052: Entrence
+    400054: Ground
+    400056: GroundBig
+    400058: GroundBreak
+    400060: GroundHole
+    400062: GroundRect
+    400064: GroundSquare
+    400066: Hose
+    400068: Palm
+    400070: PillarBig_g
+    400072: PillarBig_o
+    400074: PillarHigh
+    400076: PillarLong
+    400078: PillarSmall_g
+    400080: PillarSmall_o
+    400082: Platform
+    400084: Pyramid
+    400086: Ramp
+    400088: RampHigh
+    400090: RampHighSmall
+    400092: RampLong
+    400094: RampWall
+    400096: RampWallLong
+    400098: RampWallSmall
+    400100: Rect
+    400102: Rect 1
+    400104: Rect 2
+    400106: RoofBig
+    400108: RoofBig 1
+    400110: RoofSmall_g
+    400112: RoofSmall_o
+    400114: SmallBoxWall
+    400116: SphereBig
+    400118: SphereSmall
+    400120: Stairs_Box_Big
+    400122: Stairs_Box_Big 1
+    400124: Stairs_Box_Big 2
+    400126: Stairs_Box_Big 3
+    400128: Stairs_Box_Big 4
+    400130: Stairs_Box_Big 5
+    400132: Stairs_Box_Big 6
+    400134: Stairs_Box_Small
+    400136: Stairs_Closed
+    400138: Stairs_Closed 1
+    400140: Stairs_Closed 10
+    400142: Stairs_Closed 11
+    400144: Stairs_Closed 12
+    400146: Stairs_Closed 13
+    400148: Stairs_Closed 14
+    400150: Stairs_Closed 15
+    400152: Stairs_Closed 16
+    400154: Stairs_Closed 17
+    400156: Stairs_Closed 2
+    400158: Stairs_Closed 3
+    400160: Stairs_Closed 4
+    400162: Stairs_Closed 5
+    400164: Stairs_Closed 6
+    400166: Stairs_Closed 7
+    400168: Stairs_Closed 8
+    400170: Stairs_Closed 9
+    400172: Stairs_Closed_Big
+    400174: Stairs_Closed_Big014
+    400176: Stairs_Closed_Big015
+    400178: Stairs_Closed_Small
+    400180: Stairs_Closedq
+    400182: StairsBox
+    400184: StairsBox 1
+    400186: StairsBox 2
+    400188: StairsBox 3
+    400190: StairsFlat
+    400192: StairsFlat 1
+    400194: StairsFlat 2
+    400196: StairsFlat 3
+    400198: StairsFlat 4
+    400200: StairsFlat 5
+    400202: StairsFlat 6
+    400204: StairsPhilar
+    400206: StairsPhilar 1
+    400208: StairsPhilar 2
+    400210: StairsPhilar 3
+    400212: StairsPhilar 4
+    400214: StairsPhilars
+    400216: StairsRounded
+    400218: StairsSticker
+    400220: StairsSticker 1
+    400222: StairsSticker 2
+    400224: StairsSticker 3
+    400226: StairsSticker 4
+    400228: StairsSticker 5
+    400230: //RootNode
+    400232: Tunnel
+    400234: Wall
+    400236: Wall 1
+    400238: Wall_g
+    400240: Wall_o
+    400242: WallBig
+    400244: WallBig 1
+    400246: WallBig 2
+    400248: WallBig 3
+    400250: WallBigCorner
+    400252: WallBigWindow
+    400254: WallBlock
+    400256: WallBlock 1
+    400258: WallBox
+    400260: WallCorner
+    400262: WallCorner 1
+    400264: WallCorner 2
+    400266: WallCorner 3
+    400268: WallCorner 4
+    400270: WallDoor
+    400272: WallHigh
+    400274: WallHigh 1
+    400276: WallHole
+    400278: WallLongWindow
+    400280: WallPillars
+    400282: WallPillars 1
+    400284: WallRounded
+    400286: WallRounded 1
+    400288: WallSmallWindow
+    400290: WallSmallWindow 1
+    400292: WallSquare
+    400294: WallWindow
+    400296: WallWindow 1
+    400298: WallWindows
+    2300000: BigBox
+    2300002: BoxBig
+    2300004: BoxMiddle
+    2300006: BoxSquare
+    2300008: BoxWall
+    2300010: BoxWall 1
+    2300012: BoxWall 2
+    2300014: BoxWall 3
+    2300016: BoxWall 4
+    2300018: Bridge
+    2300020: Bridge 1
+    2300022: BridgeBoxBended
+    2300024: BridgeBoxBenUp
+    2300026: BridgeBoxLine
+    2300028: BridgeRamp
+    2300030: BridgeWoodenDesks
+    2300032: BridgeWoodenDesks 1
+    2300034: BridgeWoodenRamp
+    2300036: ConeBig
+    2300038: ConeSmall
+    2300040: Crate_g
+    2300042: Crate_o
+    2300044: Crate_small
+    2300046: Crate_small 1
+    2300048: DoorEnter
+    2300050: Drabine
+    2300052: Entrence
+    2300054: Ground
+    2300056: GroundBig
+    2300058: GroundBreak
+    2300060: GroundHole
+    2300062: GroundRect
+    2300064: GroundSquare
+    2300066: Hose
+    2300068: Palm
+    2300070: PillarBig_g
+    2300072: PillarBig_o
+    2300074: PillarHigh
+    2300076: PillarLong
+    2300078: PillarSmall_g
+    2300080: PillarSmall_o
+    2300082: Platform
+    2300084: Pyramid
+    2300086: Ramp
+    2300088: RampHigh
+    2300090: RampHighSmall
+    2300092: RampLong
+    2300094: RampWall
+    2300096: RampWallLong
+    2300098: RampWallSmall
+    2300100: Rect
+    2300102: Rect 1
+    2300104: Rect 2
+    2300106: RoofBig
+    2300108: RoofBig 1
+    2300110: RoofSmall_g
+    2300112: RoofSmall_o
+    2300114: SmallBoxWall
+    2300116: SphereBig
+    2300118: SphereSmall
+    2300120: Stairs_Box_Big
+    2300122: Stairs_Box_Big 1
+    2300124: Stairs_Box_Big 2
+    2300126: Stairs_Box_Big 3
+    2300128: Stairs_Box_Big 4
+    2300130: Stairs_Box_Big 5
+    2300132: Stairs_Box_Big 6
+    2300134: Stairs_Box_Small
+    2300136: Stairs_Closed
+    2300138: Stairs_Closed 1
+    2300140: Stairs_Closed 10
+    2300142: Stairs_Closed 11
+    2300144: Stairs_Closed 12
+    2300146: Stairs_Closed 13
+    2300148: Stairs_Closed 14
+    2300150: Stairs_Closed 15
+    2300152: Stairs_Closed 16
+    2300154: Stairs_Closed 17
+    2300156: Stairs_Closed 2
+    2300158: Stairs_Closed 3
+    2300160: Stairs_Closed 4
+    2300162: Stairs_Closed 5
+    2300164: Stairs_Closed 6
+    2300166: Stairs_Closed 7
+    2300168: Stairs_Closed 8
+    2300170: Stairs_Closed 9
+    2300172: Stairs_Closed_Big
+    2300174: Stairs_Closed_Big014
+    2300176: Stairs_Closed_Big015
+    2300178: Stairs_Closed_Small
+    2300180: Stairs_Closedq
+    2300182: StairsBox
+    2300184: StairsBox 1
+    2300186: StairsBox 2
+    2300188: StairsBox 3
+    2300190: StairsFlat
+    2300192: StairsFlat 1
+    2300194: StairsFlat 2
+    2300196: StairsFlat 3
+    2300198: StairsFlat 4
+    2300200: StairsFlat 5
+    2300202: StairsFlat 6
+    2300204: StairsPhilar
+    2300206: StairsPhilar 1
+    2300208: StairsPhilar 2
+    2300210: StairsPhilar 3
+    2300212: StairsPhilar 4
+    2300214: StairsPhilars
+    2300216: StairsRounded
+    2300218: StairsSticker
+    2300220: StairsSticker 1
+    2300222: StairsSticker 2
+    2300224: StairsSticker 3
+    2300226: StairsSticker 4
+    2300228: StairsSticker 5
+    2300230: Tunnel
+    2300232: Wall
+    2300234: Wall 1
+    2300236: Wall_g
+    2300238: Wall_o
+    2300240: WallBig
+    2300242: WallBig 1
+    2300244: WallBig 2
+    2300246: WallBig 3
+    2300248: WallBigCorner
+    2300250: WallBigWindow
+    2300252: WallBlock
+    2300254: WallBlock 1
+    2300256: WallBox
+    2300258: WallCorner
+    2300260: WallCorner 1
+    2300262: WallCorner 2
+    2300264: WallCorner 3
+    2300266: WallCorner 4
+    2300268: WallDoor
+    2300270: WallHigh
+    2300272: WallHigh 1
+    2300274: WallHole
+    2300276: WallLongWindow
+    2300278: WallPillars
+    2300280: WallPillars 1
+    2300282: WallRounded
+    2300284: WallRounded 1
+    2300286: WallSmallWindow
+    2300288: WallSmallWindow 1
+    2300290: WallSquare
+    2300292: WallWindow
+    2300294: WallWindow 1
+    2300296: WallWindows
+    3300000: BigBox
+    3300002: BoxBig
+    3300004: BoxMiddle
+    3300006: BoxSquare
+    3300008: BoxWall
+    3300010: BoxWall 1
+    3300012: BoxWall 2
+    3300014: BoxWall 3
+    3300016: BoxWall 4
+    3300018: Bridge
+    3300020: Bridge 1
+    3300022: BridgeBoxBended
+    3300024: BridgeBoxBenUp
+    3300026: BridgeBoxLine
+    3300028: BridgeRamp
+    3300030: BridgeWoodenDesks
+    3300032: BridgeWoodenDesks 1
+    3300034: BridgeWoodenRamp
+    3300036: ConeBig
+    3300038: ConeSmall
+    3300040: Crate_g
+    3300042: Crate_o
+    3300044: Crate_small
+    3300046: Crate_small 1
+    3300048: DoorEnter
+    3300050: Drabine
+    3300052: Entrence
+    3300054: Ground
+    3300056: GroundBig
+    3300058: GroundBreak
+    3300060: GroundHole
+    3300062: GroundRect
+    3300064: GroundSquare
+    3300066: Hose
+    3300068: Palm
+    3300070: PillarBig_g
+    3300072: PillarBig_o
+    3300074: PillarHigh
+    3300076: PillarLong
+    3300078: PillarSmall_g
+    3300080: PillarSmall_o
+    3300082: Platform
+    3300084: Pyramid
+    3300086: Ramp
+    3300088: RampHigh
+    3300090: RampHighSmall
+    3300092: RampLong
+    3300094: RampWall
+    3300096: RampWallLong
+    3300098: RampWallSmall
+    3300100: Rect
+    3300102: Rect 1
+    3300104: Rect 2
+    3300106: RoofBig
+    3300108: RoofBig 1
+    3300110: RoofSmall_g
+    3300112: RoofSmall_o
+    3300114: SmallBoxWall
+    3300116: SphereBig
+    3300118: SphereSmall
+    3300120: Stairs_Box_Big
+    3300122: Stairs_Box_Big 1
+    3300124: Stairs_Box_Big 2
+    3300126: Stairs_Box_Big 3
+    3300128: Stairs_Box_Big 4
+    3300130: Stairs_Box_Big 5
+    3300132: Stairs_Box_Big 6
+    3300134: Stairs_Box_Small
+    3300136: Stairs_Closed
+    3300138: Stairs_Closed 1
+    3300140: Stairs_Closed 10
+    3300142: Stairs_Closed 11
+    3300144: Stairs_Closed 12
+    3300146: Stairs_Closed 13
+    3300148: Stairs_Closed 14
+    3300150: Stairs_Closed 15
+    3300152: Stairs_Closed 16
+    3300154: Stairs_Closed 17
+    3300156: Stairs_Closed 2
+    3300158: Stairs_Closed 3
+    3300160: Stairs_Closed 4
+    3300162: Stairs_Closed 5
+    3300164: Stairs_Closed 6
+    3300166: Stairs_Closed 7
+    3300168: Stairs_Closed 8
+    3300170: Stairs_Closed 9
+    3300172: Stairs_Closed_Big
+    3300174: Stairs_Closed_Big014
+    3300176: Stairs_Closed_Big015
+    3300178: Stairs_Closed_Small
+    3300180: Stairs_Closedq
+    3300182: StairsBox
+    3300184: StairsBox 1
+    3300186: StairsBox 2
+    3300188: StairsBox 3
+    3300190: StairsFlat
+    3300192: StairsFlat 1
+    3300194: StairsFlat 2
+    3300196: StairsFlat 3
+    3300198: StairsFlat 4
+    3300200: StairsFlat 5
+    3300202: StairsFlat 6
+    3300204: StairsPhilar
+    3300206: StairsPhilar 1
+    3300208: StairsPhilar 2
+    3300210: StairsPhilar 3
+    3300212: StairsPhilar 4
+    3300214: StairsPhilars
+    3300216: StairsRounded
+    3300218: StairsSticker
+    3300220: StairsSticker 1
+    3300222: StairsSticker 2
+    3300224: StairsSticker 3
+    3300226: StairsSticker 4
+    3300228: StairsSticker 5
+    3300230: Tunnel
+    3300232: Wall
+    3300234: Wall 1
+    3300236: Wall_g
+    3300238: Wall_o
+    3300240: WallBig
+    3300242: WallBig 1
+    3300244: WallBig 2
+    3300246: WallBig 3
+    3300248: WallBigCorner
+    3300250: WallBigWindow
+    3300252: WallBlock
+    3300254: WallBlock 1
+    3300256: WallBox
+    3300258: WallCorner
+    3300260: WallCorner 1
+    3300262: WallCorner 2
+    3300264: WallCorner 3
+    3300266: WallCorner 4
+    3300268: WallDoor
+    3300270: WallHigh
+    3300272: WallHigh 1
+    3300274: WallHole
+    3300276: WallLongWindow
+    3300278: WallPillars
+    3300280: WallPillars 1
+    3300282: WallRounded
+    3300284: WallRounded 1
+    3300286: WallSmallWindow
+    3300288: WallSmallWindow 1
+    3300290: WallSquare
+    3300292: WallWindow
+    3300294: WallWindow 1
+    3300296: WallWindows
+    4300000: WallWindows
+    4300002: WallBigCorner
+    4300004: PillarLong
+    4300006: Platform
+    4300008: Entrence
+    4300010: GroundBreak
+    4300012: WallSquare
+    4300014: GroundHole
+    4300016: Crate_o
+    4300018: Wall_o
+    4300020: Crate_g
+    4300022: Wall_g
+    4300024: PillarSmall_g
+    4300026: PillarBig_g
+    4300028: PillarSmall_o
+    4300030: PillarBig_o
+    4300032: Stairs_Closed_Small
+    4300034: Stairs_Closed_Big
+    4300036: Stairs_Box_Big
+    4300038: Stairs_Box_Small
+    4300040: RoofSmall_g
+    4300042: RoofSmall_o
+    4300044: RoofBig
+    4300046: RoofBig
+    4300048: Rect
+    4300050: Rect
+    4300052: Rect
+    4300054: Pyramid
+    4300056: SphereSmall
+    4300058: SphereBig
+    4300060: Drabine
+    4300062: Bridge
+    4300064: Wall
+    4300066: WallSmallWindow
+    4300068: Wall
+    4300070: WallSmallWindow
+    4300072: StairsRounded
+    4300074: DoorEnter
+    4300076: PillarHigh
+    4300078: Hose
+    4300080: BridgeBoxBended
+    4300082: ConeSmall
+    4300084: ConeBig
+    4300086: WallWindow
+    4300088: WallWindow
+    4300090: WallDoor
+    4300092: GroundBig
+    4300094: Palm
+    4300096: WallCorner
+    4300098: WallCorner
+    4300100: WallHole
+    4300102: WallBigWindow
+    4300104: WallPillars
+    4300106: WallPillars
+    4300108: WallBlock
+    4300110: WallBlock
+    4300112: WallBig
+    4300114: WallBig
+    4300116: WallRounded
+    4300118: WallRounded
+    4300120: WallHigh
+    4300122: WallHigh
+    4300124: BigBox
+    4300126: BoxBig
+    4300128: BoxMiddle
+    4300130: BoxSquare
+    4300132: WallBox
+    4300134: BoxWall
+    4300136: BoxWall
+    4300138: BoxWall
+    4300140: BoxWall
+    4300142: BoxWall
+    4300144: SmallBoxWall
+    4300146: RampLong
+    4300148: RampHighSmall
+    4300150: RampHigh
+    4300152: RampWallLong
+    4300154: RampWallSmall
+    4300156: RampWall
+    4300158: StairsFlat
+    4300160: Stairs_Closed
+    4300162: Stairs_Closed
+    4300164: Stairs_Closed
+    4300166: StairsSticker
+    4300168: StairsSticker
+    4300170: Stairs_Closed
+    4300172: Stairs_Closed
+    4300174: WallCorner
+    4300176: WallCorner
+    4300178: Stairs_Closed
+    4300180: Stairs_Closed
+    4300182: Stairs_Closed
+    4300184: StairsSticker
+    4300186: Stairs_Closed_Big014
+    4300188: Stairs_Closed_Big015
+    4300190: Stairs_Closed
+    4300192: Stairs_Closed
+    4300194: Stairs_Closed
+    4300196: StairsSticker
+    4300198: StairsSticker
+    4300200: StairsSticker
+    4300202: Stairs_Closed
+    4300204: Stairs_Closed
+    4300206: Stairs_Closed
+    4300208: GroundSquare
+    4300210: WallCorner
+    4300212: Stairs_Closed
+    4300214: Stairs_Closed
+    4300216: Stairs_Closed
+    4300218: Stairs_Closed
+    4300220: Stairs_Closedq
+    4300222: WallBig
+    4300224: WallBig
+    4300226: Stairs_Box_Big
+    4300228: Stairs_Box_Big
+    4300230: Stairs_Box_Big
+    4300232: GroundRect
+    4300234: StairsBox
+    4300236: StairsBox
+    4300238: StairsFlat
+    4300240: StairsFlat
+    4300242: StairsFlat
+    4300244: StairsFlat
+    4300246: StairsFlat
+    4300248: StairsPhilar
+    4300250: StairsPhilars
+    4300252: StairsPhilar
+    4300254: StairsPhilar
+    4300256: StairsPhilar
+    4300258: StairsFlat
+    4300260: Stairs_Box_Big
+    4300262: StairsBox
+    4300264: Stairs_Box_Big
+    4300266: StairsBox
+    4300268: Stairs_Box_Big
+    4300270: StairsPhilar
+    4300272: BridgeBoxLine
+    4300274: BridgeBoxBenUp
+    4300276: BridgeRamp
+    4300278: Ramp
+    4300280: BridgeWoodenRamp
+    4300282: BridgeWoodenDesks
+    4300284: BridgeWoodenDesks
+    4300286: Bridge
+    4300288: Crate_small
+    4300290: Crate_small
+    4300292: WallLongWindow
+    4300294: Tunnel
+    4300296: Ground
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
