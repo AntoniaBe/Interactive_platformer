@@ -73,7 +73,7 @@ public class SwipeGesture : MonoBehaviour
 
         if (firstHand.IsRight) {
 
-        if (firstHand.Fingers[0].IsExtended && firstHand.Fingers[1].IsExtended && firstHand.Fingers[2].IsExtended && firstHand.Fingers[3].IsExtended && firstHand.Fingers[4].IsExtended && firstHand.PalmVelocity.x > minVelocity && firstHand.PalmNormal.x < -0.96f && firstHand.PalmNormal.x > -0.99f) {
+        if (firstHand.Fingers[0].IsExtended && firstHand.Fingers[1].IsExtended && firstHand.Fingers[2].IsExtended && firstHand.Fingers[3].IsExtended && firstHand.Fingers[4].IsExtended && firstHand.PalmVelocity.x > minVelocity && firstHand.PalmNormal.x < -0.90f && firstHand.PalmNormal.x > -0.99f) {
 
             camera.transform.eulerAngles = new Vector3(xRotation, yRotationRight, 0);
          

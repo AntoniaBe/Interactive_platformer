@@ -5,10 +5,6 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour {
 
     public bool collisionDetected;
-    public bool snapIn;
-
-
-
 
     void OnTriggerStay(Collider collider)
     {
@@ -16,25 +12,13 @@ public class DetectCollision : MonoBehaviour {
         {
             //If the GameObject has the same tag as specified, output this message in the console
 
-            collisionDetected = true;
+           collisionDetected = true;
            gameObject.GetComponent<Renderer>().material.color = Color.green;
             //Debug.Log("COLLISION");
         }
 
 
     }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "snapIn")
-        {
-            snapIn = true;
-        }
-
-      // Debug.Log(gameObject.GetComponent<Collider>().bounds.center);
-    }
-
-
 
     void OnTriggerExit(Collider collider)
     {
