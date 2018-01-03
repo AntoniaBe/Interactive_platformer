@@ -47,10 +47,10 @@ public class GameController : MonoBehaviour {
 
     private void Awake() {
         instance = this;
-    }
 
-    private void Start() {
         SaveState = SaveState.LoadFromFile();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update() {

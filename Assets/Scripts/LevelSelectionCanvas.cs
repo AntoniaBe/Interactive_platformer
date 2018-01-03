@@ -6,30 +6,28 @@ public class LevelSelectionCanvas : MonoBehaviour {
 
     public float fadeOutTime = 2f;
 
-    private AsyncOperation asyncOperation;
-
     public void SelectLevel(int level) {
         var buttons = GetComponentsInChildren<Button>();
         foreach (var button in buttons) {
             button.enabled = false;
         }
 
-        asyncOperation = GameController.instance.LoadLevel(level);
-
-        StartCoroutine(HideScreen());
+        StartCoroutine(SelectLevelAnimation(level));
     }
 
-    public IEnumerator HideScreen() {
+    private IEnumerator SelectLevelAnimation(int level) {
+        var async = GameController.instance.LoadLevel(level);
+
         var canvasGroup = GetComponent<CanvasGroup>();
 
         float timer = 0f;
-        while (canvasGroup.alpha > float.Epsilon) {
+        while (timer < fadeOutTime) {
             canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeOutTime);
             timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
-        asyncOperation.allowSceneActivation = true;
+        async.allowSceneActivation = true;
 
         GameController.instance.StartLevel();
     }

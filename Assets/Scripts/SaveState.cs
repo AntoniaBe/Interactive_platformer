@@ -32,7 +32,7 @@ public class SaveState {
     public List<LevelRecord> levelRecords = new List<LevelRecord>();
 
     public bool HasUnlockedLevel(int level) {
-        return levelRecords.Any(t => t.id == level);
+        return GetLevelRecord(level) != null;
     }
 
     public void UnlockLevel(int level) {
@@ -43,8 +43,12 @@ public class SaveState {
         }
     }
 
+    public LevelRecord GetLevelRecord(int level) {
+        return levelRecords.FirstOrDefault(t => t.id == level);
+    }
+
     public void UpdateLevelRecord(int level, float bestTime, int stars) {
-        var record = levelRecords.FirstOrDefault(t => t.id == level);
+        var record = GetLevelRecord(level);
         if (record == null) {
             record = new LevelRecord(level);
             levelRecords.Add(record);
