@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour {
 
     public GameObject levelCompleteCanvasPrefab;
     public GameObject gameOverCanvasPrefab;
+    public GameObject pauseCanvasPrefab;
 
     public int maxLevels;
 
@@ -46,6 +47,11 @@ public class GameController : MonoBehaviour {
     private LevelState levelState;
 
     private void Awake() {
+        if (instance != null) {
+            Destroy(gameObject);
+            return;
+        }
+
         instance = this;
 
         SaveState = SaveState.LoadFromFile();
@@ -63,6 +69,8 @@ public class GameController : MonoBehaviour {
             RestartLevel();
         } else if (Input.GetKeyDown(KeyCode.N)) {
             StartCoroutine(NextLevel());
+        } else if (Input.GetKeyDown(KeyCode.P)) {
+            PauseGame();
         }
 #endif
 
@@ -83,15 +91,48 @@ public class GameController : MonoBehaviour {
         currentLevel = level;
         SaveState.UnlockLevel(currentLevel);
 
-        var asyncOperation = SceneManager.LoadSceneAsync("Level" + level);
-        asyncOperation.allowSceneActivation = false;
-        return asyncOperation;
+        var async = SceneManager.LoadSceneAsync("Level" + level);
+        async.allowSceneActivation = false;
+        return async;
+    }
+
+    public AsyncOperation LoadLevelSelection() {
+        var async = SceneManager.LoadSceneAsync("LevelSelection");
+        async.allowSceneActivation = false;
+        return async;
     }
 
     public void StartLevel() {
+        UnpauseGame();
+
         levelProperties = FindObjectOfType<LevelProperties>();
         LevelTimer = 0f;
         levelState = LevelState.RUNNING;
+    }
+
+    public void PauseGame() {
+        if (levelState != LevelState.RUNNING) {
+            return;
+        }
+
+        levelState = LevelState.PAUSED;
+        Time.timeScale = 0f;
+
+        Instantiate(pauseCanvasPrefab);
+    }
+
+    public void UnpauseGame() {
+        if (levelState != LevelState.PAUSED) {
+            return;
+        }
+
+        levelState = LevelState.RUNNING;
+        Time.timeScale = 1f;
+
+        var canvas = FindObjectOfType<PauseMenuCanvas>();
+        if (canvas) {
+            Destroy(canvas.gameObject);
+        }
     }
 
     public void Victory() {
@@ -111,8 +152,7 @@ public class GameController : MonoBehaviour {
     private IEnumerator NextLevel() {
         AsyncOperation async;
         if (currentLevel + 1 >= maxLevels) {
-            async = SceneManager.LoadSceneAsync("LevelSelection");
-            async.allowSceneActivation = false;
+            async = LoadLevelSelection();
         } else {
             async = LoadLevel(currentLevel + 1);
         }
