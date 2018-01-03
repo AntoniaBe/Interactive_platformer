@@ -3,6 +3,7 @@
 ## Graphics
 * Star, https://opengameart.org/content/star, CC0
 * Flare Effect, https://opengameart.org/content/flare-effect, CC0
+* Level Selection Background, https://opengameart.org/content/sky-background, CC-BY Paulina Riva
 
 ## Audio
 * Victory Sounds, https://opengameart.org/content/level-up-power-up-coin-get-13-sounds, CC0
