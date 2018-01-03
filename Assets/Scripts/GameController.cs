@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
     }
 
     public static GameController instance;
+    public SaveState SaveState { get; private set; }
 
     public GameObject levelCompleteCanvasPrefab;
     public GameObject gameOverCanvasPrefab;
@@ -48,6 +49,10 @@ public class GameController : MonoBehaviour {
         instance = this;
     }
 
+    private void Start() {
+        SaveState = SaveState.LoadFromFile();
+    }
+
     private void Update() {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.W)) {
@@ -76,6 +81,7 @@ public class GameController : MonoBehaviour {
 
     public AsyncOperation LoadLevel(int level) {
         currentLevel = level;
+        SaveState.UnlockLevel(currentLevel);
 
         var asyncOperation = SceneManager.LoadSceneAsync("Level" + level);
         asyncOperation.allowSceneActivation = false;
@@ -90,6 +96,8 @@ public class GameController : MonoBehaviour {
 
     public void Victory() {
         levelState = LevelState.VICTORY;
+
+        SaveState.UpdateLevelRecord(currentLevel, LevelTimer, CurrentStarCount);
 
         Instantiate(levelCompleteCanvasPrefab);
     }
