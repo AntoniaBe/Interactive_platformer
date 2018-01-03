@@ -16,6 +16,7 @@ public class ClickDetection : MonoBehaviour {
     private LeapServiceProvider leapServiceProvider;
     private Camera mainCamera;
     private float lastClickTime;
+    private Button lastHoverButton;
 
     private void Start() {
         leapServiceProvider = FindObjectOfType<LeapServiceProvider>();
@@ -30,10 +31,24 @@ public class ClickDetection : MonoBehaviour {
 
         var frame = leapServiceProvider.CurrentFrame;
         foreach (var hand in frame.Hands) {
+            var indexFinger = hand.Finger((int) Finger.FingerType.TYPE_INDEX);
+            var screenPoint = mainCamera.WorldToScreenPoint(indexFinger.TipPosition.ToVector3());
+            var pointer = new PointerEventData(EventSystem.current) {
+                position = screenPoint,
+                pressPosition = screenPoint
+            };
+
+            var button = GetPointerButton(pointer);
             if (IsClickGesture(hand)) {
-                var indexFinger = hand.Finger((int) Finger.FingerType.TYPE_INDEX);
-                var screenPoint = mainCamera.WorldToScreenPoint(indexFinger.TipPosition.ToVector3());
-                SimulateButtonClick(screenPoint);
+                SimulateButtonClick(pointer);
+            } else if (button != lastHoverButton) {
+                if (lastHoverButton) {
+                    ExecuteEvents.Execute(lastHoverButton.gameObject, pointer, ExecuteEvents.pointerExitHandler);
+                }
+                lastHoverButton = button;
+                if (lastHoverButton) {
+                    ExecuteEvents.Execute(lastHoverButton.gameObject, pointer, ExecuteEvents.pointerEnterHandler);
+                }
             }
         }
     }
@@ -66,18 +81,20 @@ public class ClickDetection : MonoBehaviour {
         return true;
     }
 
-    private void SimulateButtonClick(Vector3 position) {
-        var pointer = new PointerEventData(EventSystem.current) {
-            position = position,
-            pressPosition = position
-        };
+    private Button GetPointerButton(PointerEventData pointer) {
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, results);
         if (results.Count > 0) {
-            var button = results.Select(t => t.gameObject.GetComponent<Button>()).FirstOrDefault(t => t);
-            if (button) {
-                ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerClickHandler);
-            }
+            return results.Select(t => t.gameObject.GetComponent<Button>()).FirstOrDefault(t => t);
+        }
+
+        return null;
+    }
+
+    private void SimulateButtonClick(PointerEventData pointer) {
+        var button = GetPointerButton(pointer);
+        if (button) {
+            ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerClickHandler);
         }
     }
 
