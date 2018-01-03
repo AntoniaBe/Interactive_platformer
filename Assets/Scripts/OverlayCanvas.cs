@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class OverlayCanvas : MonoBehaviour {
 
     public float fadeInTime = 1f;
 
-    public Text timer;
+    public TextMeshProUGUI timer;
     public Image blackScreen;
     public Image[] stars;
 
@@ -21,7 +22,7 @@ public class OverlayCanvas : MonoBehaviour {
     private void Update() {
         float levelTimer = GameController.instance.LevelTimer;
         if (lastLevelTimer < levelTimer) {
-            timer.text = levelTimer.ToString("00.00");
+            timer.text = "<mspace=35.0>" + levelTimer.ToString("00.00") + "</mspace>";
             lastLevelTimer = levelTimer;
         }
 

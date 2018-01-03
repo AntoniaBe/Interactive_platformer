@@ -67,9 +67,7 @@ public class GameController : MonoBehaviour {
     public void Victory() {
         levelState = LevelState.VICTORY;
 
-        var canvasObject = Instantiate(levelCompleteCanvasPrefab);
-        var canvas = canvasObject.GetComponent<LevelCompleteCanvas>();
-        canvas.starCount = CurrentStarCount;
+        Instantiate(levelCompleteCanvasPrefab);
     }
 
     public void GameOver() {
