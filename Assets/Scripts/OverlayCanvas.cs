@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class OverlayCanvas : MonoBehaviour {
@@ -9,6 +7,10 @@ public class OverlayCanvas : MonoBehaviour {
 
     public Text timer;
     public Image blackScreen;
+    public Image[] stars;
+
+    private float lastLevelTimer = -1f;
+    private int lastStarCount = 3;
 
     private void Start() {
         blackScreen.enabled = true;
@@ -17,7 +19,19 @@ public class OverlayCanvas : MonoBehaviour {
     }
 
     private void Update() {
-        timer.text = GameController.instance.levelTimer.ToString("00.00");
+        float levelTimer = GameController.instance.LevelTimer;
+        if (lastLevelTimer < levelTimer) {
+            timer.text = levelTimer.ToString("00.00");
+            lastLevelTimer = levelTimer;
+        }
+
+        int starCount = GameController.instance.CurrentStarCount;
+        if (lastStarCount < starCount) {
+            for (int i = stars.Length - 1; i >= starCount - 1; i--) {
+                stars[i].CrossFadeAlpha(1f, 0f, true);
+            }
+            lastStarCount = starCount;
+        }
     }
 
 }

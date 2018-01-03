@@ -51,4 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafdbd13de3bdd8498ca0374efb0463b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelTimer: 0
+  levelCompleteCanvasPrefab: {fileID: 1919899130307754, guid: aadf32e26a4d51c4897d91be08e95bd2,
+    type: 2}
+  gameOverCanvasPrefab: {fileID: 1615235067867652, guid: c4a95a752a909a546b1576fed4c2bcdf,
+    type: 2}

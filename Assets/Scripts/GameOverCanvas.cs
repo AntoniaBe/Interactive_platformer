@@ -25,8 +25,6 @@ public class GameOverCanvas : MonoBehaviour {
         image.canvasRenderer.SetAlpha(0f);
         text.canvasRenderer.SetAlpha(0f);
 
-        GameController.instance.StopLevel();
-
         StartCoroutine(GameOverAnimation());
     }
 
@@ -53,21 +51,12 @@ public class GameOverCanvas : MonoBehaviour {
         text.CrossFadeAlpha(1f, fadeInTextTime, true);
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            StartCoroutine(RestartLevel());
-        }
-    }
-
-    private IEnumerator RestartLevel() {
+    public IEnumerator RestartLevelAnimation() {
         blackScreen.canvasRenderer.SetAlpha(0f);
         blackScreen.enabled = true;
         blackScreen.CrossFadeAlpha(1f, fadeOutTime, true);
 
-        var async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-        async.allowSceneActivation = false;
         yield return new WaitForSeconds(fadeOutTime);
-        async.allowSceneActivation = true;
     }
 
 }

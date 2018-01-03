@@ -48,7 +48,7 @@ public class LevelCompleteCanvas : MonoBehaviour {
         StartCoroutine(ShowStars(starCount));
     }
 
-    public IEnumerator FadeIn() {
+    private IEnumerator FadeIn() {
         yield return new WaitForSeconds(fadeInDelay);
 
         var canvasGroup = container.GetComponent<CanvasGroup>();
@@ -60,7 +60,7 @@ public class LevelCompleteCanvas : MonoBehaviour {
         }
     }
 
-    public IEnumerator ShowStars(int starCount) {
+    private IEnumerator ShowStars(int starCount) {
         yield return new WaitForSeconds(starInitialDelay);
 
         for (int i = 0; i < stars.Length; i++) {
@@ -79,13 +79,7 @@ public class LevelCompleteCanvas : MonoBehaviour {
         audioSource.PlayOneShot(victorySounds[starCount - 1]);
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            StartCoroutine(HideScreen());
-        }
-    }
-
-    public IEnumerator HideScreen() {
+    public IEnumerator NextLevelAnimation() {
         blackScreen.CrossFadeAlpha(1f, fadeOutTime, true);
 
         var target = container.transform.position - new Vector3(container.sizeDelta.x, 0, 0);
