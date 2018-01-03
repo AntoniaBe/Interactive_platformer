@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour {
         } else if (Input.GetKeyDown(KeyCode.L)) {
             GameOver();
         } else if (Input.GetKeyDown(KeyCode.R)) {
-            StartCoroutine(RestartLevel());
+            RestartLevel();
         } else if (Input.GetKeyDown(KeyCode.N)) {
             StartCoroutine(NextLevel());
         }
@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Return)) {
             if (levelState == LevelState.GAMEOVER) {
-                StartCoroutine(RestartLevel());
+                RestartLevel();
             } else if (levelState == LevelState.VICTORY) {
                 StartCoroutine(NextLevel());
             }
@@ -119,7 +119,11 @@ public class GameController : MonoBehaviour {
         StartLevel();
     }
 
-    private IEnumerator RestartLevel() {
+    public void RestartLevel() {
+        StartCoroutine(RestartLevelCoroutine());
+    }
+
+    private IEnumerator RestartLevelCoroutine() {
         var async = LoadLevel(currentLevel);
 
         var canvas = FindObjectOfType<GameOverCanvas>();
