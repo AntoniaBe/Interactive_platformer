@@ -89,8 +89,10 @@ public class LevelCompleteCanvas : MonoBehaviour {
         // Shoot the screen content off the screen to the left
         var target = container.transform.position - new Vector3(container.sizeDelta.x, 0, 0);
         var velocity = Vector3.zero;
-        while (Vector3.Distance(container.transform.position, target) > 0.1f) {
+        float timer = 0f;
+        while (timer < fadeOutTime) {
             container.transform.position = Vector3.SmoothDamp(container.transform.position, target, ref velocity, fadeOutTime, float.MaxValue, Time.unscaledDeltaTime);
+            timer += Time.unscaledDeltaTime;
             yield return null;
         }
     }

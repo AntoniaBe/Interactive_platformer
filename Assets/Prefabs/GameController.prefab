@@ -55,3 +55,4 @@ MonoBehaviour:
     type: 2}
   gameOverCanvasPrefab: {fileID: 1615235067867652, guid: c4a95a752a909a546b1576fed4c2bcdf,
     type: 2}
+  maxLevels: 1

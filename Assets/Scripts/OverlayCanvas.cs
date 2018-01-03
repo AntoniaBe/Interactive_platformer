@@ -29,7 +29,7 @@ public class OverlayCanvas : MonoBehaviour {
         int starCount = GameController.instance.CurrentStarCount;
         if (lastStarCount < starCount) {
             for (int i = stars.Length - 1; i >= starCount - 1; i--) {
-                stars[i].CrossFadeAlpha(1f, 0f, true);
+                stars[i].CrossFadeAlpha(0f, 0.5f, true);
             }
             lastStarCount = starCount;
         }

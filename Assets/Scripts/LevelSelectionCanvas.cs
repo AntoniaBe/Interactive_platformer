@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class LevelSelectionCanvas : MonoBehaviour {
 
@@ -16,8 +14,7 @@ public class LevelSelectionCanvas : MonoBehaviour {
             button.enabled = false;
         }
 
-        asyncOperation = SceneManager.LoadSceneAsync("Level" + level);
-        asyncOperation.allowSceneActivation = false;
+        asyncOperation = GameController.instance.LoadLevel(level);
 
         StartCoroutine(HideScreen());
     }
@@ -25,12 +22,16 @@ public class LevelSelectionCanvas : MonoBehaviour {
     public IEnumerator HideScreen() {
         var canvasGroup = GetComponent<CanvasGroup>();
 
+        float timer = 0f;
         while (canvasGroup.alpha > float.Epsilon) {
-            canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, 0f, fadeOutTime);
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, timer / fadeOutTime);
+            timer += Time.unscaledDeltaTime;
             yield return null;
         }
 
         asyncOperation.allowSceneActivation = true;
+
+        GameController.instance.StartLevel();
     }
 
 }

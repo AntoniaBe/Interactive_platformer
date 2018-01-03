@@ -364,7 +364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99e660482cf11d48a5dc587d180706c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCount: 3
   starInitialDelay: 1
   starDelay: 0.25
   jingleDelay: 0

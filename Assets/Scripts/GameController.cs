@@ -17,13 +17,28 @@ public class GameController : MonoBehaviour {
     public GameObject levelCompleteCanvasPrefab;
     public GameObject gameOverCanvasPrefab;
 
+    public int maxLevels;
+
+    private int currentLevel = 1;
+    private LevelProperties levelProperties;
+
     public float LevelTimer {
         get; private set;
     }
 
     public int CurrentStarCount {
         get {
-            return 3;
+            if (!levelProperties) {
+                return 3;
+            }
+
+            for (int i = levelProperties.levelTimes.Length - 1; i >= 0; i--) {
+                if (LevelTimer < levelProperties.levelTimes[i]) {
+                    return i + 1;
+                }
+            }
+
+            return 1;
         }
     }
 
@@ -33,16 +48,16 @@ public class GameController : MonoBehaviour {
         instance = this;
     }
 
-    private void Start() {
-        StartLevel();
-    }
-
     private void Update() {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.W)) {
             Victory();
         } else if (Input.GetKeyDown(KeyCode.L)) {
             GameOver();
+        } else if (Input.GetKeyDown(KeyCode.R)) {
+            StartCoroutine(RestartLevel());
+        } else if (Input.GetKeyDown(KeyCode.N)) {
+            StartCoroutine(NextLevel());
         }
 #endif
 
@@ -59,7 +74,16 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public AsyncOperation LoadLevel(int level) {
+        currentLevel = level;
+
+        var asyncOperation = SceneManager.LoadSceneAsync("Level" + level);
+        asyncOperation.allowSceneActivation = false;
+        return asyncOperation;
+    }
+
     public void StartLevel() {
+        levelProperties = FindObjectOfType<LevelProperties>();
         LevelTimer = 0f;
         levelState = LevelState.RUNNING;
     }
@@ -77,23 +101,35 @@ public class GameController : MonoBehaviour {
     }
 
     private IEnumerator NextLevel() {
-        var async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-        async.allowSceneActivation = false;
+        AsyncOperation async;
+        if (currentLevel + 1 >= maxLevels) {
+            async = SceneManager.LoadSceneAsync("LevelSelection");
+            async.allowSceneActivation = false;
+        } else {
+            async = LoadLevel(currentLevel + 1);
+        }
 
         var canvas = FindObjectOfType<LevelCompleteCanvas>();
-        yield return canvas.StartCoroutine(canvas.NextLevelAnimation());
+        if (canvas) {
+            yield return canvas.StartCoroutine(canvas.NextLevelAnimation());
+        }
 
         async.allowSceneActivation = true;
+
+        StartLevel();
     }
 
     private IEnumerator RestartLevel() {
-        var async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-        async.allowSceneActivation = false;
+        var async = LoadLevel(currentLevel);
 
         var canvas = FindObjectOfType<GameOverCanvas>();
-        yield return canvas.StartCoroutine(canvas.RestartLevelAnimation());
+        if (canvas) {
+            yield return canvas.StartCoroutine(canvas.RestartLevelAnimation());
+        }
 
         async.allowSceneActivation = true;
+
+        StartLevel();
     }
 
 }
