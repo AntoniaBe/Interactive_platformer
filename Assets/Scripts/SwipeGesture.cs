@@ -17,8 +17,8 @@ public class SwipeGesture : MonoBehaviour
     float HandPalmYawMin = -0.5f;
     float HandPalmYawMax = -2.6f;
     float PinchMax = 0.3f;
-    float maxVelocity;
-    float minVelocity;
+    float maxVelocity = 8f;
+    float minVelocity = 8f;
     float yRotationRight = 90;
     float yRotationLeft = -90;
 
