@@ -39,7 +39,7 @@ public class ClickDetection : MonoBehaviour {
             };
 
             var button = GetPointerButton(pointer);
-            if (CanClick() && IsClickGesture(pointingFinger)) {
+            if (CanClick() && IsClickGesture(hand)) {
                 SimulateButtonClick(pointer);
             } else if (button != lastHoverButton) {
                 if (lastHoverButton) {
@@ -62,8 +62,8 @@ public class ClickDetection : MonoBehaviour {
         return true;
     }
 
-    private bool IsClickGesture(Finger pointingFinger) {
-        return pointingFinger.TipVelocity.z > minVelocity;
+    private bool IsClickGesture(Hand hand) {
+        return hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].TipVelocity.z > minVelocity || hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].TipVelocity.z > minVelocity;
     }
 
     public Finger.FingerType? GetPointingFinger(Hand hand) {
