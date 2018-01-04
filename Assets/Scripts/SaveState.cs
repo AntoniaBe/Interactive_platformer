@@ -32,6 +32,10 @@ public class SaveState {
     public List<LevelRecord> levelRecords = new List<LevelRecord>();
 
     public bool HasUnlockedLevel(int level) {
+        if (level == 1) {
+            return true;
+        }
+
         return GetLevelRecord(level) != null;
     }
 

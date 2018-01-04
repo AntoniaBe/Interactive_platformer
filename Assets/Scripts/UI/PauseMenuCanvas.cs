@@ -9,6 +9,9 @@ public class PauseMenuCanvas : MonoBehaviour {
     public float exitLevelTime = 1f;
 
     private void Start() {
+        // Automatically set the correct camera - canvas needs to be screen space for the Particle System.
+        GetComponent<Canvas>().worldCamera = Camera.main;
+
         blackScreen.canvasRenderer.SetAlpha(0f);
     }
 
