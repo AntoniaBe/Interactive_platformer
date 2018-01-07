@@ -11,7 +11,7 @@ using Leap.Unity;
 public class ClickDetection : MonoBehaviour {
 
     public float clickCooldown = 1f;
-    public float minVelocity = 0.5f;
+    public float minVelocity = 0.1f;
 
     private LeapServiceProvider leapServiceProvider;
     private Camera mainCamera;
@@ -24,22 +24,22 @@ public class ClickDetection : MonoBehaviour {
     }
 
     private void Update() {
-        // Don't bother doing checks if we're not allowed to click
-        if (!CanClick()) {
-            return;
-        }
-
         var frame = leapServiceProvider.CurrentFrame;
         foreach (var hand in frame.Hands) {
-            var indexFinger = hand.Finger((int) Finger.FingerType.TYPE_INDEX);
-            var screenPoint = mainCamera.WorldToScreenPoint(indexFinger.TipPosition.ToVector3());
+            var pointingFingerType = GetPointingFinger(hand);
+            if (!pointingFingerType.HasValue) {
+                return;
+            }
+
+            var pointingFinger = hand.Fingers[(int) pointingFingerType];
+            var screenPoint = mainCamera.WorldToScreenPoint(pointingFinger.TipPosition.ToVector3());
             var pointer = new PointerEventData(EventSystem.current) {
                 position = screenPoint,
                 pressPosition = screenPoint
             };
 
             var button = GetPointerButton(pointer);
-            if (IsClickGesture(hand)) {
+            if (CanClick() && IsClickGesture(hand)) {
                 SimulateButtonClick(pointer);
             } else if (button != lastHoverButton) {
                 if (lastHoverButton) {
@@ -63,22 +63,19 @@ public class ClickDetection : MonoBehaviour {
     }
 
     private bool IsClickGesture(Hand hand) {
-        if (!IsPointingGesture(hand)) {
-            return false;
-        }
-
-        var indexFinger = hand.Finger((int) Finger.FingerType.TYPE_INDEX);
-        return indexFinger.TipVelocity.z > minVelocity;
+        return hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].TipVelocity.z > minVelocity || hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].TipVelocity.z > minVelocity;
     }
 
-    private bool IsPointingGesture(Hand hand) {
-        foreach (var finger in hand.Fingers) {
-            if (finger.IsExtended != (finger.Type == Finger.FingerType.TYPE_INDEX)) {
-                return false;
-            }
+    public Finger.FingerType? GetPointingFinger(Hand hand) {
+        if (hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].IsExtended) {
+            return Finger.FingerType.TYPE_MIDDLE;
         }
 
-        return true;
+        if (hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].IsExtended) {
+            return Finger.FingerType.TYPE_INDEX;
+        }
+
+        return null;
     }
 
     private Button GetPointerButton(PointerEventData pointer) {
