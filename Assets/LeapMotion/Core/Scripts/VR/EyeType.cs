@@ -72,7 +72,7 @@ namespace Leap.Unity {
       }
 
       //Allow the user to specify themselves if VR is disabled
-      if (!UnityEngine.XR.XRSettings.enabled || !PlayerSettings.virtualRealitySupported) {
+      if (!UnityEngine.VR.VRSettings.enabled || !PlayerSettings.virtualRealitySupported) {
         return;
       }
 
@@ -91,7 +91,7 @@ namespace Leap.Unity {
     }
 #endif
 
-    public void BeginCamera() {
+        public void BeginCamera() {
       if (!_hasBegun) {
         _isOnFirst = true;
         _hasBegun = true;

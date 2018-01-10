@@ -37,11 +37,11 @@ public class VRHeightOffset : MonoBehaviour {
   }
 
   void Start() {
-    if (UnityEngine.XR.XRDevice.isPresent && UnityEngine.XR.XRSettings.enabled && _deviceOffsets != null) {
+    if (UnityEngine.VR.VRDevice.isPresent && UnityEngine.VR.VRSettings.enabled && _deviceOffsets != null) {
 #if UNITY_5_4_OR_NEWER
-      string deviceName = UnityEngine.XR.XRSettings.loadedDeviceName;
+      string deviceName = UnityEngine.VR.VRSettings.loadedDeviceName;
 #else
-      string deviceName = VRDevice.family;
+            string deviceName = VRDevice.family;
 #endif
       var deviceHeightPair = _deviceOffsets.FirstOrDefault(d => deviceName.ToLower().Contains(d.DeviceName.ToLower()));
       if (deviceHeightPair != null) {
