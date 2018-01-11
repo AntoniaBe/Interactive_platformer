@@ -58,7 +58,7 @@ public class SaveState {
             levelRecords.Add(record);
         }
 
-        if (bestTime < record.bestTime) {
+        if (record.bestTime <= 0f || bestTime < record.bestTime) {
             record.bestTime = bestTime;
             record.stars = stars;
 
