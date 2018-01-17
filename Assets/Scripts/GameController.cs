@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
     }
 
     public static GameController instance;
-    public SaveState SaveState { get; private set; }
+    public SaveState SaveState { get; private set; } = new SaveState();
 
     public GameObject levelCompleteCanvasPrefab;
     public GameObject gameOverCanvasPrefab;

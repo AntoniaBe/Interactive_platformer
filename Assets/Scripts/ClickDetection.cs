@@ -11,7 +11,7 @@ using Leap.Unity;
 public class ClickDetection : MonoBehaviour {
 
     public float clickCooldown = 1f;
-    public float minVelocity = 0.1f;
+    public float minVelocity = 5f;
 
     private LeapServiceProvider leapServiceProvider;
     private Camera mainCamera;
@@ -63,6 +63,10 @@ public class ClickDetection : MonoBehaviour {
     }
 
     private bool IsClickGesture(Hand hand) {
+        if (hand.PalmNormal.z < 0.4f) {
+            return false;
+        }
+
         return hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].TipVelocity.z > minVelocity || hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].TipVelocity.z > minVelocity;
     }
 
@@ -82,7 +86,7 @@ public class ClickDetection : MonoBehaviour {
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, results);
         if (results.Count > 0) {
-            return results.Select(t => t.gameObject.GetComponent<Button>()).FirstOrDefault(t => t);
+            return results.Select(t => t.gameObject.GetComponentInParent<Button>()).FirstOrDefault(t => t);
         }
 
         return null;
@@ -92,6 +96,7 @@ public class ClickDetection : MonoBehaviour {
         var button = GetPointerButton(pointer);
         if (button) {
             ExecuteEvents.Execute(button.gameObject, pointer, ExecuteEvents.pointerClickHandler);
+            lastClickTime = Time.unscaledTime;
         }
     }
 
