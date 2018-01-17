@@ -6,6 +6,7 @@ TagManager:
   tags:
   - grab
   - hands
+  - snapIn
   layers:
   - Default
   - TransparentFX
@@ -15,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - NPC
+  - Hands
+  - DetectCollision
+  - SnapIn
+  - Trigger
   - 
   - 
   - 
