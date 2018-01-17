@@ -8,21 +8,17 @@ using System.Collections.Generic;
 
 public class SwipeGesture : MonoBehaviour
 {
-
-    public float HandPalmYaw;
-    public float HandPalmRoll;
-    public float pinch;
     private LeapServiceProvider leapServiceProvider;
     Hand firstHand;
     Hand secondHand;
 
-    public float HandPalmRollMin = 0.5f;
-    public float HandPalmRollMax = -2.8f;
-    public float HandPalmYawMin = -0.5f;
-    public float HandPalmYawMax = -2.6f;
-    public float PinchMax = 0.3f;
-    public float minVelocity = 16f;
-    public float maxVelocity = -16f;
+    float HandPalmRollMin = 0.5f;
+    float HandPalmRollMax = -2.8f;
+    float HandPalmYawMin = -0.5f;
+    float HandPalmYawMax = -2.6f;
+    float PinchMax = 0.3f;
+    float maxVelocity = 8f;
+    float minVelocity = 8f;
     float yRotationRight = 90;
     float yRotationLeft = -90;
 
@@ -54,65 +50,31 @@ public class SwipeGesture : MonoBehaviour
 
         }
 
-        HandPalmRoll = firstHand.PalmNormal.Roll;
-        HandPalmYaw = firstHand.PalmNormal.Yaw;
-
-
-        //Debug.Log(firstHand.PalmNormal.x);
-
-        if (firstHand.PalmNormal.x < -0.96f && firstHand.PalmNormal.x > -0.99f)
-        {
-            //Debug.Log("SUP");
-
-        }
-
-
-        pinch = firstHand.PinchStrength; //turn radio on
-
-        // Debug.Log(firstHand.PalmVelocity.x);
-
         if (firstHand.IsRight) {
 
-        if (firstHand.Fingers[0].IsExtended && firstHand.Fingers[1].IsExtended && firstHand.Fingers[2].IsExtended && firstHand.Fingers[3].IsExtended && firstHand.Fingers[4].IsExtended && firstHand.PalmVelocity.x > minVelocity && firstHand.PalmNormal.x < -0.90f && firstHand.PalmNormal.x > -0.99f) {
+        if (FingersExtended() && firstHand.PalmVelocity.x > maxVelocity && firstHand.PalmNormal.x < -0.90f && firstHand.PalmNormal.x > -0.99f) {
 
             camera.transform.eulerAngles = new Vector3(xRotation, yRotationRight, 0);
-         
+                Debug.Log("Swipe to Right");     
         }
 
-        if (firstHand.Fingers[0].IsExtended && firstHand.Fingers[1].IsExtended && firstHand.Fingers[2].IsExtended && firstHand.Fingers[3].IsExtended && firstHand.Fingers[4].IsExtended && firstHand.PalmVelocity.x < maxVelocity && firstHand.PalmNormal.x < -0.96f && firstHand.PalmNormal.x > -0.99f)
+        if (FingersExtended() && firstHand.PalmVelocity.x < minVelocity && firstHand.PalmNormal.x < -0.96f && firstHand.PalmNormal.x > -0.99f)
         {
 
            camera.transform.eulerAngles = new Vector3(xRotation, 0, 0);
+                Debug.Log("Swipe to Left");
+            }
         }
-        }
 
-
-        //Debug.Log("RightHand: " + RightHand);
-        //Debug.Log("LeftHand: " + LeftHand);
-        //Debug.Log("Pitch: " + HandPalmPitch);
-        //Debug.Log("Roll: " + HandPalmRoll);
-        //Debug.Log("Yaw: " + HandPalmYaw);
-        //Debug.Log("Wrist: " + HandWristRot);
-        //Debug.Log("Pinch: " + pinch);
-        //Debug.Log("PalmdirectionRoll: " + HandPalmDirectionRoll);
-        //Debug.Log("RightHandPos: " + VectorHandPosRight);
-        //Debug.Log("RightHand: " + VectorHandDirRight);
-        //Debug.Log("DistanceBetween: " + DistanceBetweenHands);
-
-
-        // if (GestureSwipe() == true)
-        // {
-        //  Debug.Log("God damn- it´s a swipe gesture");
-        //  }
-
+        //Debug.Log(FingersExtended());
     }
 
 
-    bool GestureSwipe()
+    bool FingersExtended()
     {
-        // if ((((HandPalmRoll < HandPalmRollMin && HandPalmRoll > HandPalmRollMax ) == true) & ((HandPalmYaw < HandPalmYawMin && HandPalmYaw > HandPalmYawMax) == true) & ((pinch > PinchMax) == true)))
-        if(HandPalmRoll < HandPalmRollMin && HandPalmRoll > HandPalmRollMax)
+        if(firstHand.Fingers[0].IsExtended && firstHand.Fingers[1].IsExtended && firstHand.Fingers[2].IsExtended && firstHand.Fingers[3].IsExtended && firstHand.Fingers[4].IsExtended)
         {
+            
             return true;
         }
         else return false;
