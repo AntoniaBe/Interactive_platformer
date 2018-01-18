@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Leap;
 using Leap.Unity;
 
 public class ClapDetection : MonoBehaviour {
+
+    public UnityEvent onClapEvent;
 
     public float nearDistance = 3f;
     public float clapDistance = 2f;
@@ -16,6 +19,12 @@ public class ClapDetection : MonoBehaviour {
     private LeapServiceProvider leapServiceProvider;
     private float lastClapTime;
     private float probablyClappingTime = -1f;
+
+    private void Awake() {
+        if (onClapEvent == null) {
+            onClapEvent = new UnityEvent();
+        }
+    }
 
     private void Start() {
         leapServiceProvider = FindObjectOfType<LeapServiceProvider>();
@@ -109,6 +118,7 @@ public class ClapDetection : MonoBehaviour {
 
     private void Clap() {
         Debug.Log("*klatsch*");
+        onClapEvent.Invoke();
     }
 
 }

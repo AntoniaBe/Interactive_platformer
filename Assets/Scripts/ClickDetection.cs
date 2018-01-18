@@ -10,6 +10,9 @@ using Leap.Unity;
 
 public class ClickDetection : MonoBehaviour {
 
+    // TODO still triggers during the opening clap of the menu sometimes
+    // TODO only works well with the left hand currently?
+
     public float clickCooldown = 1f;
     public float minVelocity = 5f;
 
