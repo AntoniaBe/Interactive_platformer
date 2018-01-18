@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4804564906916412}
   - component: {fileID: 114972447614858804}
   - component: {fileID: 114969015072092572}
-  - component: {fileID: 114503321338555130}
   - component: {fileID: 114711376019074346}
   m_Layer: 0
   m_Name: GameController
@@ -43,25 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114503321338555130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182747947624032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1c1320f9d04b64589cd5708c758860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onPointEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  minVelocity: 1
-  velocitySwitchTime: 1
-  minVelocitySwitches: 2
-  cooldownTime: 1
 --- !u!114 &114711376019074346
 MonoBehaviour:
   m_ObjectHideFlags: 1

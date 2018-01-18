@@ -58,13 +58,14 @@ public class PointingGesture : MonoBehaviour {
                 continue;
             }
 
-            if (lastPointTime != -1f && lastPointTime < Time.unscaledTime + velocitySwitchTime && lastPointingDir == pointingDirX) {
+            if (lastPointTime != -1f && Time.unscaledTime < lastPointTime + velocitySwitchTime && lastPointingDir == pointingDirX) {
                 var lastSign = Mathf.Sign(lastPointVelocityX);
                 var sign = Mathf.Sign(finger.TipVelocity.x);
                 if (lastSign != sign) {
                     velocitySwitches++;
                     if (velocitySwitches > minVelocitySwitches) {
                         onPointEvent.Invoke(pointingDirX == 1);
+                        velocitySwitches = 0;
                         cooldownTimer = cooldownTime;
                     }
                 }
