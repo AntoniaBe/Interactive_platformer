@@ -113,28 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &29957946 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1182747947624032, guid: a9dbbc2da0dd3804793967f15764b512,
-    type: 2}
-  m_PrefabInternal: {fileID: 1620318216}
---- !u!114 &29957947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 29957946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5547edbd981d7134e9a4ec419e7b1d41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSwipeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  minVelocity: 3
-  cooldownTime: 1
 --- !u!114 &197738243 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114867478761518132, guid: f3e524d660c05c64ea54fdd0b791a1e0,
