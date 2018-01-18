@@ -53,9 +53,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1c1320f9d04b64589cd5708c758860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onPointEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   minVelocity: 1
   velocitySwitchTime: 1
   minVelocitySwitches: 2
+  cooldownTime: 1
 --- !u!114 &114969015072092572
 MonoBehaviour:
   m_ObjectHideFlags: 1

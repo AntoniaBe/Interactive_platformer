@@ -4,21 +4,36 @@ using Leap.Unity;
 
 public class PointingGesture : MonoBehaviour {
 
+    public BooleanEvent onPointEvent;
+
     public float minVelocity = 1f;
     public float velocitySwitchTime = 1f;
     public int minVelocitySwitches = 2;
+    public float cooldownTime = 1f;
 
     private LeapServiceProvider leapServiceProvider;
     private float lastPointTime = -1f;
-    private float initialPointVelocityX;
     private float lastPointVelocityX;
+    private int lastPointingDir;
     private int velocitySwitches;
+    private float cooldownTimer;
+
+    private void Awake() {
+        if (onPointEvent == null) {
+            onPointEvent = new BooleanEvent();
+        }
+    }
 
     private void Start() {
         leapServiceProvider = FindObjectOfType<LeapServiceProvider>();
     }
 
     private void Update() {
+        if (cooldownTimer > 0f) {
+            cooldownTimer -= Time.unscaledDeltaTime;
+            return;
+        }
+
         Frame frame = leapServiceProvider.CurrentFrame;
         foreach (var hand in frame.Hands) {
             if (!IsPointingFinger(hand)) {
@@ -26,23 +41,37 @@ public class PointingGesture : MonoBehaviour {
             }
 
             var finger = hand.Fingers[(int) Finger.FingerType.TYPE_INDEX];
-            if (finger.TipVelocity.x > -minVelocity && finger.TipVelocity.x < minVelocity) {
+            var yaw = finger.Direction.Yaw;
+            var pointingDirX = 0;
+            var dist = Mathf.Abs(yaw - -Mathf.PI / 2f);
+            if (dist < 1f && hand.IsRight) {
+                pointingDirX = -1;
+            } else if (dist < 4f && hand.IsLeft) {
+                pointingDirX = 1;
+            }
+
+            if (pointingDirX == 0) {
                 continue;
             }
 
-            if (lastPointTime != -1f && lastPointTime < Time.unscaledTime + velocitySwitchTime) {
+            if (Mathf.Abs(finger.TipVelocity.x) < minVelocity) {
+                continue;
+            }
+
+            if (lastPointTime != -1f && lastPointTime < Time.unscaledTime + velocitySwitchTime && lastPointingDir == pointingDirX) {
                 var lastSign = Mathf.Sign(lastPointVelocityX);
                 var sign = Mathf.Sign(finger.TipVelocity.x);
                 if (lastSign != sign) {
                     velocitySwitches++;
                     if (velocitySwitches > minVelocitySwitches) {
-                        OnPointing(initialPointVelocityX);
+                        onPointEvent.Invoke(pointingDirX == 1);
+                        cooldownTimer = cooldownTime;
                     }
                 }
             } else {
                 velocitySwitches = 0;
-                initialPointVelocityX = finger.TipVelocity.x;
             }
+            lastPointingDir = pointingDirX;
             lastPointTime = Time.unscaledTime;
             lastPointVelocityX = finger.TipVelocity.x;
         }
@@ -54,7 +83,7 @@ public class PointingGesture : MonoBehaviour {
             return false;
         }
 
-        // At least middle and ring finger must not be extended. Not checking for pinky because Leap Motion isn't very reliable...
+        // At least middle and ring finger must not be extended.
         var otherFingers = new Finger.FingerType[] { Finger.FingerType.TYPE_MIDDLE, Finger.FingerType.TYPE_RING };
         var foundNotExtended = false;
         foreach (var fingerType in otherFingers) {
@@ -65,10 +94,6 @@ public class PointingGesture : MonoBehaviour {
         }
 
         return foundNotExtended;
-    }
-
-    private void OnPointing(float velocityX) {
-        print("pointing to " + velocityX);
     }
 
 }
