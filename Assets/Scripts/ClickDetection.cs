@@ -1,17 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using Leap;
 using Leap.Unity;
 
 public class ClickDetection : MonoBehaviour {
-
-    // TODO still triggers during the opening clap of the menu sometimes
-    // TODO only works well with the left hand currently?
 
     public float clickCooldown = 1f;
     public float minVelocity = 5f;
@@ -31,7 +26,11 @@ public class ClickDetection : MonoBehaviour {
         foreach (var hand in frame.Hands) {
             var pointingFingerType = GetPointingFinger(hand);
             if (!pointingFingerType.HasValue) {
-                return;
+                continue;
+            }
+
+            if (hand.PalmNormal.y >= 0f || Mathf.Abs(hand.PalmNormal.x) >= 0.75f) {
+                continue;
             }
 
             var pointingFinger = hand.Fingers[(int) pointingFingerType];
