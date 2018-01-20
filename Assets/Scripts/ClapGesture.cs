@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using Leap;
 using Leap.Unity;
 
-public class ClapDetection : MonoBehaviour { // TODO rename to ClapGesture?
+public class ClapGesture : MonoBehaviour {
 
     public UnityEvent onClapEvent;
 

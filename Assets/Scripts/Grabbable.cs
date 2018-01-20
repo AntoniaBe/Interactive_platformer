@@ -2,12 +2,12 @@
 
 public class Grabbable : MonoBehaviour {
 
-    public bool isTouchingHand;
+    public GameObject touchingHand;
     public bool isSnappedIn;
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
-            isTouchingHand = true;
+            touchingHand = collider.gameObject;
             ApplyMaterialColor(Color.green);
             gameObject.GetComponent<Renderer>().material.color = Color.green;
         }
@@ -16,7 +16,7 @@ public class Grabbable : MonoBehaviour {
 
     private void OnTriggerExit(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
-            isTouchingHand = false;
+            touchingHand = null;
             ApplyMaterialColor(Color.white);
         }
     }

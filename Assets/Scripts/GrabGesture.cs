@@ -29,7 +29,7 @@ public class GrabGesture : MonoBehaviour {
             var grabbing = hand.GrabStrength > minGrabStrength || IsGrabbingDespiteGrabStrength(hand);
             if (grabbing) {
                 if (!currentGrabbables[handIndex]) {
-                    currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => t.isTouchingHand && !t.isSnappedIn);
+                    currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.isSnappedIn);
                 }
 
                 if (currentGrabbables[handIndex]) {
@@ -46,6 +46,14 @@ public class GrabGesture : MonoBehaviour {
                 currentGrabbables[handIndex] = null;
             }
         }
+    }
+
+    private bool DoesHandMatch(GameObject handObject, Hand hand) {
+        if (!handObject) {
+            return false;
+        }
+
+        return (handObject.GetComponentInParent<RigidHand>().Handedness == Chirality.Left) == hand.IsLeft;
     }
 
     /// <summary>
