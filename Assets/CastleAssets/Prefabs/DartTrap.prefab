@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23912665455606440}
   - component: {fileID: 114598565592921226}
   m_Layer: 0
-  m_Name: dart_trap
+  m_Name: DartTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9208d2906162f8b44904006ee2b354d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   dartPrefab: {fileID: 1383399953094796, guid: c386e4c1ee3535846ae5eac9759b2165, type: 2}
   minOffset: {x: 1.5, y: -0.25, z: -0.25}
   maxOffset: {x: 1.5, y: 0.25, z: 0.25}

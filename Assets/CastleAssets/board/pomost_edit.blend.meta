@@ -1,23 +1,24 @@
 fileFormatVersion: 2
-guid: 2b7bb848c3398734e9e23f0b5589e223
-timeCreated: 1516471036
+guid: c0bcc0e3976ed8b4ab48953f8e09c173
+timeCreated: 1516486050
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material_001__BarrelRingsUV_jpg
-    2100002: Material_001
-    2100004: Material_001__MetalBareBlade_jpg
-    2100006: Material_001__greencopper_jpg
-    2100008: Material_001__daggerWoodGrip_jpg
+    2100000: drewno2__PlywoodOld0085_S_jpg
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Cube_008
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drewno2__PlywoodOld0085_S_jpg
+    second: {fileID: 2100000, guid: 1a5f6fb6a45221b43991c21732f4dbb0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
