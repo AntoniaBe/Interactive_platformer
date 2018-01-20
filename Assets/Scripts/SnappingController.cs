@@ -1,39 +1,21 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SnappingController : MonoBehaviour {
 
-    float transparency = 0.1f;
-    DetectCollision detectCollisionScript;
-    public Vector3 posOfTrigger;
-    public string snippingString;
+    public GameObject[] grabbables;
 
-    private void Start()
-    {
-        posOfTrigger = transform.position;
-        
-    }
-
-    void OnTriggerStay(Collider col)
-    {
-        //Change Col.gameObject.tag String to wanted collision object tag
-        if (col.gameObject.name == snippingString)
-        {
-            //Change posi vector to target position of snapping
-            //Vector3 posi = new Vector3(0f, 0f, 00f);
+    private IEnumerator OnTriggerEnter(Collider col) {
+        if (grabbables.Contains(col.gameObject)) {
+            col.transform.position = transform.position;
+            col.transform.rotation = transform.rotation;
             col.gameObject.layer = LayerMask.NameToLayer("SnapIn");
+            col.GetComponent<Grabbable>().isSnappedIn = true;
             col.isTrigger = false;
-            col.transform.position = posOfTrigger;
-            StartCoroutine(WaitAndDestroy());
+            yield return new WaitForSeconds(0.5f);
+            Destroy(gameObject);
         }
     }
-
-    IEnumerator WaitAndDestroy()
-    {
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
-    }
-
 
 }

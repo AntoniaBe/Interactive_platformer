@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using Leap;
 using Leap.Unity;
 
-public class ClickDetection : MonoBehaviour {
+public class ClickDetection : MonoBehaviour { // TODO rename to ClickGesture?
 
     public float clickCooldown = 1f;
     public float minVelocity = 5f;

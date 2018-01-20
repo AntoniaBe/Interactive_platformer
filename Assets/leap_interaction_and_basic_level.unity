@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDetected: 0
+  snappedIn: 0
 --- !u!23 &334144884
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -401,8 +402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1d2a95eabc75f44942b2e89752e7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOfTrigger: {x: 0, y: 0, z: 0}
-  snippingString: grabObject2
+  grabbables:
+  - {fileID: 334144881}
 --- !u!23 &569843689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1086,30 +1087,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &748965312 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1718866656332530, guid: f3e524d660c05c64ea54fdd0b791a1e0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1616838154}
---- !u!114 &748965314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 748965312}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1c1320f9d04b64589cd5708c758860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onPointEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  minVelocity: 8
-  velocitySwitchTime: 1
-  minVelocitySwitches: 2
-  cooldownTime: 1
 --- !u!1 &858696462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDetected: 0
+  snappedIn: 0
 --- !u!135 &1101498536
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1711,8 +1689,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1d2a95eabc75f44942b2e89752e7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOfTrigger: {x: 0, y: 0, z: 0}
-  snippingString: grabObject
+  grabbables:
+  - {fileID: 1734585790}
 --- !u!23 &1185782302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1836,6 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDetected: 0
+  snappedIn: 0
 --- !u!4 &1188395474
 Transform:
   m_ObjectHideFlags: 0
@@ -4463,7 +4442,7 @@ Prefab:
     - target: {fileID: 114309181540252340, guid: f3e524d660c05c64ea54fdd0b791a1e0,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4836504548298518, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
       propertyPath: m_LocalScale.x
@@ -4854,6 +4833,7 @@ Prefab:
     - {fileID: 114732101003013160, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
     - {fileID: 114361774381866700, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
     - {fileID: 65162617805902666, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
+    - {fileID: 114612099569509708, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1620318216
@@ -4894,6 +4874,11 @@ Prefab:
     - target: {fileID: 4804564906916412, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114152462328826854, guid: a9dbbc2da0dd3804793967f15764b512,
+        type: 2}
+      propertyPath: minGrabStrength
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
@@ -4973,6 +4958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDetected: 0
+  snappedIn: 0
 --- !u!23 &1734585795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5337,7 +5323,6 @@ GameObject:
   - component: {fileID: 1879566451}
   - component: {fileID: 1879566450}
   - component: {fileID: 1879566449}
-  - component: {fileID: 1879566448}
   - component: {fileID: 1879566447}
   - component: {fileID: 1879566446}
   - component: {fileID: 1879566445}
@@ -5359,8 +5344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1d2a95eabc75f44942b2e89752e7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posOfTrigger: {x: 0, y: 0, z: 0}
-  snippingString: tree
+  grabbables:
+  - {fileID: 1101498534}
 --- !u!54 &1879566446
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5410,18 +5395,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1879566448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1879566444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea7528ef5c212145a7a6305adc2465e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionDetected: 0
 --- !u!135 &1879566449
 SphereCollider:
   m_ObjectHideFlags: 0
