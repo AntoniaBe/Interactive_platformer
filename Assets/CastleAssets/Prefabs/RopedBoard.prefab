@@ -39,6 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4217249706340106}
   - component: {fileID: 114279066803974876}
+  - component: {fileID: 114495902238162610}
   m_Layer: 0
   m_Name: RopedBoard
   m_TagString: Untagged
@@ -114,6 +115,8 @@ GameObject:
   - component: {fileID: 33591334360892654}
   - component: {fileID: 23291957689688534}
   - component: {fileID: 114862636609126066}
+  - component: {fileID: 65294550074936944}
+  - component: {fileID: 114661689483208628}
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
@@ -217,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040825718835756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.12, y: 4.604, z: -2.206}
+  m_LocalPosition: {x: -4.41, y: 4.604, z: -2.206}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4135331586469720}
@@ -729,6 +732,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.280058, y: 0.51740015, z: 6.0000014}
   m_Center: {x: -0.04343791, y: 0.16210705, z: -0.0000038146973}
+--- !u!65 &65294550074936944
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742908967148756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 9.139048, z: 8.435247}
+  m_Center: {x: 0, y: 0.05211092, z: 3.2176232}
 --- !u!65 &65375795567406492
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -829,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 0
   connectedRope: {fileID: 1868659206432002}
+  isDetached: 0
 --- !u!114 &114468482856616388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -842,6 +858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 1
   connectedRope: {fileID: 1748723230853284}
+  isDetached: 0
 --- !u!114 &114477275473552798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -855,6 +872,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 0
   connectedRope: {fileID: 1774886953814336}
+  isDetached: 0
+--- !u!114 &114495902238162610
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040825718835756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c53a37c8b4e09479b63c99b1cf23af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  board: {fileID: 1742908967148756}
 --- !u!114 &114573700236119728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -868,6 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 0
   connectedRope: {fileID: 1218420861280034}
+  isDetached: 0
 --- !u!114 &114575507158432814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -881,6 +912,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 1
   connectedRope: {fileID: 1457713381181232}
+  isDetached: 0
+--- !u!114 &114661689483208628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742908967148756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28bc414b488b365478d357e8c894cad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114747843367373748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -894,6 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 0
   connectedRope: {fileID: 1225638565174420}
+  isDetached: 0
 --- !u!114 &114862636609126066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -920,6 +964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 1
   connectedRope: {fileID: 1929565142940348}
+  isDetached: 0
 --- !u!114 &114974727993994190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -933,3 +978,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTopRobe: 1
   connectedRope: {fileID: 1002957053413166}
+  isDetached: 0

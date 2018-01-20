@@ -10,6 +10,7 @@ public class PointingGesture : MonoBehaviour {
     public float velocitySwitchTime = 1f;
     public int minVelocitySwitches = 2;
     public float cooldownTime = 1f;
+    public bool usePalmVelocity = true;
 
     private LeapServiceProvider leapServiceProvider;
     private float lastPointTime = -1f;
@@ -54,13 +55,15 @@ public class PointingGesture : MonoBehaviour {
                 continue;
             }
 
-            if (Mathf.Abs(finger.TipVelocity.x) < minVelocity) {
+            var velocity = usePalmVelocity ? hand.PalmVelocity.x : finger.TipVelocity.x;
+
+            if (Mathf.Abs(velocity) < minVelocity) {
                 continue;
             }
 
             if (lastPointTime != -1f && Time.unscaledTime < lastPointTime + velocitySwitchTime && lastPointingDir == pointingDirX) {
                 var lastSign = Mathf.Sign(lastPointVelocityX);
-                var sign = Mathf.Sign(finger.TipVelocity.x);
+                var sign = Mathf.Sign(velocity);
                 if (lastSign != sign) {
                     velocitySwitches++;
                     if (velocitySwitches > minVelocitySwitches) {
@@ -74,7 +77,7 @@ public class PointingGesture : MonoBehaviour {
             }
             lastPointingDir = pointingDirX;
             lastPointTime = Time.unscaledTime;
-            lastPointVelocityX = finger.TipVelocity.x;
+            lastPointVelocityX = velocity;
         }
     }
 
