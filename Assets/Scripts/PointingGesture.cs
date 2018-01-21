@@ -82,6 +82,12 @@ public class PointingGesture : MonoBehaviour {
     }
 
     private bool IsPointingFinger(Hand hand) {
+        // Palm must be oriented towards player TODO testme
+        if (hand.PalmNormal.z < 0.5f) {
+            print(hand.PalmNormal.z);
+            return false;
+        }
+
         // Index finger must always be extended for this gesture.
         if (!hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].IsExtended) {
             return false;
