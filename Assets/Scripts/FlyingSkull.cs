@@ -8,6 +8,7 @@ public class FlyingSkull : MonoBehaviour {
     public float speed = 1f;
 
     private Rigidbody rigidBody;
+    private bool isDead;
 
     private void Start() {
         rigidBody = GetComponent<Rigidbody>();
@@ -22,9 +23,20 @@ public class FlyingSkull : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
+        if (isDead) {
+            return;
+        }
         if (collision.gameObject.CompareTag("Player")) {
             GameController.instance.GameOver();
+        } else if (collision.gameObject.CompareTag("hands")) {
+            isDead = true;
         }
+    }
+
+    private IEnumerator FadeOut() {
+        // TODO
+        yield return null;
+        Destroy(gameObject);
     }
 
 }

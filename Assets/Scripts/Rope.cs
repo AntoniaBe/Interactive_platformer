@@ -8,7 +8,7 @@ public class Rope : MonoBehaviour {
     public bool isDetached;
 
     private void OnTriggerEnter(Collider other) {
-        if (!isDetached) {
+        if (!isDetached && other.CompareTag("sword")) {
             DetachRope();
             connectedRope.GetComponent<Rope>().DetachRope();
         }
