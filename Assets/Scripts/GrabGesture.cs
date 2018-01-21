@@ -26,7 +26,12 @@ public class GrabGesture : MonoBehaviour {
         var frame = leapServiceProvider.CurrentFrame;
         foreach (var hand in frame.Hands) {
             var handIndex = hand.IsRight ? 0 : 1;
-            var grabbing = hand.GrabStrength > minGrabStrength || IsGrabbingDespiteGrabStrength(hand);
+            // The initial grab needs to be harder than followup checks to prevent accidental grabs
+            var grabbing = hand.GrabStrength >= 1f;
+            // If the player is already holding something, don't be as harsh, to prevent letting go due to Leap errors
+            if (currentGrabbables[handIndex]) {
+                grabbing = hand.GrabStrength > minGrabStrength || IsGrabbingDespiteGrabStrength(hand);
+            }
             if (grabbing) {
                 if (!currentGrabbables[handIndex]) {
                     currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.isSnappedIn);
