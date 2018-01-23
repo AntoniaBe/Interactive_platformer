@@ -35,10 +35,14 @@ public class GrabGesture : MonoBehaviour {
             if (grabbing) {
                 if (!currentGrabbables[handIndex]) {
                     currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.isSnappedIn);
+                    if (currentGrabbables[handIndex]) {
+                        currentGrabbables[handIndex].onGrabEvent.Invoke(hand);
+                    }
                 }
 
                 if (currentGrabbables[handIndex]) {
                     if (currentGrabbables[handIndex].isSnappedIn) {
+                        currentGrabbables[handIndex].onUngrabEvent.Invoke(hand);
                         currentGrabbables[handIndex] = null;
                     } else {
                         currentGrabbables[handIndex].transform.position = hand.PalmPosition.ToVector3();
@@ -48,6 +52,9 @@ public class GrabGesture : MonoBehaviour {
                     }
                 }
             } else {
+                if (currentGrabbables[handIndex]) {
+                    currentGrabbables[handIndex].onUngrabEvent.Invoke(hand);
+                }
                 currentGrabbables[handIndex] = null;
             }
         }

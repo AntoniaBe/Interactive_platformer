@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114067209124275440}
   - component: {fileID: 54509400522024618}
   - component: {fileID: 136954416444706464}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: FlyingSkull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183575279796340}
   m_LocalRotation: {x: 0.000000037300687, y: -0.7799823, z: -0.000000046490573, w: 0.6258016}
-  m_LocalPosition: {x: -2.72, y: 5.598285, z: -1.73}
+  m_LocalPosition: {x: 5.47, y: 7.34, z: -1.88}
   m_LocalScale: {x: 0.0027817383, y: 0.0027817409, z: 0.0027817409}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &114067209124275440
 MonoBehaviour:

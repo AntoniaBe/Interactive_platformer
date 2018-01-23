@@ -2,14 +2,25 @@
 
 public class Grabbable : MonoBehaviour {
 
+    public HandEvent onGrabEvent;
+    public HandEvent onUngrabEvent;
+
     public GameObject touchingHand;
     public bool isSnappedIn;
+
+    private void Awake() {
+        if (onGrabEvent == null) {
+            onGrabEvent = new HandEvent();
+        }
+        if (onUngrabEvent == null) {
+            onUngrabEvent = new HandEvent();
+        }
+    }
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
             touchingHand = collider.gameObject;
             ApplyMaterialColor(Color.green);
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 
@@ -27,4 +38,5 @@ public class Grabbable : MonoBehaviour {
             renderer.material.color = color;
         }
     }
+
 }
