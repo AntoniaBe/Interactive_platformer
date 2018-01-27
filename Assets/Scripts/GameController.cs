@@ -87,6 +87,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="level"></param>
+    /// <returns></returns>
     public AsyncOperation LoadLevel(int level) {
         currentLevel = level;
         SaveState.UnlockLevel(currentLevel);
