@@ -29,11 +29,9 @@ public class exAI : MonoBehaviour {
 
         Vector3 targetVelocity = new Vector3(speed, rb.velocity.y, 0);
 
-        // Jump when about to run against a grabbable object
-        if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght)) {
-            if (vision.collider.CompareTag("grab")) {
-                targetVelocity.y = jumpSpeed;
-            }
+        // Jump when about to run against a grabbable, snapped in object
+        if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
+            targetVelocity.y = jumpSpeed;
         }
 
         // Apply knockback to the final velocity
