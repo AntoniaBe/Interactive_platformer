@@ -12,7 +12,7 @@ public class SnappingController : MonoBehaviour {
             col.transform.rotation = transform.rotation;
             col.gameObject.layer = LayerMask.NameToLayer("SnapIn");
             col.GetComponent<Grabbable>().isSnappedIn = true;
-            col.isTrigger = false;
+            //col.isTrigger = false;
             yield return new WaitForSeconds(0.5f);
             Destroy(gameObject);
         }

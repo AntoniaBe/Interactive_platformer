@@ -3060,7 +3060,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 87914274}
-  m_LocalRotation: {x: -0.11248872, y: 0.6982202, z: 0.6979769, w: 0.112530716}
+  m_LocalRotation: {x: -0.11254745, y: 0.69809246, z: 0.69809246, w: 0.11254745}
   m_LocalPosition: {x: 0.88790894, y: -0.05469036, z: -2.501217}
   m_LocalScale: {x: 36.00003, y: 36, z: 36}
   m_Children:
@@ -3071,7 +3071,7 @@ Transform:
   - {fileID: 1958661311}
   m_Father: {fileID: 1664776016}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 161.68301}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 161.68301}
 --- !u!114 &87914276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,7 +3085,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 431093694}
   goal: {fileID: 946321999}
-  rotation: 0
+  rotation: 270
+  targetRotation: {x: -90, y: 0, z: 270}
 --- !u!4 &88866085 stripped
 Transform:
   m_PrefabParentObject: {fileID: 458574, guid: 616c8e393f945dd4398d283a74e72159, type: 2}
@@ -7013,7 +7014,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 208037588}
-  m_LocalRotation: {x: -0.1162538, y: 0.69760317, z: 0.6973597, w: 0.11629439}
+  m_LocalRotation: {x: -0.11631074, y: 0.6974754, z: 0.6974754, w: 0.11631074}
   m_LocalPosition: {x: -0.8537903, y: -0.11427593, z: 2.5368996}
   m_LocalScale: {x: 36.000027, y: 36, z: 36}
   m_Children:
@@ -7024,7 +7025,7 @@ Transform:
   - {fileID: 187900349}
   m_Father: {fileID: 1664776016}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 161.065}
 --- !u!114 &208037590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7038,7 +7039,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 431093694}
   goal: {fileID: 946321999}
-  rotation: 0
+  rotation: 60
+  targetRotation: {x: -90, y: 0, z: 60}
 --- !u!1001 &208543975
 Prefab:
   m_ObjectHideFlags: 0
@@ -49739,7 +49741,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!136 &1422812488
 CapsuleCollider:
@@ -49760,12 +49762,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1422812482}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d02f01f9917664d4bbd4f9e049eec81c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2.5
   knockbackRecovery: 3
   rayLenght: 3
   changedY: {x: 0, y: -2, z: 0}

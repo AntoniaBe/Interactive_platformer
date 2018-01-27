@@ -8,9 +8,9 @@ public class DoorVaseDetection : MonoBehaviour {
     public Transform goal;
     private Vector3 targetPosition;
     private Vector3 goalPosition;
-    public float rotation = 0f;
     private float smooth = 0.2f;
     private GameObject trigger;
+    public Vector3 targetRotation;
 
     /// <summary>
     /// Initialise goalPosition to the public goal object and find the "door_spikes" object for later use
@@ -28,10 +28,10 @@ public class DoorVaseDetection : MonoBehaviour {
         targetPosition = target.position;
         if (Vector3.Distance(targetPosition, goalPosition) < 0.1f)
         {
-            if (transform.rotation.eulerAngles.y > rotation && transform.name.Equals("gate_door_left") || transform.rotation.eulerAngles.y < rotation && transform.name.Equals("gate_door_right"))
+            Quaternion targetQuaternion = Quaternion.Euler(targetRotation);
+            if (Quaternion.Angle(transform.rotation, targetQuaternion) > 1f)
             {
-                Quaternion targetRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -rotation);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smooth);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetQuaternion, Time.deltaTime * smooth);
                 trigger.SetActive(false);
             }
 
