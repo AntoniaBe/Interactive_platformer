@@ -24,18 +24,22 @@ public class exAI : MonoBehaviour {
         knockback = Vector3.Lerp(knockback, Vector3.zero, Time.deltaTime * knockbackRecovery);
     }
 
+
     private void FixedUpdate() {
         Debug.DrawRay(rb.transform.position - changedY, to * rayLenght, Color.red, 1.5f);
 
         Vector3 targetVelocity = new Vector3(speed, rb.velocity.y, 0);
 
-        // Jump when about to run against a grabbable, snapped in object
-        if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
-            targetVelocity.y = jumpSpeed;
+        // Jump when about to run against a grabbable object
+        if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght)) {
+            if (vision.collider.CompareTag("grab")) {
+                targetVelocity.y = jumpSpeed;
+            }
         }
 
         // Apply knockback to the final velocity
         targetVelocity += knockback;
+
 
         rb.velocity = targetVelocity;
     }
