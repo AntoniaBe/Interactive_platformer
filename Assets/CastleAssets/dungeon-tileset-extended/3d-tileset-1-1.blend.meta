@@ -448,7 +448,237 @@ ModelImporter:
     9500000: //RootNode
     13700000: switch
     13700002: switch_001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buckler__buckler05D
+    second: {fileID: 2100000, guid: 3f9c9d9d800311349ad39672589cd536, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground-1
+    second: {fileID: 2100000, guid: cb802cea0d143714fbbb4fd36dd46261, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground-2
+    second: {fileID: 2100000, guid: 642ecf6414c9af64db03bc9e8f7fe6f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground-3
+    second: {fileID: 2100000, guid: a0eec22338c9deb46a1c58b9b2e5ef96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground-depth
+    second: {fileID: 2100000, guid: 276d3097bdbfa5449858294e7d2bd3a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mug_2__Untitled_007
+    second: {fileID: 2100000, guid: a85c12f17ae172f48822aaa668b35f22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete
+    second: {fileID: 2100000, guid: b39ba9277f60f5c478f1f71e5d5aad13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_001
+    second: {fileID: 2100000, guid: 6ef0ffa1185e81e47bf20d5aea5742e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete_001__concrete01_diff_jpg_001
+    second: {fileID: 2100000, guid: 90f92165606fd9f4db31da52d8dfb807, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete__tile_ceilingacoustic_png
+    second: {fileID: 2100000, guid: 56d10e4ea9cdd544bbf68d98d848cb4c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete__wall-tex-1_jpg
+    second: {fileID: 2100000, guid: eea833db71644a94082f263773c2afd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete__wall-tex-1_png
+    second: {fileID: 2100000, guid: f53022bdd8502254a80eb5f46ce59022, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete__wall-window_png
+    second: {fileID: 2100000, guid: 98b742e9bf924744eacf977323f1144c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_wall
+    second: {fileID: 2100000, guid: a05e0285ebc48884f829df302db7348d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_wall__wall-tex-1_jpg
+    second: {fileID: 2100000, guid: a338b9d9458eec74da6b638aa63246e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_wall__wall-tex-1_png
+    second: {fileID: 2100000, guid: e25ba76067556a4489a017d98dc6554a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dark_wall__wall-window_png
+    second: {fileID: 2100000, guid: 41c25190cd96e4d4abbebed6dd4eef5a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decorative
+    second: {fileID: 2100000, guid: 9f2678bc49e122446a9e5ddeaf386b3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iso-holdout
+    second: {fileID: 2100000, guid: 8a802cc4c5bd78d49a5360c8d9aaccb6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iso-holdout__wall-tex-1_png
+    second: {fileID: 2100000, guid: a0f5ef5f66cb95b4eb623737a6fc2a8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iso-shadow__gate-2_png
+    second: {fileID: 2100000, guid: 363191b15aeba7042bd8be59c1265396, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: platform
+    second: {fileID: 2100000, guid: 9c8724efbab4db041b30ed52fd662d03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shortSword_001__shortSwordD
+    second: {fileID: 2100000, guid: 3934c5e6d62ce37449bb9068b47024c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: switch
+    second: {fileID: 2100000, guid: b3679e360c02a3d438b8f8e8c968ff79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-ground
+    second: {fileID: 2100000, guid: 5fd1c9e2bfd16f946a38cbcd7df15b32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-ground__wall-window_png
+    second: {fileID: 2100000, guid: b1b6f68ab0fa6fe47a027d227fc37bc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-non-ground
+    second: {fileID: 2100000, guid: 834a2815961138e4ca1b4e66df196d3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-non-ground_001
+    second: {fileID: 2100000, guid: 99b1a70d40be45e42ac8a111a1183b94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-non-ground__tile_tantiles_png
+    second: {fileID: 2100000, guid: 83180ab6d1057db4f9d24203cbd6af55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-non-ground__wall-tex-1_png
+    second: {fileID: 2100000, guid: f4fe33a3e96dba34daead672c918e07d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiles-non-ground__wall-window_png
+    second: {fileID: 2100000, guid: a335fb5fd28b36247ab76fb422f3f9fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torch
+    second: {fileID: 2100000, guid: 3b2f1bc514f393e46bb49babceceb808, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torch__shortSwordD
+    second: {fileID: 2100000, guid: 78e035a8bfeb75849974ddefccb84a16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torch__wall-window_png
+    second: {fileID: 2100000, guid: d2d78388177fbb0469ad8bcd39ef51cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1
+    second: {fileID: 2100000, guid: 5b1a015576e1b7941bdf9f7d98b0fdd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1_001
+    second: {fileID: 2100000, guid: cc5ec949cf221ff41baed1fe25165123, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1__wall-tex-1_jpg
+    second: {fileID: 2100000, guid: 175db455eb6a8ea498876e15450e8eda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1__wall-tex-1_png
+    second: {fileID: 2100000, guid: fb377a9ac388f5141b849b2c35c12ab3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1__wall-tex-2_jpg
+    second: {fileID: 2100000, guid: 16de190d8d76415489fc402c8b59267d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1__wall-tex-3_jpg
+    second: {fileID: 2100000, guid: 7fc7a911592956f45aa69496d3cd3ac3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-1__wall-window_png
+    second: {fileID: 2100000, guid: 639d3094f10c14d4f9c529f3755fdc73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall-to-depth__wall-tex-1_png
+    second: {fileID: 2100000, guid: 065128aa55ff70848badf6e9ed79c072, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden-gate-2
+    second: {fileID: 2100000, guid: 8e7725ec1b0ae79409aeaaca4f3af97d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden-gate-2__gate-2_JPG
+    second: {fileID: 2100000, guid: d195e7a198d19744dab7155dc125af45, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden-gate__gate_JPG
+    second: {fileID: 2100000, guid: e55d3fc743c1ac349a30d14ca47f930b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wooden-gate__tile_tantiles_png
+    second: {fileID: 2100000, guid: cca527c8d7ea911419f73591e7bdc4ba, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
