@@ -7,7 +7,6 @@ public class GrabGesture : MonoBehaviour {
 
     public float minGrabStrength = 0.75f;
     public int minUnextendedFingers = 3;
-    public bool allowRotation = true;
 
     private LeapServiceProvider leapServiceProvider;
     private Grabbable[] grabbables;
@@ -36,24 +35,29 @@ public class GrabGesture : MonoBehaviour {
                 if (!currentGrabbables[handIndex]) {
                     currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.isSnappedIn);
                     if (currentGrabbables[handIndex]) {
-                        currentGrabbables[handIndex].onGrabEvent.Invoke(hand);
+                        currentGrabbables[handIndex].StartGrabbing(hand);
                     }
                 }
 
                 if (currentGrabbables[handIndex]) {
                     if (currentGrabbables[handIndex].isSnappedIn) {
-                        currentGrabbables[handIndex].onUngrabEvent.Invoke(hand);
+                        currentGrabbables[handIndex].StopGrabbing(hand);
                         currentGrabbables[handIndex] = null;
-                    } else {
-                        currentGrabbables[handIndex].transform.position = hand.PalmPosition.ToVector3();
-                        if (allowRotation) {
+                    } else { 
+                        if (currentGrabbables[handIndex].allowMovement) {
+                            currentGrabbables[handIndex].transform.position = hand.PalmPosition.ToVector3();
+                        }
+
+                        if (currentGrabbables[handIndex].allowRotation) {
                             currentGrabbables[handIndex].transform.rotation = hand.Rotation.ToQuaternion();
                         }
+
+                        currentGrabbables[handIndex].GrabUpdate(hand);
                     }
                 }
             } else {
                 if (currentGrabbables[handIndex]) {
-                    currentGrabbables[handIndex].onUngrabEvent.Invoke(hand);
+                    currentGrabbables[handIndex].StopGrabbing(hand);
                 }
                 currentGrabbables[handIndex] = null;
             }

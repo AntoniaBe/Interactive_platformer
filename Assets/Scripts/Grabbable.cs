@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
+using Leap;
 
 public class Grabbable : MonoBehaviour {
 
     public HandEvent onGrabEvent;
+    public HandEvent onGrabUpdateEvent;
     public HandEvent onUngrabEvent;
 
+    public bool allowMovement = true;
+    public bool allowRotation = true;
     public GameObject touchingHand;
     public bool isSnappedIn;
+    public bool IsGrabbed { get; private set; }
 
     private void Awake() {
         if (onGrabEvent == null) {
@@ -33,10 +38,28 @@ public class Grabbable : MonoBehaviour {
     }
 
     private void ApplyMaterialColor(Color color) {
-        GetComponent<Renderer>().material.color = color;
+        var ownRenderer = GetComponent<Renderer>();
+        if (ownRenderer) {
+            ownRenderer.material.color = color;
+        }
+
         foreach (var renderer in GetComponentsInChildren<Renderer>()) {
             renderer.material.color = color;
         }
+    }
+
+    public void StartGrabbing(Hand hand) {
+        onGrabEvent.Invoke(hand);
+        IsGrabbed = true;
+    }
+
+    public void GrabUpdate(Hand hand) {
+        onGrabUpdateEvent.Invoke(hand);
+    }
+
+    public void StopGrabbing(Hand hand) {
+        onUngrabEvent.Invoke(hand);
+        IsGrabbed = false;
     }
 
 }
