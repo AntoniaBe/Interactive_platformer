@@ -2,35 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bridgeFollow : MonoBehaviour {
+public class BridgeFollow : MonoBehaviour {
 
     public Transform target;
-
-    //rotation -24.611 to 0,
-    private static float rStart = -24.611f;
-    private static float rEnd = 0f;
-    //location -13.61 to -7.7
-    private static float pStart = -13.61f;
-    private static float pEnd = -7.7f;
-    // - 5.91
-    private static float pDif = pStart - pEnd;
-
+    
+    private static float rotStart = -24.611f;
+    private static float rotEnd = 0f;
+    private static float posStart = -13.61f;
+    private static float posEnd = -7.7f;
+    private static float posDif = posStart - posEnd;
     float smooth = 2.0f;
-
-
-    void Start () {
-		
-	}
-	
+    
+    /// <summary>
+    /// Use the target object to calculate the rotation of the bridge object, with its Y position, 
+    /// in order to make the bridge object follow the target object once moved.
+    /// </summary>
 	void LateUpdate () {
-        // if -13.61 then -24.611
-        // if -7.7 then 0
-
-        // dif 7.7 and 0 / 7.7
         float targetP = target.transform.position.y;
-        float targetDif = targetP - pEnd;
-        float dif = targetDif / pDif;
-        float rotation = rEnd + dif * rStart;
+        float targetDif = targetP - posEnd;
+        float dif = targetDif / posDif;
+        float rotation = rotEnd + dif * rotStart;
         Quaternion targetRotation = Quaternion.Euler(0, 0, rotation);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smooth);
 	}

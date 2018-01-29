@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
     }
 
     public static GameController instance;
-    public SaveState SaveState { get; private set; }
+    public SaveState SaveState { get; private set; } = new SaveState();
 
     public GameObject levelCompleteCanvasPrefab;
     public GameObject gameOverCanvasPrefab;
@@ -87,6 +87,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="level"></param>
+    /// <returns></returns>
     public AsyncOperation LoadLevel(int level) {
         currentLevel = level;
         SaveState.UnlockLevel(currentLevel);

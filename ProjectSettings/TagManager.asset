@@ -7,6 +7,7 @@ TagManager:
   - grab
   - hands
   - snapIn
+  - sword
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - DetectCollision
   - SnapIn
   - Trigger
-  - 
+  - FlyingSkull
   - 
   - 
   - 

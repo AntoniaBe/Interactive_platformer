@@ -2,25 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveBridge : MonoBehaviour {
+public class MoveBridge : MonoBehaviour {
 
     public GameObject statueLarge;
     public GameObject statueSmall;
-    public GameObject statueTiny;
     public GameObject bridgeTrigger;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+	/// <summary>
+    /// Get "status" information from all statues and check whether they are true. If all are true, move bridge upwards
+    /// </summary>
 	void LateUpdate () {
-
-        if (statueLarge.GetComponent<statueDetection>().status && statueSmall.GetComponent<statueDetection>().status && statueTiny.GetComponent<statueDetection>().status) {
+        if (statueLarge.GetComponent<StatueDetection>().status && statueSmall.GetComponent<StatueDetection>().status) {
             if(transform.position.y < bridgeTrigger.transform.position.y)
             {
-                Debug.Log(transform.position.y);
                 transform.Translate(Vector3.up * Time.deltaTime, Space.World);
             }
         }
