@@ -63,7 +63,6 @@ public class Grabbable : MonoBehaviour {
         }
     }
 
-
     private void OnTriggerExit(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
             TouchingHand = null;

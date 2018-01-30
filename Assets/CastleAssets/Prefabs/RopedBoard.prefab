@@ -219,9 +219,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040825718835756}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.41, y: 4.604, z: -2.206}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.0000020787118, y: -0.7071067, z: -0.7071069, w: 0.0000020712612}
+  m_LocalPosition: {x: -0.00172, y: -0.0006, z: -0.0556}
+  m_LocalScale: {x: 0.009999996, y: 0.10000568, z: 0.01}
   m_Children:
   - {fileID: 4135331586469720}
   - {fileID: 4787797626807024}
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: 2
-  amplitude: 2
+  amplitude: 1.5
   useUnscaledTime: 0
   angleMask: {x: 0, y: 0, z: 1}
 --- !u!114 &114292240642223548
@@ -953,12 +953,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onGrabUpdateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onUngrabEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  touchingHand: {fileID: 0}
-  isSnappedIn: 1
+  allowMovement: 1
+  allowRotation: 1
 --- !u!114 &114926271909143466
 MonoBehaviour:
   m_ObjectHideFlags: 1
