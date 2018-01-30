@@ -5,6 +5,7 @@ using UnityEngine;
 public class RopedBoard : MonoBehaviour {
 
     public GameObject board;
+    public Rigidifier sword;
 
     private Rope[] ropes;
     private bool isBoardDetached;
@@ -27,6 +28,7 @@ public class RopedBoard : MonoBehaviour {
         }
 
         isBoardDetached = true;
+        sword.CanRigidify = true;
         var rb = board.AddComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
         board.transform.parent = null;
