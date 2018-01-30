@@ -33,14 +33,14 @@ public class GrabGesture : MonoBehaviour {
             }
             if (grabbing) {
                 if (!currentGrabbables[handIndex]) {
-                    currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.isSnappedIn);
+                    currentGrabbables[handIndex] = grabbables.FirstOrDefault(t => DoesHandMatch(t.touchingHand, hand) && !t.IsSnappedIn);
                     if (currentGrabbables[handIndex]) {
                         currentGrabbables[handIndex].StartGrabbing(hand);
                     }
                 }
 
                 if (currentGrabbables[handIndex]) {
-                    if (currentGrabbables[handIndex].isSnappedIn) {
+                    if (currentGrabbables[handIndex].IsSnappedIn) {
                         currentGrabbables[handIndex].StopGrabbing(hand);
                         currentGrabbables[handIndex] = null;
                     } else { 

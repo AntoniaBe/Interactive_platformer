@@ -18,7 +18,7 @@ public class FlowerCondition : MonoBehaviour {
 
 	void Update () {
 
-        if (snapInFlower.GetComponent<Grabbable>().isSnappedIn)
+        if (snapInFlower.GetComponent<Grabbable>().IsSnappedIn)
         {
             StartCoroutine(DisableSpeechBubbles());
             makeNPCStop.SetActive(false);

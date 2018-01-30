@@ -26,7 +26,7 @@ public class SnappingController : MonoBehaviour {
             col.transform.rotation = transform.rotation;
 
             col.gameObject.layer = LayerMask.NameToLayer("SnapIn");
-            col.GetComponent<Grabbable>().isSnappedIn = true;
+            col.GetComponent<Grabbable>().IsSnappedIn = true;
             onSnapEvent.Invoke();
             HasSnapped = true;
         }
