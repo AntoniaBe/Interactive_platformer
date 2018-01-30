@@ -10096,7 +10096,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10116,7 +10116,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10136,7 +10136,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10146,7 +10146,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -13355,7 +13355,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!4 &440696507 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 2}
@@ -36438,7 +36437,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!4 &1193792972 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 059c81de61f2d4e4cbe522492d0181da, type: 2}
@@ -42762,7 +42760,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!65 &1418147775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -48732,7 +48729,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!1 &1487114619 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 167786, guid: 573a6e3170167534ba962b93a414fcb8, type: 2}
@@ -48778,7 +48774,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!1001 &1489871693
 Prefab:
   m_ObjectHideFlags: 0
@@ -62441,7 +62436,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!54 &1920238861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62841,7 +62835,6 @@ MonoBehaviour:
   allowMovement: 1
   allowRotation: 1
   touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!65 &1925861449
 BoxCollider:
   m_ObjectHideFlags: 0
