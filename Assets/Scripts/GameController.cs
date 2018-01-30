@@ -59,6 +59,14 @@ public class GameController : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start() {
+#if UNITY_EDITOR
+        if (FindObjectOfType<LevelProperties>()) {
+            StartLevel();
+        }
+#endif
+    }
+
     private void Update() {
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.W)) {

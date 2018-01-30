@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minGrabStrength: 0.5
-  allowRotation: 1
+  minUnextendedFingers: 3
 --- !u!114 &114711376019074346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,4 +123,4 @@ MonoBehaviour:
     type: 2}
   pauseCanvasPrefab: {fileID: 1741689104791408, guid: 4e9775173058f20448fdf0626382ab28,
     type: 2}
-  maxLevels: 1
+  maxLevels: 3

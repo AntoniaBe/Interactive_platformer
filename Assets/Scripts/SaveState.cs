@@ -79,7 +79,7 @@ public class SaveState {
                 var serializer = new XmlSerializer(typeof(SaveState));
                 return (SaveState) serializer.Deserialize(stream);
             }
-        } catch (XmlException) {
+        } catch (System.Exception) {
             // We don't care, it's probably a new empty file, or it's corrupt
             return new SaveState();
         }
