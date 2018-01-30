@@ -10096,7 +10096,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10116,7 +10116,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10136,7 +10136,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10146,7 +10146,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -48951,6 +48951,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114909584821670538, guid: a9dbbc2da0dd3804793967f15764b512,
+        type: 2}
+      propertyPath: onPointEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1908131247}
+    - target: {fileID: 114909584821670538, guid: a9dbbc2da0dd3804793967f15764b512,
+        type: 2}
+      propertyPath: onPointEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CameraSwipe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
   m_IsPrefabParent: 0
@@ -62147,7 +62157,6 @@ GameObject:
   - component: {fileID: 1908131243}
   - component: {fileID: 1908131242}
   - component: {fileID: 1908131247}
-  - component: {fileID: 1908131248}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -62240,37 +62249,6 @@ MonoBehaviour:
   offset: {x: 0, y: 5.21, z: -12.23}
   swipeOffsetDistance: 10
   swipeTime: 0.25
---- !u!114 &1908131248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1908131241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e1c1320f9d04b64589cd5708c758860, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onPointEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1908131247}
-        m_MethodName: CameraSwipe
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  minVelocity: 1
-  velocitySwitchTime: 1
-  minVelocitySwitches: 2
-  cooldownTime: 1
-  usePalmVelocity: 1
 --- !u!4 &1908188581 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e5a1087c565204f42969686d1df0633d, type: 3}

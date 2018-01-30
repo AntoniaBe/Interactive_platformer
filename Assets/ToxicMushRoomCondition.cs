@@ -4,29 +4,25 @@ using UnityEngine;
 
 public class ToxicMushRoomCondition : MonoBehaviour {
 
-    public GameObject woodbox1, woodbox2;
-    public ParticleSystem particeSystem;
+    public SnappingController[] snappingTriggers;
+    public new ParticleSystem particleSystem;
 
+    private void Update() {
+        foreach (var trigger in snappingTriggers) {
+            if (!trigger.HasSnapped) {
+                break;
+            }
 
-	void Update () {
-
-        if (woodbox1.GetComponent<Grabbable>().isSnappedIn && woodbox2.GetComponent<Grabbable>().isSnappedIn)
-        {
-            particeSystem.Clear();
-
+            particleSystem.Clear();
+            enabled = false;
         }
     }
 
 
-    private void OnTriggerEnter(Collider collider)
-    {
-
-        if (collider.gameObject.tag == "Player")
-        {
-            this.gameObject.GetComponent<NPCDies>().NpcDies();
-
+    private void OnTriggerEnter(Collider collider) {
+        if (collider.CompareTag("Player")) {
+            GetComponent<NPCDies>().NpcDies(); // TODO cleanup: NPCDies should be part of exAI and be called as a Death() function on there
         }
-
     }
 
 }

@@ -8,13 +8,19 @@ public class SnappingController : MonoBehaviour {
     public UnityEvent onSnapEvent;
     public GameObject[] grabbables;
 
+    public bool HasSnapped { get; private set; }
+
     private void Awake() {
         if (onSnapEvent == null) {
             onSnapEvent = new UnityEvent();
         }
     }
 
-    private IEnumerator OnTriggerEnter(Collider col) {
+    private void OnTriggerEnter(Collider col) {
+        if (HasSnapped) {
+            return;
+        }
+
         if (grabbables.Contains(col.gameObject)) {
             col.transform.position = transform.position;
             col.transform.rotation = transform.rotation;
@@ -22,8 +28,7 @@ public class SnappingController : MonoBehaviour {
             col.gameObject.layer = LayerMask.NameToLayer("SnapIn");
             col.GetComponent<Grabbable>().isSnappedIn = true;
             onSnapEvent.Invoke();
-            yield return new WaitForSeconds(0.5f);
-            Destroy(gameObject);
+            HasSnapped = true;
         }
     }
 }
