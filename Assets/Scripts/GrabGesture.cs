@@ -69,7 +69,8 @@ public class GrabGesture : MonoBehaviour {
             return false;
         }
 
-        return (handObject.GetComponentInParent<RigidHand>().Handedness == Chirality.Left) == hand.IsLeft;
+        var rigidHand = handObject.GetComponentInParent<RigidHand>();
+        return rigidHand && (rigidHand.Handedness == Chirality.Left) == hand.IsLeft;
     }
 
     /// <summary>
