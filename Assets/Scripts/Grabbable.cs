@@ -46,7 +46,7 @@ public class Grabbable : MonoBehaviour {
 
     private void Update() {
         if (!IsSnappedIn) {
-            var intensity = Mathf.Sin(emissionTime * EMISSION_FREQUENCY) * EMISSION_INTENSITY;
+            var intensity = Mathf.Abs(Mathf.Sin(emissionTime * EMISSION_FREQUENCY) * EMISSION_INTENSITY);
             var color = new Color(intensity, intensity, intensity);
             ApplyEmissionColor(color);
             emissionTime += Time.deltaTime;
