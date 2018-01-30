@@ -102,4 +102,8 @@ public class ClickGesture : MonoBehaviour {
         }
     }
 
+    public void WaitBeforeDetection(float time) {
+        lastClickTime = Time.unscaledTime - clickCooldown + time;
+    }
+
 }
