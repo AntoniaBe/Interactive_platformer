@@ -41,7 +41,7 @@ public class FollowNPC : MonoBehaviour {
             }
         }
 
-        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime, float.MaxValue);
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime, float.MaxValue, Time.unscaledDeltaTime);
     }
 
     public void CameraSwipe(bool value) {
