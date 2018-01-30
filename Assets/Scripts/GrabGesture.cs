@@ -29,7 +29,7 @@ public class GrabGesture : MonoBehaviour {
             var grabbing = hand.GrabStrength >= 1f;
             // If the player is already holding something, don't be as harsh, to prevent letting go due to Leap errors
             if (currentGrabbables[handIndex]) {
-                grabbing = hand.GrabStrength > minGrabStrength || IsGrabbingDespiteGrabStrength(hand);
+                grabbing = hand.GrabStrength >= minGrabStrength || IsGrabbingDespiteGrabStrength(hand);
             }
             if (grabbing) {
                 if (!currentGrabbables[handIndex]) {
