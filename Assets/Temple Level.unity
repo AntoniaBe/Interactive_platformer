@@ -2262,24 +2262,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a40ecd0744f670743af2d7b03a765d10, type: 3}
   m_PrefabInternal: {fileID: 70914928}
---- !u!1 &72896692 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
-  m_PrefabInternal: {fileID: 1925861446}
---- !u!64 &72896696
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 72896692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
 --- !u!1001 &74621511
 Prefab:
   m_ObjectHideFlags: 0
@@ -13354,7 +13336,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!4 &440696507 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 2}
@@ -16455,6 +16436,10 @@ Prefab:
     - target: {fileID: 100002, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
       propertyPath: m_Name
       value: barrel_trigger_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
@@ -23638,6 +23623,7 @@ Transform:
   - {fileID: 1925861452}
   - {fileID: 2090520922}
   - {fileID: 1204053952}
+  - {fileID: 1030181269}
   m_Father: {fileID: 846880885}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33062,6 +33048,59 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 491272, guid: 5a780b07c3c81f34794e073c069820a2, type: 2}
   m_PrefabInternal: {fileID: 880529738}
+--- !u!1 &1030181268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1030181269}
+  - component: {fileID: 1030181271}
+  - component: {fileID: 1030181270}
+  m_Layer: 0
+  m_Name: WaitingArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030181269
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030181268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -80.44, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721747533}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030181270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030181268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec1e54e718e07542972ec7fe4314336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1030181271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030181268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5123291, y: 2.6919222, z: 4.8457403}
+  m_Center: {x: 0.24383545, y: -0.32445383, z: -1.2195315}
 --- !u!1 &1031574621
 GameObject:
   m_ObjectHideFlags: 0
@@ -36436,7 +36475,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!4 &1193792972 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 059c81de61f2d4e4cbe522492d0181da, type: 2}
@@ -42759,7 +42797,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!65 &1418147775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46345,6 +46382,10 @@ MonoBehaviour:
   knockbackRecovery: 3
   rayLenght: 3
   changedY: {x: 0, y: -2, z: 0}
+  jumpCastLength: 2.5
+  jumpCastOffset: {x: 0, y: 0, z: 0}
+  jumpCastSize: {x: 0.1, y: 0.1, z: 0.1}
+  shouldWait: 0
 --- !u!1001 &1432036645
 Prefab:
   m_ObjectHideFlags: 0
@@ -48728,7 +48769,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!1 &1487114619 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 167786, guid: 573a6e3170167534ba962b93a414fcb8, type: 2}
@@ -48773,7 +48813,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!1001 &1489871693
 Prefab:
   m_ObjectHideFlags: 0
@@ -62435,7 +62474,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!54 &1920238861
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62792,7 +62830,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
       propertyPath: m_IsActive
@@ -62822,7 +62860,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGrabEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1030181270}
+        m_MethodName: set_ShouldWait
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onGrabUpdateEvent:
     m_PersistentCalls:
@@ -62834,7 +62883,6 @@ MonoBehaviour:
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
   allowRotation: 1
-  touchingHand: {fileID: 0}
 --- !u!65 &1925861449
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62847,20 +62895,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 50, y: 60, z: 50}
   m_Center: {x: 0, y: 20, z: 0}
---- !u!64 &1925861450
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925861447}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!54 &1925861451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -68088,6 +68122,10 @@ Prefab:
     - target: {fileID: 100002, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
       propertyPath: m_Name
       value: barrel_trigger_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb4f7bb67026fe34f9865eb2cfdebf95, type: 3}
