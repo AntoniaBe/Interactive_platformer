@@ -66,6 +66,8 @@ public class Grabbable : MonoBehaviour {
     }
 
     private void ApplyEmissionColor(Color color) {
+
+        // TODO go through all mateirals
         var ownRenderer = GetComponent<Renderer>();
         if (ownRenderer) {
             ownRenderer.material.SetColor(emissionColorId, color);
