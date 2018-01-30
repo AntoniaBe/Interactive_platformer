@@ -13,15 +13,7 @@ public class WaterCondition : MonoBehaviour {
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
             player.GetComponent<Collider>().enabled = false;
-            GameController.instance.GameOver();
-            StartCoroutine(DoABackflip());
-        }
-    }
-
-    private IEnumerator DoABackflip() {
-        while (true) {
-            player.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
-            yield return null;
+            player.GetComponent<exAI>().FallToDeath();
         }
     }
 

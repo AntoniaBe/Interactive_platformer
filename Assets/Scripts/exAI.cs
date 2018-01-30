@@ -72,4 +72,17 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
         }
     }
 
+    public void FallToDeath() {
+        isDead = true;
+        StartCoroutine(FallingAnimation());
+        GameController.instance.GameOver();
+    }
+
+    private IEnumerator FallingAnimation() {
+        while (true) {
+            transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
+            yield return null;
+        }
+    }
+
 }
