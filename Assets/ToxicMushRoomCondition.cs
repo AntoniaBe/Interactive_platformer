@@ -21,7 +21,7 @@ public class ToxicMushRoomCondition : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
-            collider.GetComponent<exAI>().Die();
+            collider.GetComponent<NPC>().Die();
         }
     }
 

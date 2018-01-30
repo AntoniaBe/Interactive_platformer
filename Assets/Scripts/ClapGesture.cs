@@ -83,7 +83,6 @@ public class ClapGesture : MonoBehaviour {
             }
 
             // Hand must be facing the other hand
-            // TODO maybe limit this to the x axis only
             float angle = Vector3.Angle(hand.PalmNormal.ToVector3(), hand.IsLeft ? Vector3.right : Vector3.left);
             if (angle > maxAngle) {
                 return false;

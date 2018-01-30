@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or something
+public class NPC : MonoBehaviour {
 
     public float speed = 2f;
     public float knockbackRecovery = 3f;
@@ -26,10 +26,6 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
     }
 
     private void FixedUpdate() {
-        //Debug.DrawRay(rb.transform.position - changedY, o * rayLenght, Color.red, 1.5f);
-        Debug.DrawRay(transform.position + jumpCastOffset - jumpCastSize, Vector3.right * jumpCastLength, Color.red, 1.5f);
-        Debug.DrawRay(transform.position + jumpCastOffset + jumpCastSize, Vector3.right * jumpCastLength, Color.red, 1.5f);
-
         Vector3 targetVelocity = new Vector3(0, rigidBody.velocity.y, 0);
 
         if (!shouldWait && !isDead) {
@@ -38,7 +34,6 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
 
             // Jump when about to run against a grabbable, snapped in object
             if (Physics.BoxCast(transform.position + jumpCastOffset, jumpCastSize, Vector3.right, Quaternion.identity, jumpCastLength, 1 << LayerMask.NameToLayer("SnapIn"))) {
-                // if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
                 targetVelocity.y = jumpSpeed;
             }
         }

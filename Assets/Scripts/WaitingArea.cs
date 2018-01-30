@@ -5,11 +5,11 @@ public class WaitingArea : MonoBehaviour {
 
     public bool ShouldWait { get; set; } = true;
 
-    private exAI ai;
+    private NPC ai;
     private bool isPlayerInside;
 
     private void Start() {
-        ai = GameObject.FindGameObjectWithTag("Player").GetComponent<exAI>();
+        ai = GameObject.FindGameObjectWithTag("Player").GetComponent<NPC>();
     }
 
     private void Update() {

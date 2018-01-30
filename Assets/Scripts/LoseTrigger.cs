@@ -9,9 +9,9 @@ public class LoseTrigger : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             if(shouldFallToDeath) {
-                other.GetComponent<exAI>().FallToDeath();
+                other.GetComponent<NPC>().FallToDeath();
             } else if (shouldKill) {
-                other.GetComponent<exAI>().Die();
+                other.GetComponent<NPC>().Die();
             } else {
                 GameController.instance.GameOver();
             }

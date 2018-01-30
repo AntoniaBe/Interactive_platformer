@@ -29,7 +29,7 @@ public class DartProjectile : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        var ai = collision.gameObject.GetComponent<exAI>();
+        var ai = collision.gameObject.GetComponent<NPC>();
         if (ai) {
             ai.Knockback(Vector3.left * knockbackStrength);
         }

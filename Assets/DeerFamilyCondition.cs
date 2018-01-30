@@ -41,7 +41,7 @@ public class DeerFamilyCondition : MonoBehaviour {
             npcCollides = true;
             StartCoroutine(DeactivateDeerFamily());
             yield return new WaitForSeconds(0.5f);
-            collider.GetComponent<exAI>().Die();
+            collider.GetComponent<NPC>().Die();
         }
     }
 

@@ -11,7 +11,7 @@ public class WinTrigger : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            player.GetComponent<exAI>().shouldWait = true;
+            player.GetComponent<NPC>().shouldWait = true;
             GameController.instance.Victory();
         }
     }

@@ -13,7 +13,7 @@ public class WaterCondition : MonoBehaviour {
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
             player.GetComponent<Collider>().enabled = false;
-            player.GetComponent<exAI>().FallToDeath();
+            player.GetComponent<NPC>().FallToDeath();
         }
     }
 

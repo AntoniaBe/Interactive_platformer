@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class FollowNPC : MonoBehaviour { // TODO rename to CameraController?
+public class FollowNPC : MonoBehaviour {
 
     public Transform target;
     public Vector3 offset = new Vector3(0f, 1.0f, -2.0f);

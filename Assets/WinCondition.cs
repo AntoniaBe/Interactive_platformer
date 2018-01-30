@@ -23,7 +23,7 @@ public class WinCondition : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             AI.GetComponent<Animation>().Stop();
-            AI.GetComponent<exAI>().speed = 0;
+            AI.GetComponent<NPC>().speed = 0;
         }
 
     }

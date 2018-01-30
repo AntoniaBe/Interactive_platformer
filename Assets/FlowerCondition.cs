@@ -26,7 +26,7 @@ public class FlowerCondition : MonoBehaviour {
             butterfly.transform.position = Vector3.MoveTowards(butterfly.transform.position, firstPoint.transform.position, moveTowardsSpeed * Time.deltaTime);
             flower.transform.position = followingFlower.transform.position;
             AI.GetComponent<Animation>().Play();
-            AI.GetComponent<exAI>().speed = 2;
+            AI.GetComponent<NPC>().speed = 2;
             flower.GetComponent<Collider>().enabled = false;
 
             if (butterfly.transform.position == firstPoint.transform.position)
