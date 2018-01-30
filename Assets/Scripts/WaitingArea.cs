@@ -14,8 +14,12 @@ public class WaitingArea : MonoBehaviour {
 
     private void Update() {
         if (isPlayerInside) {
+            if (ai.shouldWait && !ShouldWait) {
+                ai.GetComponent<Animation>().Play();
+            } else if (!ai.shouldWait && ShouldWait) {
+                ai.GetComponent<Animation>().Stop();
+            }
             ai.shouldWait = ShouldWait;
-            
         }
     }
 
