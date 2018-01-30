@@ -17,6 +17,7 @@ public class GameOverCanvas : MonoBehaviour {
     public Image blackScreen;
 
     private PostProcessingBehaviour postProcessing;
+    private bool initAnimationDone;
 
     private void Start() {
         postProcessing = Camera.main.GetComponent<PostProcessingBehaviour>();
@@ -49,9 +50,16 @@ public class GameOverCanvas : MonoBehaviour {
 
         image.CrossFadeAlpha(1f, fadeInBackgroundTime, true);
         text.CrossFadeAlpha(1f, fadeInTextTime, true);
+
+        initAnimationDone = true;
     }
 
     public IEnumerator RestartLevelAnimation() {
+        // Wait for the appearance animation to finish
+        while (!initAnimationDone) {
+            yield return null;
+        }
+
         blackScreen.canvasRenderer.SetAlpha(0f);
         blackScreen.enabled = true;
         blackScreen.CrossFadeAlpha(1f, fadeOutTime, true);

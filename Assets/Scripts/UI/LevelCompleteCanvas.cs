@@ -25,6 +25,7 @@ public class LevelCompleteCanvas : MonoBehaviour {
     public Image blackScreen;
 
     private AudioSource audioSource;
+    private bool initAnimationDone;
 
     private void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -58,7 +59,7 @@ public class LevelCompleteCanvas : MonoBehaviour {
         // Fade in the star outlines
         var canvasGroup = container.GetComponent<CanvasGroup>();
         float timer = 0f;
-        while(timer < starInitialDelay) {
+        while (timer < starInitialDelay) {
             canvasGroup.alpha = Mathf.Lerp(0f, 1f, timer / starInitialDelay);
             timer += Time.unscaledDeltaTime;
             yield return null;
@@ -80,9 +81,16 @@ public class LevelCompleteCanvas : MonoBehaviour {
         // Play victory jingle and fade in title
         title.CrossFadeAlpha(1f, 2f, true);
         audioSource.PlayOneShot(victorySounds[starCount - 1]);
+
+        initAnimationDone = true;
     }
 
     public IEnumerator NextLevelAnimation() {
+        // Wait for the appearance animation to finish
+        while (!initAnimationDone) {
+            yield return null;
+        }
+
         // Fade the screen to dark completely
         blackScreen.CrossFadeAlpha(1f, fadeOutTime, true);
 

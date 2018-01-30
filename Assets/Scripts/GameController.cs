@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    private LevelState levelState;
+    public LevelState State { get; private set; }
 
     private void Awake() {
         if (instance != null) {
@@ -76,21 +76,21 @@ public class GameController : MonoBehaviour {
         } else if (Input.GetKeyDown(KeyCode.R)) {
             RestartLevel();
         } else if (Input.GetKeyDown(KeyCode.N)) {
-            StartCoroutine(NextLevel());
+            NextLevel();
         } else if (Input.GetKeyDown(KeyCode.P)) {
             PauseGame();
         }
 #endif
 
         if (Input.GetKeyDown(KeyCode.Return)) {
-            if (levelState == LevelState.GAMEOVER) {
+            if (State == LevelState.GAMEOVER) {
                 RestartLevel();
-            } else if (levelState == LevelState.VICTORY) {
-                StartCoroutine(NextLevel());
+            } else if (State == LevelState.VICTORY) {
+                NextLevel();
             }
         }
 
-        if (levelState == LevelState.RUNNING) {
+        if (State == LevelState.RUNNING) {
             LevelTimer += Time.deltaTime;
         }
     }
@@ -115,26 +115,26 @@ public class GameController : MonoBehaviour {
 
         levelProperties = FindObjectOfType<LevelProperties>();
         LevelTimer = 0f;
-        levelState = LevelState.RUNNING;
+        State = LevelState.RUNNING;
     }
 
     public void PauseGame() {
-        if (levelState != LevelState.RUNNING) {
+        if (State != LevelState.RUNNING) {
             return;
         }
 
-        levelState = LevelState.PAUSED;
+        State = LevelState.PAUSED;
         Time.timeScale = 0f;
 
         Instantiate(pauseCanvasPrefab);
     }
 
     public void UnpauseGame() {
-        if (levelState != LevelState.PAUSED) {
+        if (State != LevelState.PAUSED) {
             return;
         }
 
-        levelState = LevelState.RUNNING;
+        State = LevelState.RUNNING;
         Time.timeScale = 1f;
 
         var canvas = FindObjectOfType<PauseMenuCanvas>();
@@ -144,7 +144,7 @@ public class GameController : MonoBehaviour {
     }
 
     public void Victory() {
-        levelState = LevelState.VICTORY;
+        State = LevelState.VICTORY;
 
         SaveState.UpdateLevelRecord(currentLevel, LevelTimer, CurrentStarCount);
 
@@ -152,12 +152,16 @@ public class GameController : MonoBehaviour {
     }
 
     public void GameOver() {
-        levelState = LevelState.GAMEOVER;
+        State = LevelState.GAMEOVER;
 
         Instantiate(gameOverCanvasPrefab);
     }
 
-    private IEnumerator NextLevel() {
+    public void NextLevel() {
+        StartCoroutine(NextLevelCoroutine());
+    }
+
+    private IEnumerator NextLevelCoroutine() {
         AsyncOperation async;
         if (currentLevel + 1 >= maxLevels) {
             async = LoadLevelSelection();

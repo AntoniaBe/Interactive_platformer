@@ -16841,7 +16841,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16861,7 +16861,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16881,7 +16881,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16891,7 +16891,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -24469,6 +24469,11 @@ Transform:
   m_Father: {fileID: 650598959}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1100158876 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1739485186955410, guid: 2d71b97139be8fd48a002d1df9d44871,
+    type: 2}
+  m_PrefabInternal: {fileID: 1672622870}
 --- !u!1 &1101519439
 GameObject:
   m_ObjectHideFlags: 0
@@ -37072,6 +37077,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114314067283000208, guid: 2d71b97139be8fd48a002d1df9d44871,
+        type: 2}
+      propertyPath: onSwipeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
       propertyPath: m_LocalPosition.x
       value: -84.682
@@ -37104,6 +37114,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114314067283000208, guid: 2d71b97139be8fd48a002d1df9d44871,
+        type: 2}
+      propertyPath: onSwipeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314067283000208, guid: 2d71b97139be8fd48a002d1df9d44871,
+        type: 2}
+      propertyPath: onSwipeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114314067283000208, guid: 2d71b97139be8fd48a002d1df9d44871,
+        type: 2}
+      propertyPath: onSwipeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1100158876}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
   m_IsPrefabParent: 0
