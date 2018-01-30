@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class WaterCondition : MonoBehaviour {
 
-    public Collider NPC;
-    private GameObject AI;
+    private GameObject player;
 
-    // Use this for initialization
-    void Start () {
-        AI = GameObject.Find("NPC");
+    private void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            AI.GetComponent<Collider>().enabled = false;
+    private void OnTriggerEnter(Collider collider) {
+        if (collider.CompareTag("Player")) {
+            player.GetComponent<Collider>().enabled = false;
+            GameController.instance.GameOver();
+            StartCoroutine(DoABackflip());
         }
     }
+
+    private IEnumerator DoABackflip() {
+        while (true) {
+            player.transform.Rotate(new Vector3(Random.value, Random.value, Random.value));
+            yield return null;
+        }
     }
+
+}

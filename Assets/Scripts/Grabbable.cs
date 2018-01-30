@@ -4,7 +4,7 @@ using Leap;
 
 public class Grabbable : MonoBehaviour {
 
-    private const float EMISSION_INTENSITY = 0.5f;
+    private const float EMISSION_INTENSITY = 0.2f;
     private const float EMISSION_FREQUENCY = 3f;
 
     public HandEvent onGrabEvent;

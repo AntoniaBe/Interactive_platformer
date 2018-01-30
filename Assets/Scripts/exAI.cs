@@ -57,6 +57,7 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
         GetComponent<Animation>().Stop();
         isDead = true;
         StartCoroutine(DeathAnimation());
+        GameController.instance.GameOver();
     }
 
     private IEnumerator DeathAnimation() {
