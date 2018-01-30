@@ -501,12 +501,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  onGrabUpdateEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onUngrabEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  touchingHand: {fileID: 0}
-  isSnappedIn: 0
+  allowMovement: 1
+  allowRotation: 1
 --- !u!114 &114694360980377694
 MonoBehaviour:
   m_ObjectHideFlags: 1

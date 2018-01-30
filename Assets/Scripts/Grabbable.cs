@@ -48,9 +48,6 @@ public class Grabbable : MonoBehaviour {
         if (!IsSnappedIn) {
             var intensity = Mathf.Sin(emissionTime * EMISSION_FREQUENCY) * EMISSION_INTENSITY;
             var color = new Color(intensity, intensity, intensity);
-            if (TouchingHand) {
-                color *= Color.yellow;
-            }
             ApplyEmissionColor(color);
             emissionTime += Time.deltaTime;
         }
@@ -59,7 +56,6 @@ public class Grabbable : MonoBehaviour {
     private void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
             TouchingHand = collider.gameObject;
-            emissionTime = 1f;
         }
     }
 

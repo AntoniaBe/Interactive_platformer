@@ -10,6 +10,7 @@ public class DartTrap : MonoBehaviour {
     public float interval = 1f;
 
     public bool IsActive { get; set; }
+    public bool Disabled { get; set; }
 
     private GameObject player;
 
@@ -22,7 +23,7 @@ public class DartTrap : MonoBehaviour {
     private IEnumerator FireDarts() {
         while (true) {
             yield return new WaitForSecondsRealtime(interval);
-            if (IsActive) {
+            if (IsActive && !Disabled) {
                 var dart = Instantiate(dartPrefab);
                 var offset = new Vector3(Random.Range(minOffset.x, maxOffset.x), Random.Range(minOffset.y, maxOffset.y), Random.Range(minOffset.z, maxOffset.z));
                 dart.transform.position = transform.position + offset;

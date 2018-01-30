@@ -6,6 +6,8 @@ public class PressurePlate : MonoBehaviour {
     public UnityEvent onPressed;
     public UnityEvent onUnpressed;
 
+    private int pressors;
+
     private void Awake() {
         if (onPressed == null) {
             onPressed = new UnityEvent();
@@ -16,11 +18,18 @@ public class PressurePlate : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider collision) {
-        onPressed.Invoke();
+        if (pressors == 0) {
+            onPressed.Invoke();
+        }
+        pressors++;
     }
 
     private void OnTriggerExit(Collider collision) {
-        onUnpressed.Invoke();
+        pressors--;
+        if (pressors <= 0) {
+            onUnpressed.Invoke();
+            pressors = 0;
+        }
     }
 
 }
