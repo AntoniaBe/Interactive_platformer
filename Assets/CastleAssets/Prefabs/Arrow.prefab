@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54779136785184292}
   - component: {fileID: 114741701595152840}
   - component: {fileID: 65943031246005372}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3825eb8fb1acf8b45bbaa9a1c692cd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoTarget: {fileID: 0}
   speed: 40
   lifeTime: 2
   knockbackStrength: 5
-  knockbackVerticalStrength: 0.5
