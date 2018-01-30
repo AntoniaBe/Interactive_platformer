@@ -1,16 +1,26 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.Events;
 
 public class PressurePlate : MonoBehaviour {
 
-    public bool active;
+    public UnityEvent onPressed;
+    public UnityEvent onUnpressed;
 
-    private void OnCollisionEnter(Collision collision) {
-        active = true;
+    private void Awake() {
+        if (onPressed == null) {
+            onPressed = new UnityEvent();
+        }
+        if (onUnpressed == null) {
+            onUnpressed = new UnityEvent();
+        }
     }
 
-    private void OnCollisionExit(Collision collision) {
-        active = false;
+    private void OnTriggerEnter(Collider collision) {
+        onPressed.Invoke();
+    }
+
+    private void OnTriggerExit(Collider collision) {
+        onUnpressed.Invoke();
     }
 
 }

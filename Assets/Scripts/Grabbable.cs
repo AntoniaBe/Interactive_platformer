@@ -13,7 +13,6 @@ public class Grabbable : MonoBehaviour {
 
     public bool allowMovement = true;
     public bool allowRotation = true;
-    public GameObject touchingHand;
 
     private bool isSnappedIn;
     public bool IsSnappedIn {
@@ -26,6 +25,7 @@ public class Grabbable : MonoBehaviour {
         }
     }
 
+    public GameObject TouchingHand { get; set; }
     public bool IsGrabbed { get; private set; }
 
     private int emissionColorId;
@@ -48,7 +48,7 @@ public class Grabbable : MonoBehaviour {
         if (!IsSnappedIn) {
             var intensity = Mathf.Sin(emissionTime * EMISSION_FREQUENCY) * EMISSION_INTENSITY;
             var color = new Color(intensity, intensity, intensity);
-            if (touchingHand) {
+            if (TouchingHand) {
                 color *= Color.yellow;
             }
             ApplyEmissionColor(color);
@@ -58,7 +58,7 @@ public class Grabbable : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
-            touchingHand = collider.gameObject;
+            TouchingHand = collider.gameObject;
             emissionTime = 1f;
         }
     }
@@ -66,7 +66,7 @@ public class Grabbable : MonoBehaviour {
 
     private void OnTriggerExit(Collider collider) {
         if (collider.gameObject.CompareTag("hands")) {
-            touchingHand = null;
+            TouchingHand = null;
         }
     }
 
