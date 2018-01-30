@@ -91,7 +91,7 @@ MonoBehaviour:
     modelList: []
     modelsCheckedOut: []
     IsEnabled: 1
-    CanDuplicate: 1
+    CanDuplicate: 0
     HandPostProcesses:
       m_PersistentCalls:
         m_Calls: []
@@ -106,7 +106,7 @@ MonoBehaviour:
     modelList: []
     modelsCheckedOut: []
     IsEnabled: 1
-    CanDuplicate: 1
+    CanDuplicate: 0
     HandPostProcesses:
       m_PersistentCalls:
         m_Calls: []
