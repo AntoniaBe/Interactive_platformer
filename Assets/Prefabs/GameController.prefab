@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114711376019074346}
   - component: {fileID: 114152462328826854}
   - component: {fileID: 114069680881276074}
+  - component: {fileID: 114174589130518866}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -70,6 +71,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minGrabStrength: 0.5
   minUnextendedFingers: 3
+--- !u!114 &114174589130518866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182747947624032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d43c057c4d945342865cbcb2fb0a007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114711376019074346
 MonoBehaviour:
   m_ObjectHideFlags: 1

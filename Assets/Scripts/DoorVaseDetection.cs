@@ -6,10 +6,15 @@ public class DoorVaseDetection : MonoBehaviour {
 
     public Transform target;
     public Transform goal;
+    private Vector3 goalPosition;
     private Vector3 targetPosition;
     private float smooth = 0.2f;
     public Vector3 targetRotation;
     public GameObject[] spikes;
+
+    private void Start() {
+        goalPosition = goal.transform.position;
+    }
 
     /// <summary>
     /// Get newest position of target object to check if the distance between goal and target is smaller than 0.1f.
@@ -17,7 +22,7 @@ public class DoorVaseDetection : MonoBehaviour {
     /// </summary>
     void LateUpdate() {
         targetPosition = target.position;
-        if (Vector3.Distance(targetPosition, goal.position) < 0.1f) {
+        if (Vector3.Distance(targetPosition, goalPosition) < 0.1f) {
             if (spikes != null) {
                 foreach (var spike in spikes) {
                     spike.SetActive(false);

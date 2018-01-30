@@ -7740,7 +7740,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &259855574
 Prefab:
@@ -10026,7 +10026,7 @@ Prefab:
     - target: {fileID: 224808867981489724, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224808867981489724, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10156,7 +10156,7 @@ Prefab:
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 47.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1ceacbc7a030764a922635963d46960, type: 2}
@@ -11156,31 +11156,11 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: a40ecd0744f670743af2d7b03a765d10, type: 3}
   m_PrefabInternal: {fileID: 341547672}
---- !u!1 &342183060 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1348682395334530, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1290132557}
 --- !u!4 &342183065 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4383976326292226, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
     type: 2}
   m_PrefabInternal: {fileID: 1290132557}
---- !u!114 &342183066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 342183060}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675d0f0ae93120b45931e549d82666a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 1, z: -2}
-  swipeOffsetDistance: 10
-  swipeTime: 0.25
 --- !u!1001 &343114756
 Prefab:
   m_ObjectHideFlags: 0
@@ -21538,7 +21518,7 @@ Transform:
   - {fileID: 1946687350}
   - {fileID: 1936985115}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &661037375
 Prefab:
@@ -28736,7 +28716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885183858
 GameObject:
@@ -35974,7 +35954,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 54161596777075206, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f3e524d660c05c64ea54fdd0b791a1e0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1181108499
@@ -36173,9 +36154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1188395474}
-  - component: {fileID: 1188395473}
   - component: {fileID: 1188395472}
-  - component: {fileID: 1188395475}
   m_Layer: 9
   m_Name: HandController
   m_TagString: Untagged
@@ -36198,33 +36177,6 @@ MonoBehaviour:
   offset: {x: 0, y: -5.97, z: 11.57}
   swipeOffsetDistance: 10
   swipeTime: 0.25
---- !u!114 &1188395473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1188395471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea7528ef5c212145a7a6305adc2465e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onGrabEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onGrabUpdateEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onUngrabEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  allowMovement: 1
-  allowRotation: 1
-  touchingHand: {fileID: 0}
-  isSnappedIn: 0
 --- !u!4 &1188395474
 Transform:
   m_ObjectHideFlags: 0
@@ -36239,17 +36191,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1188395475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1188395471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d43c057c4d945342865cbcb2fb0a007, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1189852992
 Prefab:
   m_ObjectHideFlags: 0
@@ -39455,18 +39396,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4383976326292226, guid: 3c84e8ebaf632c246a12a1d614c2f1bb, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383976326292226, guid: 3c84e8ebaf632c246a12a1d614c2f1bb, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383976326292226, guid: 3c84e8ebaf632c246a12a1d614c2f1bb, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
+        type: 2}
+      propertyPath: _modelsParent
+      value: 
+      objectReference: {fileID: 1188395474}
     - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
         type: 2}
       propertyPath: ModelPool.Array.data[0].LeftModel
@@ -39479,32 +39413,14 @@ Prefab:
       objectReference: {fileID: 1545037533}
     - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
         type: 2}
-      propertyPath: ModelPool.Array.data[1].RightModel
-      value: 
-      objectReference: {fileID: 1286369451}
-    - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
-        type: 2}
       propertyPath: ModelPool.Array.data[1].LeftModel
       value: 
       objectReference: {fileID: 698950392}
-    - target: {fileID: 1348682395334530, guid: 3c84e8ebaf632c246a12a1d614c2f1bb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1348682395334530, guid: 3c84e8ebaf632c246a12a1d614c2f1bb, type: 2}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114034892358404344, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
-        type: 2}
-      propertyPath: _isHeadMounted
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
         type: 2}
-      propertyPath: _modelsParent
+      propertyPath: ModelPool.Array.data[1].RightModel
       value: 
-      objectReference: {fileID: 1188395474}
+      objectReference: {fileID: 1286369451}
     - target: {fileID: 114494431699053752, guid: 3c84e8ebaf632c246a12a1d614c2f1bb,
         type: 2}
       propertyPath: ModelPool.Array.data[0].CanDuplicate
@@ -46389,29 +46305,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 428e87d475580ca458360e8c4956c12b, type: 3}
   m_PrefabInternal: {fileID: 1831104476}
---- !u!114 &1422812485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1422812482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 760c18ed6520fec47be67098d17a9d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1422812486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1422812482}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6544304104e209044874b1a882a3cdd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.4
 --- !u!54 &1422812487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49056,7 +48949,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4804564906916412, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
@@ -59760,6 +59653,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 428e87d475580ca458360e8c4956c12b, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 428e87d475580ca458360e8c4956c12b, type: 3}
   m_IsPrefabParent: 0
@@ -62250,6 +62147,7 @@ GameObject:
   - component: {fileID: 1908131243}
   - component: {fileID: 1908131242}
   - component: {fileID: 1908131247}
+  - component: {fileID: 1908131248}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -62342,6 +62240,37 @@ MonoBehaviour:
   offset: {x: 0, y: 5.21, z: -12.23}
   swipeOffsetDistance: 10
   swipeTime: 0.25
+--- !u!114 &1908131248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908131241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1c1320f9d04b64589cd5708c758860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPointEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1908131247}
+        m_MethodName: CameraSwipe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: BooleanEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  minVelocity: 1
+  velocitySwitchTime: 1
+  minVelocitySwitches: 2
+  cooldownTime: 1
+  usePalmVelocity: 1
 --- !u!4 &1908188581 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e5a1087c565204f42969686d1df0633d, type: 3}

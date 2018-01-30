@@ -1558,7 +1558,6 @@ GameObject:
   - component: {fileID: 4836504548298518}
   - component: {fileID: 114095234987597440}
   - component: {fileID: 114106824486125652}
-  - component: {fileID: 54557808188698756}
   - component: {fileID: 23399180563165460}
   - component: {fileID: 114416154169592628}
   m_Layer: 9
@@ -3541,21 +3540,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!54 &54557808188698756
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1951227017868936}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &54561158295076858
 Rigidbody:
   m_ObjectHideFlags: 1
