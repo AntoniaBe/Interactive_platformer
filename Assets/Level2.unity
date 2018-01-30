@@ -10146,7 +10146,7 @@ Prefab:
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 47.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1ceacbc7a030764a922635963d46960, type: 2}
@@ -21019,6 +21019,59 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f45d8131c96f26045a69d17edf050a86, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &647743939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 647743940}
+  - component: {fileID: 647743942}
+  - component: {fileID: 647743941}
+  m_Layer: 0
+  m_Name: ladder_mushroom (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &647743940
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647743939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 153.799, y: -9.12, z: 21.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 660901640}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &647743941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647743939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8fa4bdc51dfe9940a66ecd5a5dec052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &647743942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 647743939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.242753, y: 2.41675, z: 2.71451}
+  m_Center: {x: -0.8761678, y: -0.7083746, z: -0.857255}
 --- !u!1 &648203600
 GameObject:
   m_ObjectHideFlags: 0
@@ -21548,9 +21601,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1937010148}
-  - {fileID: 1886115935}
   - {fileID: 1946687350}
   - {fileID: 1936985115}
+  - {fileID: 647743940}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46454,6 +46507,7 @@ MonoBehaviour:
   jumpCastOffset: {x: 0, y: 0, z: 0}
   jumpCastSize: {x: 0.1, y: 0.1, z: 0.1}
   shouldWait: 0
+  isDead: 0
 --- !u!1001 &1432036645
 Prefab:
   m_ObjectHideFlags: 0
@@ -61321,47 +61375,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9c3d22cdfbbcfd4f8d8019ff97a0f2e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1886115934
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1886115935}
-  - component: {fileID: 1886115936}
-  m_Layer: 0
-  m_Name: door_spikes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1886115935
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1886115934}
-  m_LocalRotation: {x: -0, y: -0.18682376, z: -0, w: 0.98239344}
-  m_LocalPosition: {x: -19.48, y: -9.97, z: 20.58}
-  m_LocalScale: {x: 2.336299, y: 5.8212514, z: 5.282644}
-  m_Children: []
-  m_Father: {fileID: 660901640}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -21.535002, z: 0}
---- !u!65 &1886115936
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1886115934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1887745679
 GameObject:
   m_ObjectHideFlags: 0
@@ -62256,6 +62269,7 @@ GameObject:
   - component: {fileID: 1908131242}
   - component: {fileID: 1908131247}
   - component: {fileID: 1908131248}
+  - component: {fileID: 1908131249}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -62379,6 +62393,18 @@ MonoBehaviour:
   minVelocitySwitches: 2
   cooldownTime: 1
   usePalmVelocity: 1
+--- !u!114 &1908131249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1908131241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 26d834e6e25c12949a62d60e5b0609ea, type: 2}
 --- !u!4 &1908188581 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e5a1087c565204f42969686d1df0633d, type: 3}
@@ -63155,6 +63181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936985115}
   - component: {fileID: 1936985116}
+  - component: {fileID: 1936985117}
   m_Layer: 0
   m_Name: ladder_mushroom
   m_TagString: Untagged
@@ -63173,7 +63200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 660901640}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.061}
 --- !u!65 &1936985116
 BoxCollider:
@@ -63182,11 +63209,22 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936985114}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.250468, y: 2.41675, z: 2.71451}
   m_Center: {x: 0.12768961, y: -0.7083746, z: -0.857255}
+--- !u!114 &1936985117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1936985114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74afabb0da16c9d4ebb14698445cb8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1937010147
 GameObject:
   m_ObjectHideFlags: 0
@@ -63196,6 +63234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937010148}
   - component: {fileID: 1937010149}
+  - component: {fileID: 1937010150}
   m_Layer: 0
   m_Name: bridge_1_cliff
   m_TagString: Untagged
@@ -63228,6 +63267,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10.854927, y: 1, z: 1}
   m_Center: {x: 0.89571, y: 0, z: 0}
+--- !u!114 &1937010150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937010147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74afabb0da16c9d4ebb14698445cb8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1937600914 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d209be13548e70947bc39053977ce977, type: 2}
@@ -63491,6 +63541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946687350}
   - component: {fileID: 1946687351}
+  - component: {fileID: 1946687352}
   m_Layer: 0
   m_Name: bridge_2_cliff
   m_TagString: Untagged
@@ -63509,7 +63560,7 @@ Transform:
   m_LocalScale: {x: 17.141233, y: 1, z: 11.026629}
   m_Children: []
   m_Father: {fileID: 660901640}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1946687351
 BoxCollider:
@@ -63523,6 +63574,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1946687352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946687349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74afabb0da16c9d4ebb14698445cb8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1947452398 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 2d8402e543c9173428264cd2e8429b50, type: 3}

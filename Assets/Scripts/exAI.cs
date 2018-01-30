@@ -11,6 +11,7 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
     public Vector3 jumpCastOffset;
     public Vector3 jumpCastSize = new Vector3(0.1f, 0.1f, 0.1f);
     public bool shouldWait;
+    public bool isDead;
 
     private Rigidbody rigidBody;
     private Vector3 knockback;
@@ -31,13 +32,13 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
 
         Vector3 targetVelocity = new Vector3(0, rigidBody.velocity.y, 0);
 
-        if(!shouldWait) {
+        if (!shouldWait && !isDead) {
             // Keep walkinng to the right if not instructed to wait
             targetVelocity.x = speed;
 
             // Jump when about to run against a grabbable, snapped in object
             if (Physics.BoxCast(transform.position + jumpCastOffset, jumpCastSize, Vector3.right, Quaternion.identity, jumpCastLength, 1 << LayerMask.NameToLayer("SnapIn"))) {
-            // if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
+                // if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
                 targetVelocity.y = jumpSpeed;
             }
         }
@@ -50,6 +51,24 @@ public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or somethin
 
     public void Knockback(Vector3 knockback) {
         this.knockback = knockback;
+    }
+
+    public void Die() {
+        GetComponent<Animation>().Stop();
+        isDead = true;
+        StartCoroutine(DeathAnimation());
+    }
+
+    private IEnumerator DeathAnimation() {
+        const float deathTime = 0.5f;
+        float timer = 0f;
+        float angle = 0f;
+        while (timer < deathTime) {
+            angle = Mathf.LerpAngle(angle, -91f, timer / deathTime);
+            transform.localEulerAngles = new Vector3(-9.75f, 97f, angle);
+            timer += Time.deltaTime;
+            yield return null;
+        }
     }
 
 }

@@ -21,7 +21,7 @@ public class ToxicMushRoomCondition : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
-            GetComponent<NPCDies>().NpcDies(); // TODO cleanup: NPCDies should be part of exAI and be called as a Death() function on there
+            collider.GetComponent<exAI>().Die();
         }
     }
 

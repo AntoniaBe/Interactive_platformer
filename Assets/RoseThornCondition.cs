@@ -39,7 +39,7 @@ public class RoseThornCondition : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            this.gameObject.GetComponent<NPCDies>().NpcDies();
+            collider.GetComponent<exAI>().Die();
         }
 
         if (collider.gameObject.name == "Torch")
