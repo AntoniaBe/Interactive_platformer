@@ -10088,7 +10088,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10108,7 +10108,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10128,7 +10128,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10138,7 +10138,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -13345,7 +13345,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
-  allowRotation: 1
+  allowRotation: 0
 --- !u!4 &440696507 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f282d9fb9b399dd4384b20aba08642fb, type: 2}
@@ -32245,7 +32245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTimes:
-  - 0
+  - 120
   - 1
   - 2
 --- !u!4 &882518905
@@ -52400,7 +52400,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: HandEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   allowMovement: 1
-  allowRotation: 1
+  allowRotation: 0
 --- !u!1001 &1489871693
 Prefab:
   m_ObjectHideFlags: 0
@@ -66509,6 +66509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8073c613d45b43438504f0b62a68c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  withGravity: 1
 --- !u!54 &1925861451
 Rigidbody:
   m_ObjectHideFlags: 0

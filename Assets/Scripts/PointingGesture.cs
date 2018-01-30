@@ -82,7 +82,7 @@ public class PointingGesture : MonoBehaviour {
     }
 
     private bool IsPointingFinger(Hand hand) {
-        // Palm must be oriented towards player TODO testme
+        // Palm must be oriented towards player
         if (hand.PalmNormal.z > -0.5f) {
             return false;
         }
