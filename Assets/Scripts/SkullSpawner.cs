@@ -6,8 +6,9 @@ public class SkullSpawner : MonoBehaviour {
     public GameObject skullPrefab;
     public float interval = 1f;
     public Vector3 range;
-    public float minPlayerDist = 2f;
     public float safeSpace = 3f;
+
+    public bool ShouldSpawn { get; set; }
 
     private GameObject player;
     private new Camera camera;
@@ -24,8 +25,8 @@ public class SkullSpawner : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(interval);
 
-            if (Vector3.Distance(transform.position, player.transform.position) <= minPlayerDist) {
-                var spawnPos = transform.position + new Vector3(Random.value < 0.5f ? -range.x - safeSpace : range.x + safeSpace, Random.Range(-range.y, range.y), Random.Range(-range.z, range.z));
+            if (ShouldSpawn) {
+                var spawnPos = transform.position + new Vector3(Random.value < 0.5f ? -range.x - safeSpace : range.x + safeSpace, Random.Range(safeSpace, range.y), Random.Range(-range.z, range.z));
                 var skull = Instantiate(skullPrefab);
                 skull.transform.position = spawnPos;
                 skull.GetComponent<FlyingSkull>().autoTarget = player;

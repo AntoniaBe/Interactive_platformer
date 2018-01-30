@@ -11,6 +11,7 @@ public class GateWheelRotator : MonoBehaviour {
     public float revertTime = 0.5f;
     public float minRotation = 1f;
     public RisingGate[] gates;
+    public bool isLocked;
 
     private float previousAngle;
     private float revertTimer;
@@ -33,7 +34,7 @@ public class GateWheelRotator : MonoBehaviour {
     }
 
     private void Update() {
-        if (revertTimer <= 0f) {
+        if (revertTimer <= 0f && !isLocked) {
             foreach (var gate in gates) {
                 gate.normalizedValue -= revertSpeed;
             }
