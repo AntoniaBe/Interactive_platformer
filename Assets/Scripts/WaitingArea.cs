@@ -15,6 +15,7 @@ public class WaitingArea : MonoBehaviour {
     private void Update() {
         if (isPlayerInside) {
             ai.shouldWait = ShouldWait;
+            
         }
     }
 

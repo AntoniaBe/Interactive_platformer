@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0d7042326cb44394585a5c7a1dd60046, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.3980868, g: 0.37283516, b: 0.2906384, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -10086,7 +10086,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10106,7 +10106,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10126,7 +10126,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10136,7 +10136,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
