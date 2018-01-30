@@ -20,9 +20,9 @@ public class LevelSelectionEntry : MonoBehaviour {
             starContainer.SetActive(false);
         } else {
             var record = saveState.GetLevelRecord(level);
-            bestTimeText.text = record.bestTime.ToString("00.00");
+            bestTimeText.text = record != null ? record.bestTime.ToString("00.00") : "--.--";
             for (int i = 0; i < stars.Length; i++) {
-                stars[i].enabled = i < record.stars;
+                stars[i].enabled = record != null ? i < record.stars : false;
             }
         }
     }

@@ -10078,7 +10078,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10098,7 +10098,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10118,7 +10118,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10128,7 +10128,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -20763,6 +20763,48 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: bfeccaa1e94bf5f42a1fce423b9c5834, type: 3}
   m_PrefabInternal: {fileID: 640889882}
+--- !u!1001 &643651509
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -84.682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 2.38238
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.100094736
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506473201632600, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2d71b97139be8fd48a002d1df9d44871, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &643989857 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: e5a1087c565204f42969686d1df0633d, type: 3}
@@ -46380,8 +46422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   knockbackRecovery: 3
-  rayLenght: 3
-  changedY: {x: 0, y: -2, z: 0}
+  jumpSpeed: 4
   jumpCastLength: 2.5
   jumpCastOffset: {x: 0, y: 0, z: 0}
   jumpCastSize: {x: 0.1, y: 0.1, z: 0.1}
@@ -48985,17 +49026,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 114909584821670538, guid: a9dbbc2da0dd3804793967f15764b512,
-        type: 2}
-      propertyPath: onPointEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1908131247}
-    - target: {fileID: 114909584821670538, guid: a9dbbc2da0dd3804793967f15764b512,
-        type: 2}
-      propertyPath: onPointEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CameraSwipe
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a9dbbc2da0dd3804793967f15764b512, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1493860431 stripped
