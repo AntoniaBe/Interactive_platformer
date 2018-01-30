@@ -8,7 +8,7 @@ public class DoorVaseDetection : MonoBehaviour {
     public Transform goal;
     private Vector3 goalPosition;
     private Vector3 targetPosition;
-    private float smooth = 0.2f;
+    public float smooth = 0.5f;
     public Vector3 targetRotation;
     public GameObject[] spikes;
 

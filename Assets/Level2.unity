@@ -2918,7 +2918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 431093694}
   goal: {fileID: 946321999}
-  targetRotation: {x: -90, y: 0, z: 270}
+  smooth: 0.5
+  targetRotation: {x: -90, y: 0, z: 280}
   spikes:
   - {fileID: 867953602}
   - {fileID: 1477330944}
@@ -6444,6 +6445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 431093694}
   goal: {fileID: 946321999}
+  smooth: 0.5
   targetRotation: {x: -90, y: 0, z: 60}
   spikes:
   - {fileID: 2059810751}
@@ -10086,7 +10088,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10106,7 +10108,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10126,7 +10128,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -172.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10136,7 +10138,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10146,7 +10148,7 @@ Prefab:
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 47.66
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1ceacbc7a030764a922635963d46960, type: 2}
@@ -28208,6 +28210,10 @@ Prefab:
       propertyPath: m_Name
       value: door_left_spike_4
       objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
   m_IsPrefabParent: 0
@@ -29858,6 +29864,10 @@ Prefab:
     - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
       propertyPath: m_Name
       value: door_left_spike_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
@@ -32439,6 +32449,10 @@ Prefab:
     - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
       propertyPath: m_Name
       value: door_left_spike_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
@@ -43908,6 +43922,10 @@ Prefab:
       propertyPath: m_Name
       value: door_right_spike_3
       objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
   m_IsPrefabParent: 0
@@ -45828,6 +45846,10 @@ Prefab:
     - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
       propertyPath: m_Name
       value: door_right_spike_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
@@ -50512,6 +50534,10 @@ Prefab:
       propertyPath: m_Name
       value: door_right_spike_4
       objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
   m_IsPrefabParent: 0
@@ -51950,6 +51976,10 @@ Prefab:
     - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
       propertyPath: m_Name
       value: door_right_spike_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
@@ -60471,6 +60501,10 @@ Prefab:
     - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
       propertyPath: m_Name
       value: door_left_spike_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 159714, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 95fb3a8d6baafd84f8eabf43c4298f51, type: 2}
