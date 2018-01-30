@@ -32,11 +32,14 @@ public class SaveState {
     public List<LevelRecord> levelRecords = new List<LevelRecord>();
 
     public bool HasUnlockedLevel(int level) {
-        if (level == 1) {
+        // Unlock all levels by default. It's better that way for the demo and locked levels aren't really necessary for only three levels.
+        return true;
+
+        /*if (level == 1) {
             return true;
         }
 
-        return GetLevelRecord(level) != null;
+        return GetLevelRecord(level) != null;*/
     }
 
     public void UnlockLevel(int level) {
