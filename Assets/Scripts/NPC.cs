@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour {
 
     public float speed = 2f;
+    public float speedBoost = 1f;
     public float knockbackRecovery = 3f;
     public float jumpSpeed = 4f;
     public float jumpCastLength = 2.5f;
@@ -30,7 +31,7 @@ public class NPC : MonoBehaviour {
 
         if (!shouldWait && !isDead) {
             // Keep walkinng to the right if not instructed to wait
-            targetVelocity.x = speed;
+            targetVelocity.x = speed * speedBoost;
 
             // Jump when about to run against a grabbable, snapped in object
             if (Physics.BoxCast(transform.position + jumpCastOffset, jumpCastSize, Vector3.right, Quaternion.identity, jumpCastLength, 1 << LayerMask.NameToLayer("SnapIn"))) {

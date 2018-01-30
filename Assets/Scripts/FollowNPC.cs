@@ -6,22 +6,55 @@ public class FollowNPC : MonoBehaviour {
 
     public Transform target;
     public Vector3 offset = new Vector3(0f, 1.0f, -2.0f);
+    public float smoothTime = 0.25f;
     public float swipeOffsetDistance = 10f;
-    public float swipeTime = 0.25f;
+    public float swipeSpeedBoost = 0.1f;
 
-    private Vector3 swipeOffset;
-    private Vector3 swipeOffsetTarget;
-    private Vector3 swipeOffsetVelocity;
+    private Vector3 targetPos;
+    private bool isSwiped;
+    private Vector3 smoothVelocity;
+    private NPC npc;
+
+    private void Start() {
+        npc = target.GetComponent<NPC>();
+        targetPos = target.position + offset;
+        transform.position = targetPos;
+    }
 
     void LateUpdate() {
-        swipeOffset = Vector3.SmoothDamp(swipeOffset, swipeOffsetTarget, ref swipeOffsetVelocity, swipeTime, float.MaxValue);
+        if (!isSwiped) {
+            targetPos = target.position + offset;
+        } else {
+            if (Mathf.Abs(target.position.x - targetPos.x) < 1f) {
+                isSwiped = false;
+                if (npc) {
+                    npc.speedBoost = 1f;
+                }
+            } else {
+                if (npc) {
+                    if (targetPos.x - offset.x > target.position.x) {
+                        npc.speedBoost = Mathf.Clamp(1f + (targetPos.x - target.position.x) * swipeSpeedBoost, 1f, 4f);
+                    } else {
+                        npc.speedBoost = 1f;
+                    }
+                }
+            }
+        }
 
-        transform.position = target.position + offset + swipeOffset;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref smoothVelocity, smoothTime, float.MaxValue);
     }
 
     public void CameraSwipe(bool value) {
         int dirX = value ? 1 : -1;
-        swipeOffsetTarget += new Vector3(dirX * swipeOffsetDistance, 0, 0);
-    } 
+        targetPos += new Vector3(dirX * swipeOffsetDistance, 0, 0);
+        isSwiped = true;
+    }
+
+    public void ResetSwipe() {
+        isSwiped = false;
+        if (npc) {
+            npc.speedBoost = 1f;
+        }
+    }
 
 }

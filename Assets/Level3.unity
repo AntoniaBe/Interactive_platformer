@@ -3028,6 +3028,7 @@ GameObject:
   - component: {fileID: 134014166}
   - component: {fileID: 134014167}
   - component: {fileID: 134014168}
+  - component: {fileID: 134014169}
   m_Layer: 0
   m_Name: WaitingArea
   m_TagString: Untagged
@@ -3071,6 +3072,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec1e54e718e07542972ec7fe4314336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &134014169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 134014165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740a695687607ff4b80ccefd9a1740c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEnterArea:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 654432418}
+        m_MethodName: ResetSwipe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onExitArea:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &136229319
 GameObject:
   m_ObjectHideFlags: 0
@@ -14396,8 +14429,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2038422317}
   offset: {x: 0, y: 5.21, z: -12.23}
+  smoothTime: 0.25
   swipeOffsetDistance: 10
-  swipeTime: 0.25
+  swipeSpeedBoost: 0.1
 --- !u!81 &654432419
 AudioListener:
   m_ObjectHideFlags: 0
@@ -16446,8 +16480,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 654432423}
   offset: {x: 0, y: -8, z: 11.57}
+  smoothTime: 0.25
   swipeOffsetDistance: 10
-  swipeTime: 0.25
+  swipeSpeedBoost: 0.1
 --- !u!4 &745347991
 Transform:
   m_ObjectHideFlags: 0
@@ -16841,7 +16876,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16861,7 +16896,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16881,7 +16916,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16891,7 +16926,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -16901,7 +16936,7 @@ Prefab:
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 47.66
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1ceacbc7a030764a922635963d46960, type: 2}
@@ -46463,6 +46498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  speedBoost: 1
   knockbackRecovery: 3
   jumpSpeed: 4
   jumpCastLength: 2.5
