@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class exAI : MonoBehaviour {
+public class exAI : MonoBehaviour { // TODO rename to NPC or just AI or something
 
     private Rigidbody rb;
     public float speed = 2f;
@@ -12,6 +12,7 @@ public class exAI : MonoBehaviour {
     private RaycastHit vision;
     private Vector3 to = new Vector3(1f, 0f, 0f);
     public Vector3 changedY = new Vector3(0f, -2f, 0f);
+    public bool shouldWait;
 
     private Vector3 knockback;
 
@@ -27,11 +28,16 @@ public class exAI : MonoBehaviour {
     private void FixedUpdate() {
         Debug.DrawRay(rb.transform.position - changedY, to * rayLenght, Color.red, 1.5f);
 
-        Vector3 targetVelocity = new Vector3(speed, rb.velocity.y, 0);
+        Vector3 targetVelocity = new Vector3(0, rb.velocity.y, 0);
 
-        // Jump when about to run against a grabbable, snapped in object
-        if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
-            targetVelocity.y = jumpSpeed;
+        if(!shouldWait) {
+            // Keep walkinng to the right if not instructed to wait
+            targetVelocity.x = speed;
+
+            // Jump when about to run against a grabbable, snapped in object
+            if (Physics.Raycast(transform.position - changedY, to, out vision, rayLenght, 1 << LayerMask.NameToLayer("SnapIn"), QueryTriggerInteraction.Ignore)) {
+                targetVelocity.y = jumpSpeed;
+            }
         }
 
         // Apply knockback to the final velocity

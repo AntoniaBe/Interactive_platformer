@@ -3,12 +3,15 @@ using UnityEngine;
 
 public class DartTrap : MonoBehaviour {
 
-    public GameObject player;
+    
     public GameObject dartPrefab;
     public Vector3 minOffset;
     public Vector3 maxOffset;
     public float interval = 1f;
+
     public bool IsActive { get; set; }
+
+    private GameObject player;
 
     private void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
