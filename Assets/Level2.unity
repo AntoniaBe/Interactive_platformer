@@ -10088,7 +10088,7 @@ Prefab:
     - target: {fileID: 224280642258162140, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10108,7 +10108,7 @@ Prefab:
     - target: {fileID: 224870404041183562, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10128,7 +10128,7 @@ Prefab:
     - target: {fileID: 224731670745799636, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -172.5
       objectReference: {fileID: 0}
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -10138,7 +10138,7 @@ Prefab:
     - target: {fileID: 224271376234819920, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 224056973294009602, guid: a1ceacbc7a030764a922635963d46960,
         type: 2}
@@ -32245,9 +32245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelTimes:
-  - 120
-  - 1
-  - 2
+  - 100
+  - 75
+  - 50
 --- !u!4 &882518905
 Transform:
   m_ObjectHideFlags: 0
@@ -39790,8 +39790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1908131246}
   offset: {x: 0, y: -5.97, z: 11.57}
+  smoothTime: 0.25
   swipeOffsetDistance: 10
-  swipeTime: 0.25
+  swipeSpeedBoost: 0.1
 --- !u!4 &1188395474
 Transform:
   m_ObjectHideFlags: 0
@@ -49958,6 +49959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  speedBoost: 1
   knockbackRecovery: 3
   jumpSpeed: 4
   jumpCastLength: 2.5
@@ -65830,8 +65832,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1422812484}
   offset: {x: 0, y: 5.21, z: -12.23}
+  smoothTime: 0.25
   swipeOffsetDistance: 10
-  swipeTime: 0.25
+  swipeSpeedBoost: 0.1
 --- !u!114 &1908131248
 MonoBehaviour:
   m_ObjectHideFlags: 0
