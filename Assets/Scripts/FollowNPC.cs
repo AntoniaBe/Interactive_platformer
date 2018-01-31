@@ -25,7 +25,7 @@ public class FollowNPC : MonoBehaviour {
         if (!isSwiped) {
             targetPos = target.position + offset;
         } else {
-            targetPos.y = target.position.y;
+            targetPos.y = target.position.y + offset.y;
 
             if (Mathf.Abs(target.position.x - targetPos.x) < 1f) {
                 isSwiped = false;

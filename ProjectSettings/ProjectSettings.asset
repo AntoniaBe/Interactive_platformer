@@ -646,7 +646,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 14a42d7b-2359-4f98-8097-811c4914a7e2
   projectName: Test_1
   organizationId: m_eteora
