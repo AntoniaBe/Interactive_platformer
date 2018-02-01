@@ -163,7 +163,7 @@ public class GameController : MonoBehaviour {
 
     private IEnumerator NextLevelCoroutine() {
         AsyncOperation async;
-        if (currentLevel + 1 >= maxLevels) {
+        if (currentLevel + 1 > maxLevels) {
             async = LoadLevelSelection();
         } else {
             async = LoadLevel(currentLevel + 1);
