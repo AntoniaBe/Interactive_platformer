@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour {
     public int CurrentStarCount {
         get {
             if (!levelProperties) {
+                print("oh shit boi");
                 return 3;
             }
 
@@ -68,6 +69,10 @@ public class GameController : MonoBehaviour {
     }
 
     private void Update() {
+        if (!levelProperties) {
+            levelProperties = FindObjectOfType<LevelProperties>();
+        }
+
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.W)) {
             Victory();
