@@ -4,9 +4,15 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Provides functionality to load and save the game's save state, containing information about the best times levels have been completed in.
+/// </summary>
 [XmlRoot]
 public class SaveState {
 
+    /// <summary>
+    /// Contains data on the best time a level has been completed at, and for convenience, the amount of stars the player received.
+    /// </summary>
     public class LevelRecord {
 
         [XmlAttribute]
@@ -31,29 +37,23 @@ public class SaveState {
     [XmlArrayItem("LevelRecord")]
     public List<LevelRecord> levelRecords = new List<LevelRecord>();
 
-    public bool HasUnlockedLevel(int level) {
-        // Unlock all levels by default. It's better that way for the demo and locked levels aren't really necessary for only three levels.
-        return true;
-
-        /*if (level == 1) {
-            return true;
-        }
-
-        return GetLevelRecord(level) != null;*/
-    }
-
-    public void UnlockLevel(int level) {
-        if (!HasUnlockedLevel(level)) {
-            levelRecords.Add(new LevelRecord(level));
-
-            SaveToFile();
-        }
-    }
-
+    /// <summary>
+    /// Returns a level record stored for a given level id.
+    /// </summary>
+    /// <param name="level">the id for the level to lookup</param>
+    /// <returns>a level record containing best time data or null if none has been saved yet</returns>
     public LevelRecord GetLevelRecord(int level) {
         return levelRecords.FirstOrDefault(t => t.id == level);
     }
 
+    /// <summary>
+    /// Updates a record stored for a level or creates it if it doesn't exist yet.
+    /// This will only affect the save state if a previous best time has been beaten.
+    /// The save state will automatically be saved to file when this is called.
+    /// </summary>
+    /// <param name="level"></param>
+    /// <param name="bestTime"></param>
+    /// <param name="stars"></param>
     public void UpdateLevelRecord(int level, float bestTime, int stars) {
         var record = GetLevelRecord(level);
         if (record == null) {
@@ -69,6 +69,9 @@ public class SaveState {
         }
     }
 
+    /// <summary>
+    /// Saves the game's save state to the savegame.xml file.
+    /// </summary>
     public void SaveToFile() {
         using (var stream = new FileStream("savegame.xml", FileMode.Create)) {
             var serializer = new XmlSerializer(typeof(SaveState));
@@ -76,6 +79,10 @@ public class SaveState {
         }
     }
 
+    /// <summary>
+    /// Loads the game's save state from the savegame.xml file, or creates it if it doesn't exit.
+    /// </summary>
+    /// <returns>the game's save state data</returns>
     public static SaveState LoadFromFile() {
         try {
             using (var stream = new FileStream("savegame.xml", FileMode.OpenOrCreate)) {

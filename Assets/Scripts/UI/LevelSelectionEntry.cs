@@ -14,16 +14,10 @@ public class LevelSelectionEntry : MonoBehaviour {
         var isUnlocked = saveState.HasUnlockedLevel(level);
 
         var button = GetComponentInChildren<Button>();
-        if (!isUnlocked) {
-            button.enabled = false;
-            bestTimeText.enabled = false;
-            starContainer.SetActive(false);
-        } else {
-            var record = saveState.GetLevelRecord(level);
-            bestTimeText.text = record != null ? record.bestTime.ToString("00.00") : "--.--";
-            for (int i = 0; i < stars.Length; i++) {
-                stars[i].enabled = record != null ? i < record.stars : false;
-            }
+        var record = saveState.GetLevelRecord(level);
+        bestTimeText.text = record != null ? record.bestTime.ToString("00.00") : "--.--";
+        for (int i = 0; i < stars.Length; i++) {
+            stars[i].enabled = record != null ? i < record.stars : false;
         }
     }
 
