@@ -5,14 +5,7 @@ using UnityEngine;
 public class RoseThornCondition : MonoBehaviour
 {
     public bool collisionWithTorch = false;
-    private GameObject flames, roseThorn, torch;
-
-    private void Awake()
-    {
-        flames = GameObject.Find("Flamesc");
-        roseThorn = GameObject.Find("rose-thorns");
-        torch = GameObject.Find("Torch");
-    }
+    public GameObject flames, torch;
 
     void Start()
     {
@@ -52,7 +45,7 @@ public class RoseThornCondition : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         flames.SetActive(false);
-        roseThorn.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     IEnumerator WaitAndDestroy()

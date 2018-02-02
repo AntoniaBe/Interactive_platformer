@@ -5,16 +5,10 @@ using UnityEngine;
 public class DeerFamilyCondition : MonoBehaviour {
 
     private Animator animatorDeer, animatorDoeAndKid;
-    private GameObject deer, doe, kid;
+    public GameObject deer, doe, kid;
     private float speed = 10f;
     private Vector3 endPositionAttack, endPositionFleeing;
     public bool handTouchingDeerFamily, npcCollides;
-
-    private void Start() {
-        deer = GameObject.Find("deer");
-        doe = GameObject.Find("doe");
-        kid = GameObject.Find("kid");
-    }
 
     private void FixedUpdate() {
         if (handTouchingDeerFamily) {
@@ -30,18 +24,19 @@ public class DeerFamilyCondition : MonoBehaviour {
         }
     }
 
-
     private IEnumerator OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("hands")) {
             handTouchingDeerFamily = true;
-            StartCoroutine(DeactivateDeerFamily());
+            yield return new WaitForSeconds(2f);
+            gameObject.SetActive(false);
         }
 
         if (collider.CompareTag("Player")) {
             npcCollides = true;
-            StartCoroutine(DeactivateDeerFamily());
             yield return new WaitForSeconds(0.5f);
             collider.GetComponent<NPC>().Die();
+            yield return new WaitForSeconds(1.5f);
+            gameObject.SetActive(false);
         }
     }
 
@@ -57,11 +52,6 @@ public class DeerFamilyCondition : MonoBehaviour {
         gameobject.transform.localEulerAngles = angle;
         gameobject.GetComponent<Animator>().SetBool("IsRun", true);
         gameobject.transform.position = Vector3.MoveTowards(gameobject.transform.position, endPositionAttack, speed * Time.deltaTime);
-    }
-
-    private IEnumerator DeactivateDeerFamily() {
-        yield return new WaitForSeconds(2f);
-        GameObject.Find("deerFamily").SetActive(false);
     }
 
 }
