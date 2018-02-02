@@ -9,7 +9,7 @@ public class PauseMenuCanvas : MonoBehaviour {
     public float exitLevelTime = 1f;
 
     private void Start() {
-        // Automatically set the correct camera - canvas needs to be screen space for the Particle System.
+        // Automatically set the correct camera. The canvas needs to be on screen-space for the hands to appear in front.
         GetComponent<Canvas>().worldCamera = Camera.main;
 
         blackScreen.canvasRenderer.SetAlpha(0f);
@@ -31,12 +31,6 @@ public class PauseMenuCanvas : MonoBehaviour {
         StartCoroutine(ExitLevelAnimation());
     }
 
-    private void DisableMenuButtons() {
-        foreach (var button in GetComponentsInChildren<Button>()) {
-            button.enabled = false;
-        }
-    }
-
     private IEnumerator ExitLevelAnimation() {
         blackScreen.enabled = true;
         blackScreen.CrossFadeAlpha(1f, exitLevelTime, true);
@@ -46,6 +40,12 @@ public class PauseMenuCanvas : MonoBehaviour {
         yield return new WaitForSecondsRealtime(exitLevelTime);
 
         async.allowSceneActivation = true;
+    }
+
+    private void DisableMenuButtons() {
+        foreach (var button in GetComponentsInChildren<Button>()) {
+            button.enabled = false;
+        }
     }
 
 }

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PauseMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-    
+
     public void OnPointerEnter(PointerEventData eventData) {
         GetComponentInChildren<Text>().color = Color.yellow;
 

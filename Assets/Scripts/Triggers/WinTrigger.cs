@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Causes a victory once the player enters the trigger area.
+/// </summary>
 public class WinTrigger : MonoBehaviour {
 
     private GameObject player;

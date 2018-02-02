@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Generic trigger area that simply invokes the attached event handlers.
+/// </summary>
 public class TriggerArea : MonoBehaviour {
 
     public UnityEvent onEnterArea;
