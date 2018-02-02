@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Checks whether the castle level final gate has been opened and triggers a victory.
+/// </summary>
 public class CastleVictory : MonoBehaviour {
 
     public RisingGate gate;
@@ -21,6 +24,7 @@ public class CastleVictory : MonoBehaviour {
             // Lock the gate in place
             gateWheel.isLocked = true;
 
+            // Display the victory animation on the player and show the victory screen
             StartCoroutine(VictoryAnimation());
             GameController.instance.Victory();
             hasWon = true;
@@ -31,6 +35,8 @@ public class CastleVictory : MonoBehaviour {
         const float turnTime = 0.5f;
         float timer = 0f;
         float angle = 0f;
+
+        // Smoothly turn the player towards the gate.
         while (timer < turnTime) {
             angle = Mathf.LerpAngle(angle, 0f, timer / turnTime);
             transform.localEulerAngles = new Vector3(0f, angle, 0f);

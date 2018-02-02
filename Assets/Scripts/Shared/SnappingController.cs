@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,17 +15,17 @@ public class SnappingController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider col) {
+    private void OnTriggerEnter(Collider collider) {
         if (HasSnapped) {
             return;
         }
 
-        if (grabbables.Contains(col.gameObject)) {
-            col.transform.position = transform.position;
-            col.transform.rotation = transform.rotation;
+        if (grabbables.Contains(collider.gameObject)) {
+            collider.transform.position = transform.position;
+            collider.transform.rotation = transform.rotation;
 
-            col.gameObject.layer = LayerMask.NameToLayer("SnapIn");
-            col.GetComponent<Grabbable>().IsSnappedIn = true;
+            collider.gameObject.layer = LayerMask.NameToLayer("SnapIn");
+            collider.GetComponent<Grabbable>().IsSnappedIn = true;
             onSnapEvent.Invoke();
             HasSnapped = true;
         }

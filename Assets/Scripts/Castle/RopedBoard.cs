@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Takes care of detaching the roped board once all ropes have been cut.
+/// </summary>
 public class RopedBoard : MonoBehaviour {
 
     public GameObject board;
@@ -16,22 +17,26 @@ public class RopedBoard : MonoBehaviour {
 
     private void Update() {
         if (!isBoardDetached) {
-            CheckRopes();
-        }
-    }
+            // Go through all ropes and check if they've been cut
+            var allRopesDetached = true;
+            foreach (var rope in ropes) {
+                if (!rope.isDetached) {
+                    allRopesDetached = false;
+                    break;
+                }
+            }
 
-    private void CheckRopes() {
-        foreach (var rope in ropes) {
-            if (!rope.isDetached) {
-                return;
+            // Only detach the board if all ropes have been cut
+            if (allRopesDetached) {
+                isBoardDetached = true;
+
+                sword.CanRigidify = true;
+
+                var rb = board.AddComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
+                board.transform.parent = null;
             }
         }
-
-        isBoardDetached = true;
-        sword.CanRigidify = true;
-        var rb = board.AddComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
-        board.transform.parent = null;
     }
 
 }

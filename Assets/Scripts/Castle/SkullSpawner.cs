@@ -1,13 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Spawns flying skulls at a specific interval.
+/// </summary>
 public class SkullSpawner : MonoBehaviour {
 
+    /// <summary>
+    /// The prefab to instantiate when spawning.
+    /// </summary>
     public GameObject skullPrefab;
+
+    /// <summary>
+    /// The interval at which skulls are spawned at.
+    /// </summary>
     public float interval = 1f;
+
+    /// <summary>
+    /// The range skulls are spawned within randomly.
+    /// </summary>
     public Vector3 range;
+
+    /// <summary>
+    /// The minimum distance of new spawns from the player.
+    /// </summary>
     public float safeSpace = 3f;
 
+    /// <summary>
+    /// Whether the spawner should be spawning skulls.
+    /// </summary>
     public bool ShouldSpawn { get; set; }
 
     private GameObject player;
