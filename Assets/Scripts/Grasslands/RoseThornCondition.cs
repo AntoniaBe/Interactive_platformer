@@ -10,16 +10,20 @@ public class RoseThornCondition : MonoBehaviour {
         flames.SetActive(false);
     }
 
-    private IEnumerator OnTriggerEnter(Collider collider) {
+    private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {
             collider.GetComponent<NPC>().Die();
         } else if (collider.gameObject.name == "Torch") {
             flames.SetActive(true);
             Destroy(torch);
-            yield return new WaitForSeconds(1.5f);
-            flames.SetActive(false);
-            gameObject.SetActive(false);
+            StartCoroutine(WaitAndDeactivate());
         }
+    }
+
+    private IEnumerator WaitAndDeactivate() {
+        yield return new WaitForSeconds(1.5f);
+        flames.SetActive(false);
+        gameObject.SetActive(false);
     }
 
 }
