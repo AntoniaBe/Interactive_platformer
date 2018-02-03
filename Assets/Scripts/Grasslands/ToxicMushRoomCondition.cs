@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ToxicMushRoomCondition : MonoBehaviour {
 
@@ -17,7 +15,6 @@ public class ToxicMushRoomCondition : MonoBehaviour {
             enabled = false;
         }
     }
-
 
     private void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player")) {

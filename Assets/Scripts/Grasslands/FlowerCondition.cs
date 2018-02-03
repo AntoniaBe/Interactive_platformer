@@ -1,16 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlowerCondition : MonoBehaviour {
-
 
     public GameObject speechBubble1, speechBubble2, speechBubble3, snapInFlower, butterfly, firstPoint, flower, followingFlower, butterflyAnimator;
     private bool disableSpeechBubble;
     private float moveTowardsSpeed = 5f;
 
-
-    void Start() {
+    private void Start() {
         speechBubble2.GetComponent<Renderer>().enabled = false;
         speechBubble3.GetComponent<Renderer>().enabled = false;
     }
@@ -49,12 +46,11 @@ public class FlowerCondition : MonoBehaviour {
 
     }
 
-    IEnumerator DisableSpeechBubbles() {
+    private IEnumerator DisableSpeechBubbles() {
         yield return new WaitForSeconds(2f);
         speechBubble1.SetActive(false);
         speechBubble2.SetActive(false);
         speechBubble3.SetActive(false);
     }
-
 
 }

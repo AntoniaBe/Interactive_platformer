@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeerFamilyCondition : MonoBehaviour {
@@ -29,9 +28,7 @@ public class DeerFamilyCondition : MonoBehaviour {
             handTouchingDeerFamily = true;
             yield return new WaitForSeconds(2f);
             gameObject.SetActive(false);
-        }
-
-        if (collider.CompareTag("Player")) {
+        } else if (collider.CompareTag("Player")) {
             npcCollides = true;
             yield return new WaitForSeconds(0.5f);
             collider.GetComponent<NPC>().Die();

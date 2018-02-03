@@ -1,57 +1,25 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RoseThornCondition : MonoBehaviour
-{
-    public bool collisionWithTorch = false;
-    public GameObject flames, torch;
+public class RoseThornCondition : MonoBehaviour {
 
-    void Start()
-    {
-        collisionWithTorch = false;
+    public GameObject flames;
+    public GameObject torch;
+
+    private void Start() {
         flames.SetActive(false);
     }
 
-    void Update()
-    {
-        if (collisionWithTorch)
-        {
+    private IEnumerator OnTriggerEnter(Collider collider) {
+        if (collider.CompareTag("Player")) {
+            collider.GetComponent<NPC>().Die();
+        } else if (collider.gameObject.name == "Torch") {
             flames.SetActive(true);
             Destroy(torch);
-            StartCoroutine(WaitAndDeactivitate());
-
-        }
-        else
-        {
+            yield return new WaitForSeconds(1.5f);
             flames.SetActive(false);
+            gameObject.SetActive(false);
         }
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "Player")
-        {
-            collider.GetComponent<NPC>().Die();
-        }
-
-        if (collider.gameObject.name == "Torch")
-        {
-            collisionWithTorch = true;
-        }
-    }
-
-    IEnumerator WaitAndDeactivitate()
-    {
-        yield return new WaitForSeconds(1.5f);
-        flames.SetActive(false);
-        gameObject.SetActive(false);
-    }
-
-    IEnumerator WaitAndDestroy()
-    {
-        yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
     }
 
 }
