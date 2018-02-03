@@ -1,22 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Rises the bridge to the target position once all conditions are met.
+/// </summary>
 public class MoveBridge : MonoBehaviour {
 
-    public GameObject statueLarge;
-    public GameObject statueSmall;
+    public bool SmallStatueDone { get; set; }
+    public bool LargeStatueDone { get; set; }
+
     public GameObject bridgeTrigger;
 
-	/// <summary>
-    /// Get "status" information from all statues and check whether they are true. If all are true, move bridge upwards
+    /// <summary>
+    /// Move bridge to target position once the statue riddle has been solved.
     /// </summary>
-	void LateUpdate () {
-        if (statueLarge.GetComponent<StatueDetection>().status && statueSmall.GetComponent<StatueDetection>().status) {
-            if(transform.position.y < bridgeTrigger.transform.position.y)
-            {
+    private void Update() {
+        if (SmallStatueDone && LargeStatueDone) {
+            if (transform.position.y < bridgeTrigger.transform.position.y) {
                 transform.Translate(Vector3.up * Time.deltaTime, Space.World);
             }
         }
-	}
+    }
+
 }
