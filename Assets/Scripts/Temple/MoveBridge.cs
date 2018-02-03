@@ -5,9 +5,19 @@
 /// </summary>
 public class MoveBridge : MonoBehaviour {
 
+    /// <summary>
+    /// Whether the first statue is in place.
+    /// </summary>
     public bool SmallStatueDone { get; set; }
+
+    /// <summary>
+    /// Whether the second statue is in place.
+    /// </summary>
     public bool LargeStatueDone { get; set; }
 
+    /// <summary>
+    /// The target to move to once conditions have been fulfilled.
+    /// </summary>
     public GameObject bridgeTrigger;
 
     /// <summary>
