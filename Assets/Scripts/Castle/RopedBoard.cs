@@ -5,7 +5,14 @@
 /// </summary>
 public class RopedBoard : MonoBehaviour {
 
+    /// <summary>
+    /// The board object attached in this roped board.
+    /// </summary>
     public GameObject board;
+
+    /// <summary>
+    /// The sword to be used for cutting the ropes.
+    /// </summary>
     public Rigidifier sword;
 
     private Rope[] ropes;

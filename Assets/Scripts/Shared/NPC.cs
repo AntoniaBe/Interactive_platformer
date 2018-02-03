@@ -1,17 +1,54 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controller for the NPC. Makes it move to the right, react to knockbacks, jump, and die.
+/// </summary>
 public class NPC : MonoBehaviour {
 
+    /// <summary>
+    /// The speed at which to move the NPC.
+    /// </summary>
     public float speed = 2f;
+
+    /// <summary>
+    /// The speed boost applied by the camera movement.
+    /// </summary>
     public float speedBoost = 1f;
+
+    /// <summary>
+    /// The time until the NPC recovers from a knockback.
+    /// </summary>
     public float knockbackRecovery = 3f;
+
+    /// <summary>
+    /// The power at which the NPC jumps.
+    /// </summary>
     public float jumpSpeed = 4f;
+
+    /// <summary>
+    /// The length of the box cast for the jump check.
+    /// </summary>
     public float jumpCastLength = 2.5f;
+
+    /// <summary>
+    /// The offset for the box cast of the jump check.
+    /// </summary>
     public Vector3 jumpCastOffset;
+
+    /// <summary>
+    /// The size of the box cast for the jump check.
+    /// </summary>
     public Vector3 jumpCastSize = new Vector3(0.1f, 0.1f, 0.1f);
+
+    /// <summary>
+    /// Whether the NPC should wait in place.
+    /// </summary>
     public bool shouldWait;
+
+    /// <summary>
+    /// Whether the NPC has died (and thus no longer moves)
+    /// </summary>
     public bool isDead;
 
     private Rigidbody rigidBody;
@@ -45,10 +82,17 @@ public class NPC : MonoBehaviour {
         rigidBody.velocity = targetVelocity;
     }
 
+    /// <summary>
+    /// Applies a knockback force to the NPC.
+    /// </summary>
+    /// <param name="knockback"></param>
     public void Knockback(Vector3 knockback) {
         this.knockback = knockback;
     }
 
+    /// <summary>
+    /// Kills the NPC, playing an animation and causing game over.
+    /// </summary>
     public void Die() {
         GetComponent<Animation>().Stop();
         isDead = true;
@@ -68,6 +112,9 @@ public class NPC : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Kills the NPC by falling, playing an animation and causing game over.
+    /// </summary>
     public void FallToDeath() {
         isDead = true;
         StartCoroutine(FallingAnimation());
