@@ -6,9 +6,19 @@ using UnityEngine.EventSystems;
 using Leap;
 using Leap.Unity;
 
+/// <summary>
+/// Leap Gesture detecting a click on a UI button.
+/// </summary>
 public class ClickGesture : MonoBehaviour {
 
+    /// <summary>
+    /// The cooldown delay after each click.
+    /// </summary>
     public float clickCooldown = 1f;
+
+    /// <summary>
+    /// The minimum velocity for a movement to be considered a click.
+    /// </summary>
     public float minVelocity = 5f;
 
     private LeapServiceProvider leapServiceProvider;
@@ -24,22 +34,26 @@ public class ClickGesture : MonoBehaviour {
     private void Update() {
         var frame = leapServiceProvider.CurrentFrame;
         foreach (var hand in frame.Hands) {
+            // Find the best suited finger for the click
             var pointingFingerType = GetPointingFinger(hand);
             if (!pointingFingerType.HasValue) {
                 continue;
             }
 
-            if (hand.PalmNormal.y >= 0f || Mathf.Abs(hand.PalmNormal.x) >= 0.75f) {
+            // Only allow clicks if the hand is oriented towards the screen
+            if (hand.PalmNormal.z < 0.4f || hand.PalmNormal.y >= 0f || Mathf.Abs(hand.PalmNormal.x) >= 0.75f) {
                 continue;
             }
 
-            var pointingFinger = hand.Fingers[(int) pointingFingerType];
+            // Map the finger position to a point on screen
+            var pointingFinger = hand.Fingers[(int)pointingFingerType];
             var screenPoint = mainCamera.WorldToScreenPoint(pointingFinger.TipPosition.ToVector3());
             var pointer = new PointerEventData(EventSystem.current) {
                 position = screenPoint,
                 pressPosition = screenPoint
             };
 
+            // Find a button on screen and simulate a click or hover event.
             var button = GetPointerButton(pointer);
             if (CanClick() && IsClickGesture(hand)) {
                 SimulateButtonClick(pointer);
@@ -55,6 +69,10 @@ public class ClickGesture : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Checks if the gesture is allowed to perform a click.
+    /// </summary>
+    /// <returns>true if a click is allowed</returns>
     private bool CanClick() {
         // Cooldown to prevent spam-clicking
         if (Time.unscaledTime - lastClickTime < clickCooldown) {
@@ -64,26 +82,38 @@ public class ClickGesture : MonoBehaviour {
         return true;
     }
 
+    /// <summary>
+    /// Checks if the hand is performing a click right now.
+    /// </summary>
+    /// <param name="hand">the hand to be checked</param>
+    /// <returns></returns>
     private bool IsClickGesture(Hand hand) {
-        if (hand.PalmNormal.z < 0.4f) {
-            return false;
-        }
-
-        return hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].TipVelocity.z > minVelocity || hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].TipVelocity.z > minVelocity;
+        // Either index or middle finger velocity must meet the minimum
+        return hand.Fingers[(int)Finger.FingerType.TYPE_INDEX].TipVelocity.z > minVelocity || hand.Fingers[(int)Finger.FingerType.TYPE_MIDDLE].TipVelocity.z > minVelocity;
     }
 
+    /// <summary>
+    /// Returns the best finger to use for finding the click position.
+    /// </summary>
+    /// <param name="hand">the hand to be checked</param>
+    /// <returns>the finger best suited for the click, or null if no finger can click</returns>
     public Finger.FingerType? GetPointingFinger(Hand hand) {
-        if (hand.Fingers[(int) Finger.FingerType.TYPE_MIDDLE].IsExtended) {
+        if (hand.Fingers[(int)Finger.FingerType.TYPE_MIDDLE].IsExtended) {
             return Finger.FingerType.TYPE_MIDDLE;
         }
 
-        if (hand.Fingers[(int) Finger.FingerType.TYPE_INDEX].IsExtended) {
+        if (hand.Fingers[(int)Finger.FingerType.TYPE_INDEX].IsExtended) {
             return Finger.FingerType.TYPE_INDEX;
         }
 
         return null;
     }
 
+    /// <summary>
+    /// Performs an EventSystem Raycast to find a button below the simulated pointer.
+    /// </summary>
+    /// <param name="pointer">the simualted pointer data</param>
+    /// <returns>the button below the pointer or null if there is none</returns>
     private Button GetPointerButton(PointerEventData pointer) {
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, results);
@@ -94,6 +124,10 @@ public class ClickGesture : MonoBehaviour {
         return null;
     }
 
+    /// <summary>
+    /// Simulates a button click and activates the cooldown period.
+    /// </summary>
+    /// <param name="pointer">the simualted pointer data</param>
     private void SimulateButtonClick(PointerEventData pointer) {
         var button = GetPointerButton(pointer);
         if (button) {
@@ -102,6 +136,10 @@ public class ClickGesture : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Activates the cooldown period manually. Used when opening menus to prevent accidental clicks.
+    /// </summary>
+    /// <param name="time">the amount of time to wait before accepting clicks again</param>
     public void WaitBeforeDetection(float time) {
         lastClickTime = Time.unscaledTime - clickCooldown + time;
     }
