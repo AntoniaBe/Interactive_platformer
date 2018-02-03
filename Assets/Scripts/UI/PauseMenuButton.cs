@@ -2,6 +2,9 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// Button controller for a button in the pause menu. Simply provides a hover effect affecting the color and scaling.
+/// </summary>
 public class PauseMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public void OnPointerEnter(PointerEventData eventData) {

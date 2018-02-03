@@ -2,16 +2,50 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controller for the victory screen.
+/// </summary>
 [RequireComponent(typeof(AudioSource))]
 public class LevelCompleteCanvas : MonoBehaviour {
 
+    /// <summary>
+    /// The time until the stars start appearing.
+    /// </summary>
     public float starInitialDelay = 2.5f;
+
+    /// <summary>
+    /// The delay between each indidvidual star appearing.
+    /// </summary>
     public float starDelay = 0.5f;
+
+    /// <summary>
+    /// The delay before the jingle sound is played after stars appeared.
+    /// </summary>
     public float jingleDelay = 0.5f;
+
+    /// <summary>
+    /// The time stars take to fade in.
+    /// </summary>
     public float starFadeDuration = 0.25f;
+
+    /// <summary>
+    /// The time taken to darken the screen when it appears.
+    /// </summary>
     public float darkenTime = 1f;
+
+    /// <summary>
+    /// The amount of time before the text and star outlines are faded in.
+    /// </summary>
     public float fadeInDelay = 1f;
+
+    /// <summary>
+    /// The time taken until the text and star outlines finish fading in.
+    /// </summary>
     public float fadeInTime = 1f;
+
+    /// <summary>
+    /// The time taken until the screen finishes fading to black.
+    /// </summary>
     public float fadeOutTime = 1f;
 
     public RectTransform container;
