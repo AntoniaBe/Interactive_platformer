@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Causes a game over once the player enters the trigger area.
 /// </summary>
 public class LoseTrigger : MonoBehaviour {
+
+    public UnityEvent onEnterArea;
 
     /// <summary>
     /// Whether the death animation should be played on the player.
@@ -15,8 +18,17 @@ public class LoseTrigger : MonoBehaviour {
     /// </summary>
     public bool shouldFallToDeath;
 
+    private void Awake() {
+        if (onEnterArea == null) {
+            onEnterArea = new UnityEvent();
+        }
+    }
+
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
+            // Invoke event for level-specific things to run
+            onEnterArea.Invoke();
+
             if (shouldFallToDeath) {
                 other.GetComponent<NPC>().FallToDeath();
             } else if (shouldKill) {

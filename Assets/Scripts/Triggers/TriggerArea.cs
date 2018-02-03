@@ -9,6 +9,8 @@ public class TriggerArea : MonoBehaviour {
     public UnityEvent onEnterArea;
     public UnityEvent onExitArea;
 
+    public string requiredTag;
+
     private void Awake() {
         if (onEnterArea == null) {
             onEnterArea = new UnityEvent();
@@ -19,11 +21,15 @@ public class TriggerArea : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        onEnterArea.Invoke();
+        if (string.IsNullOrEmpty(requiredTag) || other.CompareTag(requiredTag)) {
+            onEnterArea.Invoke();
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        onExitArea.Invoke();
+        if (string.IsNullOrEmpty(requiredTag) || other.CompareTag(requiredTag)) {
+            onExitArea.Invoke();
+        }
     }
 
 }
